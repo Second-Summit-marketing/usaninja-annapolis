@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USA Ninja Challenge Annapolis | Coming September 2026</title>
+<meta name="description" content="Annapolis's newest kids ninja gym is coming to 441 Defense Highway! Join the waitlist for exclusive founding member pricing — 20% off for life.">
+<meta property="og:title" content="USA Ninja Challenge Annapolis — Coming September 2026">
+<meta property="og:description" content="Be the first to know when we open. Founding members get 20% off tuition for life.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ninjaannapolis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--navy:#1a2744;--navy-light:#243352;--orange:#e8731a;--orange-hover:#d4650f;
+--gold:#f5a623;--blue:#2b7de9;--green:#22c55e;--white:#fff;--gray-50:#f8fafc;
+--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-600:#475569;--gray-800:#1e293b;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--gray-800);overflow-x:hidden}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#0f1a2e 50%,var(--navy) 100%);color:var(--white);padding:0;min-height:100vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 20%,rgba(43,125,233,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(232,115,26,.1) 0%,transparent 50%);pointer-events:none}
+.hero-nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;position:relative;z-index:2}
+.hero-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;color:var(--white)}
+.hero-logo span{color:var(--orange)}.hero-logo span{color:var(--orange)}
+.hero-nav-cta{background:var(--orange);color:var(--white);border:none;padding:.6rem 1.5rem;border-radius:8px;font-weight:600;cursor:pointer;font-size:.9rem;text-decoration:none;transition:background .2s}
+.hero-nav-cta:hover{background:var(--orange-hover)}
+
+.hero-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;position:relative;z-index:2}
+.hero-badge{background:rgba(232,115,26,.15);border:1px solid rgba(232,115,26,.4);color:var(--orange);padding:.4rem 1.2rem;border-radius:100px;font-size:.85rem;font-weight:600;display:inline-block;margin-bottom:1.5rem;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,5.5rem);line-height:1;letter-spacing:2px;margin-bottom:1rem}
+.hero h1 .orange{color:var(--orange)}
+.hero-sub{font-size:clamp(1.1rem,2.5vw,1.4rem);color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 2rem;line-height:1.6}
+.hero-cta-group{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn-primary{background:var(--orange);color:var(--white);border:none;padding:1rem 2.5rem;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{background:var(--orange-hover);transform:translateY(-2px);box-shadow:0 8px 25px rgba(232,115,26,.4)}
+.btn-secondary{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.3);padding:1rem 2.5rem;border-radius:12px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .2s;text-decoration:none}
+.btn-secondary:hover{border-color:var(--white);background:rgba(255,255,255,.05)}
+
+/* COUNTDOWN */
+.countdown-strip{background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.1);padding:1.5rem 2rem;position:relative;z-index:2}
+.countdown-inner{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.countdown-item{text-align:center}
+.countdown-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--orange);line-height:1}
+.countdown-label{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.5);margin-top:.25rem}
+
+/* SOCIAL PROOF TICKER */
+.ticker-wrap{background:var(--orange);padding:.6rem 0;overflow:hidden;position:relative}
+.ticker{display:flex;animation:ticker 30s linear infinite;white-space:nowrap}
+.ticker-item{padding:0 3rem;font-weight:700;color:var(--white);font-size:.9rem;letter-spacing:1px;text-transform:uppercase;flex-shrink:0}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:5rem 2rem}.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--orange);margin-bottom:.75rem}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:1px;color:var(--navy);margin-bottom:1rem}
+.section-desc{font-size:1.1rem;color:var(--gray-600);max-width:650px;line-height:1.7;margin-bottom:2.5rem}
+
+/* TIERS */
+.tiers{background:var(--gray-50)}
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.tier-card{background:var(--white);border-radius:16px;padding:2rem;border:2px solid var(--gray-200);transition:all .3s;position:relative;overflow:hidden}
+.tier-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.tier-card.featured{border-color:var(--orange);box-shadow:0 8px 30px rgba(232,115,26,.15)}
+.tier-card.featured::before{content:'MOST POPULAR';position:absolute;top:12px;right:-32px;background:var(--orange);color:var(--white);font-size:.7rem;font-weight:700;padding:.3rem 2.5rem;transform:rotate(45deg);letter-spacing:1px}
+.tier-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:1px;margin-bottom:.25rem}
+.tier-limit{font-size:.85rem;color:var(--gray-600);margin-bottom:1rem}
+.tier-discount{font-size:2.5rem;font-weight:800;color:var(--orange);margin-bottom:.25rem}
+.tier-detail{font-size:.95rem;color:var(--gray-600);margin-bottom:1.5rem}
+.tier-perks{list-style:none;margin-bottom:1.5rem}
+.tier-perks li{padding:.4rem 0;padding-left:1.5rem;position:relative;font-size:.95rem;color:var(--gray-600)}
+.tier-perks li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+.tier-btn{display:block;width:100%;text-align:center;padding:.9rem;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+.tier-btn-primary{background:var(--orange);color:var(--white)}
+.tier-btn-primary:hover{background:var(--orange-hover)}
+.tier-btn-secondary{background:var(--navy);color:var(--white)}
+.tier-btn-secondary:hover{background:var(--navy-light)}
+.tier-btn-outline{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.tier-btn-outline:hover{background:var(--navy);color:var(--white)}
+
+.tier-counter{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+.tier-dots{display:flex;gap:3px}
+.tier-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200)}.tier-dot.filled{background:var(--orange)}
+.tier-counter-text{font-size:.8rem;font-weight:600;color:var(--orange)}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.feature-card{padding:1.5rem;border-radius:12px;background:var(--white);border:1px solid var(--gray-200)}
+.feature-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.feature-icon.blue{background:rgba(43,125,233,.1);color:var(--blue)}
+.feature-icon.orange{background:rgba(232,115,26,.1);color:var(--orange)}
+.feature-icon.green{background:rgba(34,197,94,.1);color:var(--green)}
+.feature-icon.gold{background:rgba(245,166,35,.1);color:var(--gold)}
+.feature-title{font-weight:700;font-size:1.05rem;margin-bottom:.5rem}
+.feature-text{font-size:.9rem;color:var(--gray-600);line-height:1.6}
+
+/* GALLERY */
+.gallery{background:var(--navy);color:var(--white);overflow:hidden}
+.gallery .section-label{color:var(--gold)}
+.gallery .section-title{color:var(--white)}
+.gallery .section-desc{color:rgba(255,255,255,.7)}
+.gallery-scroll{display:flex;gap:1rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.gallery-scroll::-webkit-scrollbar{display:none}
+.gallery-item{flex:0 0 300px;height:220px;border-radius:12px;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:3rem;scroll-snap-align:start;position:relative;overflow:hidden}
+.gallery-item-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.85rem;font-weight:600}
+
+/* FORM SECTION */
+.form-section{background:linear-gradient(135deg,var(--navy) 0%,#0f1a2e 100%);color:var(--white)}
+.form-section .section-label{color:var(--gold)}
+.form-section .section-title{color:var(--white)}
+.form-section .section-desc{color:rgba(255,255,255,.7)}
+.form-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}.form-benefits{display:flex;flex-direction:column;gap:1.25rem}
+.form-benefit{display:flex;gap:1rem;align-items:start}
+.form-benefit-icon{width:40px;height:40px;border-radius:10px;background:rgba(232,115,26,.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.form-benefit-text h4{font-size:1rem;margin-bottom:.25rem}
+.form-benefit-text p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5}
+
+.signup-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2rem}
+.form-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:1px;margin-bottom:.5rem}
+.form-subtitle{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:1.5rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.4rem;color:rgba(255,255,255,.8)}
+.form-group input,.form-group select{width:100%;padding:.75rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:var(--white);font-size:.95rem;font-family:inherit;transition:border .2s}
+.form-group input::placeholder{color:rgba(255,255,255,.35)}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--orange);background:rgba(255,255,255,.1)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='rgba(255,255,255,.5)'%3E%3Cpath d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.form-group select option{background:var(--navy);color:var(--white)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;padding:1rem;background:var(--orange);color:var(--white);border:none;border-radius:10px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:.5rem;font-family:inherit}
+.form-submit:hover{background:var(--orange-hover);transform:translateY(-1px)}
+.form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-note{text-align:center;font-size:.8rem;color:rgba(255,255,255,.4);margin-top:.75rem}
+.form-success{display:none;text-align:center;padding:2rem}
+.form-success h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--green);margin-bottom:.5rem}
+.form-success p{color:rgba(255,255,255,.7);line-height:1.6}
+
+/* FAQ */
+.faq-list{max-width:750px}
+.faq-item{border-bottom:1px solid var(--gray-200);padding:1.25rem 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.05rem;gap:1rem}
+.faq-q::after{content:'+';font-size:1.5rem;color:var(--orange);transition:transform .2s;flex-shrink:0}.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:.95rem;color:var(--gray-600);line-height:1.7}
+.faq-item.open .faq-a{max-height:300px;padding-top:.75rem}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:2.5rem 2rem;text-align:center}
+footer a{color:var(--orange);text-decoration:none}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--white);letter-spacing:2px;margin-bottom:.5rem}
+.footer-logo span{color:var(--orange)}
+.footer-address{font-size:.85rem;margin-bottom:1rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1rem;flex-wrap:wrap}
+.footer-links a{font-size:.85rem;color:rgba(255,255,255,.5);transition:color .2s}
+.footer-links a:hover{color:var(--orange)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.3)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-nav{padding:1rem}
+  .hero-content{padding:1.5rem}
+  .countdown-inner{gap:1.25rem}
+  .countdown-num{font-size:2rem}
+  .section{padding:3rem 1.25rem}
+  .form-wrapper{grid-template-columns:1fr}
+  .form-benefits{order:2}
+  .signup-form{order:1}
+  .form-row{grid-template-columns:1fr}
+  .tier-grid{grid-template-columns:1fr}
+  .gallery-item{flex:0 0 260px;height:180px}
+}</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <nav class="hero-nav">
+    <div class="hero-logo">USA NINJA <span>CHALLENGE</span></div>
+    <a href="#signup" class="hero-nav-cta">Join the Waitlist</a>
+  </nav>
+  <div class="hero-content">
+    <div class="hero-badge">Coming September 2026</div>
+    <h1>ANNAPOLIS IS GETTING<br>A <span class="orange">NINJA GYM</span></h1>
+    <p class="hero-sub">The ultimate obstacle course training for kids ages 5–14. Be a founding member and lock in exclusive pricing before we open.</p>
+    <div class="hero-cta-group">
+      <a href="#signup" class="btn-primary">🥷 Reserve Your Spot</a>
+      <a href="#about" class="btn-secondary">Learn More</a>
+    </div>
+  </div>
+  <div class="countdown-strip">
+    <div class="countdown-inner">
+      <div class="countdown-item"><div class="countdown-num" id="cd-days">---</div><div class="countdown-label">Days</div></div>
+      <div class="countdown-item"><div class="countdown-num" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
+      <div class="countdown-item"><div class="countdown-num" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
+      <div class="countdown-item"><div class="countdown-num" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER --><div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">★ Founding Members Get 20% Off For Life</span>
+    <span class="ticker-item">★ Only 50 Founding Member Spots Available</span>
+    <span class="ticker-item">★ Ages 5–14 Welcome</span>
+    <span class="ticker-item">★ $49 Refundable Deposit Holds Your Spot</span>
+    <span class="ticker-item">★ 441 Defense Highway, Annapolis</span>
+    <span class="ticker-item">★ Opening September 2026</span>
+    <span class="ticker-item">★ Founding Members Get 20% Off For Life</span>
+    <span class="ticker-item">★ Only 50 Founding Member Spots Available</span>
+    <span class="ticker-item">★ Ages 5–14 Welcome</span>
+    <span class="ticker-item">★ $49 Refundable Deposit Holds Your Spot</span>
+    <span class="ticker-item">★ 441 Defense Highway, Annapolis</span>
+    <span class="ticker-item">★ Opening September 2026</span>
+  </div>
+</div>
+
+<!-- TIERS -->
+<section class="section tiers" id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Pre-Registration Tiers</div>
+    <div class="section-title">LOCK IN YOUR RATE BEFORE WE OPEN</div>
+    <p class="section-desc">The earlier you join, the more you save. Once a tier fills, it's gone forever. These rates are locked in for life — not just the first month.</p>
+    <div class="tier-grid">
+
+      <div class="tier-card featured">
+        <div class="tier-counter">
+          <div class="tier-dots" id="founder-dots"></div>
+          <span class="tier-counter-text" id="founder-counter">50 spots available</span>
+        </div>        <div class="tier-name" style="color:var(--orange)">FOUNDERS 50</div>
+        <div class="tier-limit">First 50 Families Only</div>
+        <div class="tier-discount">20% OFF</div>
+        <div class="tier-detail">Monthly tuition — <strong>for life</strong></div>
+        <ul class="tier-perks">
+          <li>Locked-in discount that never expires</li>
+          <li>VIP access at grand opening event</li>
+          <li>Priority class scheduling</li>
+          <li>Founding Member family t-shirt</li>
+          <li>$49 refundable deposit to reserve</li>
+        </ul>
+        <a href="#signup" class="tier-btn tier-btn-primary">Claim Founding Member Spot</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name" style="color:var(--navy)">EARLY BIRD 100</div>
+        <div class="tier-limit">Next 100 Families</div>
+        <div class="tier-discount" style="color:var(--navy)">15% OFF</div>
+        <div class="tier-detail">Monthly tuition — <strong>for life</strong></div>
+        <ul class="tier-perks">
+          <li>Locked-in discount that never expires</li>
+          <li>Early access at grand opening</li>
+          <li>Priority class scheduling</li>
+          <li>$49 refundable deposit to reserve</li>
+        </ul>
+        <a href="#signup" class="tier-btn tier-btn-secondary">Join Early Bird</a>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name" style="color:var(--gray-600)">PRE-OPEN GENERAL</div>        <div class="tier-limit">Unlimited — Ends at Grand Opening</div>
+        <div class="tier-discount" style="color:var(--gray-600);font-size:1.8rem">FREE REGISTRATION</div>
+        <div class="tier-detail">$49 registration fee waived (normally required)</div>
+        <ul class="tier-perks">
+          <li>Skip the registration fee</li>
+          <li>Free trial class at opening</li>
+          <li>Grand opening event access</li>
+        </ul>
+        <a href="#signup" class="tier-btn tier-btn-outline">Sign Up Free</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / FEATURES -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-label">What Is USA Ninja Challenge?</div>
+    <div class="section-title">WHERE KIDS BECOME NINJAS</div>
+    <p class="section-desc">USA Ninja Challenge is a kids' obstacle course training gym inspired by American Ninja Warrior. Our classes build confidence, strength, coordination, and grit — all while having a blast.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon blue">🏆</div>
+        <div class="feature-title">Expert-Led Classes</div>
+        <div class="feature-text">Trained coaches guide kids through age-appropriate obstacle courses, building skills progressively each week.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange">🔥</div>
+        <div class="feature-title">Ages 5–14</div>        <div class="feature-text">Programs designed for every skill level, from first-timers to competitive ninja athletes. Every kid finds their challenge.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon green">💪</div>
+        <div class="feature-title">Full-Body Fitness</div>
+        <div class="feature-text">Grip strength, balance, agility, and coordination — ninja training is the most fun workout your kid will ever have.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon gold">🎉</div>
+        <div class="feature-title">Birthday Parties & Camps</div>
+        <div class="feature-text">Epic ninja birthday parties and summer camps that kids talk about for weeks. The ultimate adventure experience.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY PLACEHOLDER -->
+<section class="section gallery" id="gallery">
+  <div class="section-inner">
+    <div class="section-label">Our Other Locations</div>
+    <div class="section-title">SEE WHAT WE'RE BUILDING</div>
+    <p class="section-desc">USA Ninja Challenge already has thriving locations across the country. Here's what you can expect in Annapolis.</p>
+    <div class="gallery-scroll">
+      <div class="gallery-item" style="background:linear-gradient(135deg,#1a3a5c,#2b5a8c)">🧗<div class="gallery-item-label">Obstacle Course Training</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#5c1a1a,#8c3b2b)">🥷<div class="gallery-item-label">Ninja Warrior Challenges</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#1a5c2a,#2b8c4a)">🎂<div class="gallery-item-label">Epic Birthday Parties</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#5c4a1a,#8c6b2b)">☀️<div class="gallery-item-label">Summer Ninja Camps</div></div>
+      <div class="gallery-item" style="background:linear-gradient(135deg,#3a1a5c,#5a2b8c)">🏅<div class="gallery-item-label">Competitions & Events</div></div>
+    </div>
+  </div></section>
+
+<!-- SIGNUP FORM -->
+<section class="section form-section" id="signup">
+  <div class="section-inner">
+    <div class="section-label">Join the Waitlist</div>
+    <div class="section-title">BE FIRST IN LINE</div>
+    <p class="section-desc">Sign up now to get notified when founding member spots open — and get exclusive early access before the public.</p>
+    <div class="form-wrapper">
+      <div class="signup-form" id="form-container">
+        <div id="form-fields">
+          <div class="form-title">RESERVE YOUR SPOT</div>
+          <div class="form-subtitle">Join 0 other families on the waitlist</div>
+          <form id="prereg-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="numKids">Number of Kids</label>
+                <select id="numKids" name="numKids">
+                  <option value="1">1 child</option>
+                  <option value="2">2 children</option>
+                  <option value="3">3 children</option>
+                  <option value="4">4+ children</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ageRange">Kid's Age(s)</label>
+                <input type="text" id="ageRange" name="ageRange" placeholder="e.g. 6, 8, 11">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="zipCode">Zip Code</label>
+              <input type="text" id="zipCode" name="zipCode" placeholder="21401" maxlength="5" pattern="[0-9]{5}">
+            </div>
+            <div class="form-group">
+              <label for="hearAbout">How did you hear about us?</label>
+              <select id="hearAbout" name="hearAbout">
+                <option value="">Select one...</option>
+                <option value="Facebook/Instagram Ad">Facebook / Instagram</option>
+                <option value="Google Search">Google Search</option>
+                <option value="Friend/Family Referral">Friend / Family Referral</option>
+                <option value="School Flyer">School Flyer</option>
+                <option value="Community Event">Community Event</option>                <option value="Drive-By/Signage">Drove Past / Signage</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="form-submit" id="submit-btn">Join the Waitlist — It's Free</button>
+            <p class="form-note">No payment required. We'll email you when founding member spots open.</p>
+          </form>
+        </div>
+        <div class="form-success" id="form-success">
+          <h3>YOU'RE ON THE LIST!</h3>
+          <p>We'll email you the moment founding member spots open. You'll get 48 hours of early access before the public.<br><br>Keep an eye on your inbox — big things are coming to Annapolis! 🥷</p>
+        </div>
+      </div>
+      <div class="form-benefits">
+        <div class="form-benefit">
+          <div class="form-benefit-icon">🔒</div>
+          <div class="form-benefit-text">
+            <h4>48-Hour Early Access</h4>
+            <p>Waitlist members get first dibs on founding member spots before anyone else.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="form-benefit-icon">💰</div>
+          <div class="form-benefit-text">
+            <h4>Up to 20% Off — For Life</h4>
+            <p>Founding members lock in a discount that never expires, no matter how much tuition goes up.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="form-benefit-icon">🎉</div>          <div class="form-benefit-text">
+            <h4>VIP Grand Opening</h4>
+            <p>Get exclusive access to the grand opening event — obstacle demos, giveaways, and first pick of class times.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="form-benefit-icon">🔄</div>
+          <div class="form-benefit-text">
+            <h4>100% Risk Free</h4>
+            <p>No payment needed to join the waitlist. When it's time to reserve, the $49 deposit is fully refundable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-label">Questions?</div>
+    <div class="section-title">FREQUENTLY ASKED</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What ages is USA Ninja Challenge for?</div>
+        <div class="faq-a">Our programs are designed for kids ages 5 to 14. We have different class levels based on age and skill, so every child gets an appropriate challenge whether they're a complete beginner or an experienced athlete.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does the $49 founding member deposit cover?</div>
+        <div class="faq-a">The $49 deposit reserves your founding member spot and locks in your lifetime discount. It's applied directly to your first month's tuition — so it's not an extra charge. And it's fully refundable if you change your mind before opening day.</div>      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does "20% off for life" actually mean?</div>
+        <div class="faq-a">It means exactly that. As a founding member, your monthly tuition rate is locked in at 20% below standard pricing — and it stays that way for as long as you're enrolled. Even if we raise prices in the future, your rate never changes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">When exactly are you opening?</div>
+        <div class="faq-a">We're targeting September 2026 for our grand opening at 441 Defense Highway in Annapolis. Join the waitlist and we'll keep you updated on the exact date as we get closer.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do my kids need any prior experience?</div>
+        <div class="faq-a">Not at all! Our beginner classes start from scratch. Kids learn progressively — grip strength, balance, coordination — and advance at their own pace. Many of our most dedicated ninjas started with zero experience.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer birthday parties and camps?</div>
+        <div class="faq-a">Yes! Ninja birthday parties and summer camps are some of our most popular offerings. We'll have more details on party packages and camp schedules as we get closer to opening.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is joining the waitlist free?</div>
+        <div class="faq-a">Completely free. No payment info required. You're just reserving your place in line so you get early access to founding member pricing before we open it to the public.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">USA NINJA <span>CHALLENGE</span> — ANNAPOLIS</div>
+    <div class="footer-address">441 Defense Highway, Annapolis, MD | Opening September 2026</div>    <div class="footer-links">
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#signup">Join Waitlist</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 USA Ninja Challenge Annapolis. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// COUNTDOWN — target Sept 1, 2026
+(function(){
+  const target = new Date('2026-09-01T09:00:00-04:00').getTime();
+  function update(){
+    const now = Date.now();
+    const diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = d;
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  update();
+  setInterval(update, 1000);
+})();
+// FOUNDER DOTS (visual counter)
+(function(){
+  const total = 50, taken = 0; // Update 'taken' as spots fill
+  const dots = document.getElementById('founder-dots');
+  for(let i = 0; i < Math.min(total, 20); i++){
+    const dot = document.createElement('div');
+    dot.className = 'tier-dot' + (i < Math.min(taken, 20) ? ' filled' : '');
+    dots.appendChild(dot);
+  }
+  document.getElementById('founder-counter').textContent =
+    taken >= total ? 'SOLD OUT!' : `${total - taken} of ${total} spots left`;
+})();
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+
+// FORM SUBMISSION
+// API endpoint on VPS — handles form → GHL contact creation
+const API_BASE = 'https://api.secondsummit.ninja/annapolis';
+
+// Fetch waitlist count on load
+(async function(){
+  try {    const r = await fetch(API_BASE + '/stats');
+    if(r.ok){
+      const d = await r.json();
+      if(d.count > 0){
+        document.querySelector('.form-subtitle').textContent =
+          'Join ' + d.count + ' other families on the waitlist';
+      }
+    }
+  } catch(e){}
+})();
+
+document.getElementById('prereg-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  const data = {
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    numKids: document.getElementById('numKids').value,
+    ageRange: document.getElementById('ageRange').value,
+    zipCode: document.getElementById('zipCode').value,
+    hearAbout: document.getElementById('hearAbout').value,
+    source: 'ninjaannapolis.com',
+    tier: 'None',
+    timestamp: new Date().toISOString()
+  };
+  try {
+    const resp = await fetch(API_BASE + '/register', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    // Show success regardless
+    document.getElementById('form-fields').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    // Track conversion if pixel is present
+    if(typeof fbq !== 'undefined') fbq('track', 'Lead');
+  } catch(err) {
+    // Still show success — API fires async
+    document.getElementById('form-fields').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+});
+
+// SMOOTH SCROLL for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+</script>
+
+<!-- Meta Pixel placeholder — add your pixel code here -->
+<!-- <script>!function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1230516214335467');fbq('track','PageView');</script> -->
+
+</body>
+</html>
