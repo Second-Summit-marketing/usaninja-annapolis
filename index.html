@@ -4,1536 +4,1118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USA Ninja Challenge Annapolis — Pre-Registration</title>
+    <meta name="description" content="Annapolis's first ninja obstacle course gym for kids ages 3-17. Opening September 2026. Lock in founding member pricing — 100% refundable deposits.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --navy: #0f1923;
+            --navy: #0a1628;
+            --navy-light: #132238;
+            --navy-mid: #1a2d47;
             --orange: #e8731a;
+            --orange-light: #f59542;
+            --orange-glow: rgba(232, 115, 26, 0.4);
             --green: #22c55e;
-            --white: #fff;
+            --green-dark: #16a34a;
+            --white: #ffffff;
+            --off-white: #f1f5f9;
             --light-bg: #f8fafc;
             --dark-text: #1e293b;
-            --muted: #64748b;
+            --muted: #94a3b8;
+            --muted-light: #cbd5e1;
             --gold: #f59e0b;
-            --dark-blue: #1e3a5f;
+            --card-border: rgba(255,255,255,0.08);
+            --card-bg: rgba(255,255,255,0.03);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.15), 0 10px 20px -10px rgba(0,0,0,0.08);
+            --shadow-glow: 0 0 30px rgba(232, 115, 26, 0.15);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--dark-text);
-            background-color: var(--white);
+            background: var(--white);
             line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Password Gate */
-        .password-gate {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .password-gate.hidden {
-            display: none;
-        }
-
-        .password-gate h2 {
-            color: var(--white);
-            font-size: 32px;
-            text-align: center;
-        }
-
-        .password-gate p {
-            color: var(--muted);
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .password-input-group {
-            display: flex;
-            gap: 12px;
-        }
-
-        .password-input-group input {
-            padding: 12px 16px;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--white);
-            font-size: 14px;
-            width: 200px;
-        }
-
-        .password-input-group input::placeholder {
-            color: var(--muted);
-        }        .password-input-group button {
-            padding: 12px 24px;
-            background: var(--orange);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-
-        .password-input-group button:hover {
-            background: #d6621a;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            position: sticky;
-            top: 0;
-            background: rgba(15, 25, 35, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(232, 115, 26, 0.2);
-            padding: 12px 0;
-            z-index: 100;
-        }
-
-        .top-bar-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .top-bar-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 18px;
-            color: var(--orange);
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
-        .top-bar-center {
-            flex: 1;
-            text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .top-bar-cta {
-            padding: 8px 16px;
-            background: var(--orange);
-            color: var(--white);
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 13px;
-            white-space: nowrap;
-            transition: background 0.2s;
-        }
-
-        .top-bar-cta:hover {
-            background: #d6621a;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 50%, #0a4a6b 100%);
-            color: var(--white);
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(232, 115, 26, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(34, 197, 94, 0.15);
-            border: 1px solid var(--green);
-            color: var(--green);
-            padding: 8px 16px;            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
-        }
-
-        .hero-badge::before {
-            content: '';
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background: var(--green);
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
+            letter-spacing: 0.04em;
             line-height: 1.1;
         }
 
-        .hero > .container > p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 32px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== NOISE TEXTURE OVERLAY ===== */
+        .noise-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 9998; opacity: 0.015;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
-        .hero-trust-strip {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 32px;
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.7);
-            flex-wrap: wrap;
+        /* ===== PASSWORD GATE ===== */
+        .password-gate {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--navy);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10000; flex-direction: column; gap: 24px;
         }
-
-        .hero-trust-strip span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .password-gate.hidden { display: none; }
+        .password-gate h2 {
+            font-size: 2.5rem; color: var(--white);
+            text-shadow: 0 2px 20px rgba(232, 115, 26, 0.3);
         }
-
-        .hero-trust-strip .dot {
-            width: 3px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
+        .password-gate p { color: var(--muted); font-size: 0.95rem; }
+        .password-gate .input-group {
+            display: flex; gap: 12px; align-items: center;
         }
-
-        .hero-cta {
-            display: inline-block;
-            padding: 16px 32px;
-            background: var(--orange);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
+        .password-gate input {
+            padding: 14px 20px; border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05); color: var(--white);
+            border-radius: 10px; font-size: 1rem; width: 280px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
-
-        .hero-cta:hover {
-            background: #d6621a;
+        .password-gate input:focus {
+            outline: none; border-color: var(--orange);
+            box-shadow: 0 0 20px rgba(232, 115, 26, 0.2);
+        }
+        .password-gate input::placeholder { color: var(--muted); }
+        .password-gate button {
+            padding: 14px 28px; background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            color: var(--white); border: none; border-radius: 10px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem;
+            letter-spacing: 0.08em; cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 115, 26, 0.3);
+        }
+        .password-gate button:hover {
             transform: translateY(-2px);
-        }
-
-        .hero-countdown {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Trust Bar */
-        .trust-bar {
-            background: var(--navy);
-            padding: 24px 0;
-            border-bottom: 1px solid rgba(232, 115, 26, 0.1);
-        }
-
-        .trust-bar-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 20px;flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--white);
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .trust-item svg {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-        }
-
-        /* Section Alternating Backgrounds */
-        section:nth-child(odd) {
-            background: var(--light-bg);
-        }
-
-        section:nth-child(even) {
-            background: var(--white);
-        }
-
-        section:nth-child(4n+3) {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 48px 0;
-            }
-        }
-
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            section h2 {
-                font-size: 28px;
-            }
-        }
-
-        .section-subhead {
-            text-align: center;
-            font-size: 16px;
-            color: var(--muted);
-            margin-bottom: 48px;
-        }
-
-        section:nth-child(4n+3) .section-subhead {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Pricing Section */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        @media (max-width: 1024px) {
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .pricing-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);        }
-
-        .pricing-card.featured {
-            border-top: 4px solid var(--orange);
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-        }
-
-        .pricing-badge {
-            display: inline-block;
-            background: rgba(34, 197, 94, 0.1);
-            color: var(--green);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            width: fit-content;
-            letter-spacing: 0.05em;
-        }
-
-        .pricing-badge.popular {
-            background: rgba(232, 115, 26, 0.1);
-            color: var(--orange);
-        }
-
-        .pricing-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--dark-text);
-        }
-
-        .pricing-anchor {
-            font-size: 12px;
-            color: var(--muted);
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
-
-        .pricing-perks {
-            list-style: none;
-            margin: 20px 0;
-            flex-grow: 1;
-        }
-
-        .pricing-perks li {
-            font-size: 13px;
-            color: var(--dark-text);
-            padding: 8px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .pricing-perks li::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 4px;
-            background: var(--green);
-            border-radius: 50%;
-            margin-top: 5px;
-            flex-shrink: 0;
-        }
-
-        .pricing-scarcity {
-            font-size: 12px;
-            color: var(--muted);
-            margin: 16px 0;
-        }
-
-        .pricing-progress {
-            width: 100%;
-            height: 4px;
-            background: #e2e8f0;
-            border-radius: 2px;
-            overflow: hidden;
-            margin-bottom: 16px;
-        }
-
-        .pricing-progress-bar {
-            height: 100%;
-            background: var(--green);
-            border-radius: 2px;
-        }
-
-        .pricing-cta {
-            padding: 12px 16px;
-            background: var(--orange);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;            font-size: 14px;
-            transition: background 0.2s;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-        }
-
-        .pricing-cta:hover {
-            background: #d6621a;
-        }
-
-        .pricing-cta.secondary {
-            background: var(--navy);
-        }
-
-        .pricing-cta.secondary:hover {
-            background: #1e3a5f;
-        }
-
-        .pricing-trust {
-            text-align: center;
-            font-size: 13px;
-            color: var(--muted);
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        /* How It Works */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 48px;
-            position: relative;
-        }
-
-        @media (max-width: 768px) {
-            .steps {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-        }
-
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
-            z-index: 0;
-        }
-
-        @media (max-width: 768px) {
-            .steps::before {
-                display: none;
-            }
-        }
-
-        .step {
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-circle {
-            width: 60px;
-            height: 60px;
-            background: var(--orange);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 24px;
-            margin: 0 auto 20px;
-            box-shadow: 0 4px 12px rgba(232, 115, 26, 0.3);
-        }
-
-        .step h3 {
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .step p {
-            font-size: 14px;
-            color: var(--muted);
-            text-align: center;
-            line-height: 1.5;
-        }
-
-        /* Video Section */
-        .video-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }        @media (max-width: 768px) {
-            .video-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        .video-container {
-            background: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 16 / 9;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-text h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .video-text p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .video-text .credibility {
-            font-size: 13px;
-            color: var(--muted);
-            font-style: italic;
-        }
-
-        /* Reviews Section */
-        .reviews-summary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: var(--dark-text);
-            color: var(--white);
-            padding: 12px 20px;
-            border-radius: 20px;
-            width: fit-content;
-            margin: 32px auto;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 32px;
-        }
-
-        @media (max-width: 1024px) {
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .review-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-        }
-
-        .review-stars {
-            color: var(--gold);
-            font-size: 12px;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .review-quote {
-            font-size: 14px;
-            color: var(--dark-text);
-            line-height: 1.6;
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .review-footer {
-            display: flex;
-            align-items: center;            gap: 12px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 12px;
-        }
-
-        .review-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--orange);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .review-info {
-            flex: 1;
-        }
-
-        .review-name {
-            font-weight: 600;
-            font-size: 13px;
-            color: var(--dark-text);
-        }
-
-        .review-location {
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .review-badge {
-            background: rgba(232, 115, 26, 0.1);
-            color: var(--orange);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-        /* Programs Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        @media (max-width: 768px) {
-            .programs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .program-card {
-            border-radius: 12px;
-            padding: 48px 32px;
-            color: var(--white);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            min-height: 280px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .program-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-        }
-
-        .program-card:nth-child(1)::before {
-            background: linear-gradient(135deg, #e8731a 0%, #d6621a 100%);
-        }
-
-        .program-card:nth-child(2)::before {
-            background: linear-gradient(135deg, #22c55e 0%, #1a9d42 100%);
-        }
-
-        .program-card:nth-child(3)::before {
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-        }
-
-        .program-card:nth-child(4)::before {
-            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-        }
-
-        .program-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            display: flex;align-items: center;
-            justify-content: center;
-        }
-
-        .program-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .program-card h3 {
-            font-size: 20px;
-        }
-
-        .program-card p {
-            font-size: 14px;
-            line-height: 1.6;
-            opacity: 0.95;
-        }
-
-        /* Team Section */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 48px;
-        }
-
-        @media (max-width: 768px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .team-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 32px;
-            color: var(--white);
-            display: flex;
-            gap: 20px;
-        }
-
-        .team-avatar {
-            width: 80px;
-            height: 80px;
-            min-width: 80px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--orange) 0%, #d6621a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            font-weight: 700;
-        }
-
-        .team-card:nth-child(2) .team-avatar {
-            background: linear-gradient(135deg, var(--green) 0%, #1a9d42 100%);
-        }
-
-        .team-info h3 {
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-
-        .team-info .role {
-            font-size: 13px;
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .team-info p {
-            font-size: 14px;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 700px;
-            margin: 48px auto 0;
-        }
-
-        .faq-item {
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 20px;
-            background: var(--white);
-            border: none;
-            width: 100%;            text-align: left;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            transition: background 0.2s;
-        }
-
-        .faq-question:hover {
-            background: #f1f5f9;
-        }
-
-        .faq-toggle {
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: var(--orange);
-            font-weight: 700;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 20px;
-            background: #f8fafc;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .faq-answer.open {
-            max-height: 500px;
-            padding: 20px;
-        }
-
-        /* Final CTA Section */
-        .final-cta h2 {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-
-        .final-cta .section-subhead {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .final-cta-button {
-            display: inline-block;
-            padding: 16px 40px;
-            background: var(--orange);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: all 0.3s;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-        }
-
-        .final-cta-button:hover {
-            background: #d6621a;
-            transform: translateY(-2px);
-        }
-
-        .final-cta-trust {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background: #0a1420;
-            color: var(--muted);
-            padding: 32px 0;
-            text-align: center;
-            font-size: 13px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        footer a {
-            color: var(--orange);
+            box-shadow: 0 6px 25px rgba(232, 115, 26, 0.45);
+        }
+
+        /* ===== STICKY TOP BAR ===== */
+        .top-bar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(10, 22, 40, 0.92);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0 24px; height: 60px;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .top-bar.scrolled {
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+        .top-bar-logo {
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem;
+            color: var(--orange); letter-spacing: 0.08em;
             text-decoration: none;
         }
-
-        footer a:hover {
-            text-decoration: underline;
+        .top-bar-center {
+            color: var(--muted); font-size: 0.85rem; font-weight: 500;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .top-bar-center .live-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--green);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+        .btn-nav {
+            padding: 10px 22px;
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            color: var(--white); border: none; border-radius: 8px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem;
+            letter-spacing: 0.08em; cursor: pointer;
+            transition: all 0.3s ease; text-decoration: none;
+            box-shadow: 0 2px 10px rgba(232, 115, 26, 0.25);
+        }
+        .btn-nav:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(232, 115, 26, 0.4);
         }
 
-        /* Mobile Sticky CTA */
-        .mobile-sticky-cta {
-            position: fixed;            bottom: 0;
-            left: 0;
-            right: 0;
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 100px 24px 80px;
             background: var(--navy);
-            border-top: 1px solid rgba(232, 115, 26, 0.2);
-            padding: 12px 20px;
-            display: none;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            z-index: 50;
+            position: relative; overflow: hidden;
         }
-
-        @media (max-width: 768px) {
-            .mobile-sticky-cta {
-                display: flex;
-            }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(232, 115, 26, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 20% 80%, rgba(34, 197, 94, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 60% at 80% 60%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
         }
-
-        .mobile-sticky-cta.hidden {
-            display: none !important;
+        .hero::after {
+            content: ''; position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
         }
-
-        .mobile-sticky-text {
-            color: var(--muted);
-            font-size: 12px;
-            flex: 1;
+        .hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 24px; border-radius: 50px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            background: rgba(34, 197, 94, 0.08);
+            color: var(--green); font-size: 0.8rem; font-weight: 600;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
         }
-
-        .mobile-sticky-button {
-            padding: 10px 16px;
-            background: var(--orange);
+        .hero-badge .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--green);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
             color: var(--white);
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 13px;
-            white-space: nowrap;
-            font-family: 'Bebas Neue', sans-serif;
-            transition: background 0.2s;
-        }
-
-        .mobile-sticky-button:hover {
-            background: #d6621a;
-        }
-
-        /* Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 200;
-            padding: 20px;
-        }
-
-        .modal-overlay.open {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .modal-close {
-            float: right;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--muted);
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-close:hover {
-            color: var(--dark-text);
-        }
-
-        .modal h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-            color: var(--dark-text);
-        }        .modal-deposit {
-            font-size: 18px;
-            color: var(--orange);
-            font-weight: 700;
             margin-bottom: 24px;
+            text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+        }
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--muted-light); line-height: 1.7;
+            max-width: 700px; margin: 0 auto 20px;
+            font-weight: 400;
+        }
+        .hero-trust {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 8px 24px; margin: 24px 0 40px;
+            font-size: 0.85rem; color: var(--muted);
+        }
+        .hero-trust span { display: flex; align-items: center; gap: 6px; }
+        .hero-trust .star { color: var(--gold); }
+        .hero-trust .sep { opacity: 0.3; }
+        .btn-hero {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--orange), #d4650f);
+            color: var(--white); border: none; border-radius: 12px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem;
+            letter-spacing: 0.08em; cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(232, 115, 26, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+            position: relative; overflow: hidden;
+        }
+        .btn-hero::after {
+            content: ''; position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(transparent, rgba(255,255,255,0.08), transparent);
+            transform: rotate(45deg); transition: all 0.6s ease;
+            opacity: 0;
+        }
+        .btn-hero:hover::after { opacity: 1; transform: rotate(45deg) translateY(-50%); }
+        .btn-hero:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(232, 115, 26, 0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .countdown-text {
+            color: var(--muted); font-size: 0.9rem;
+            margin-top: 20px; font-weight: 500;
         }
 
-        .form-group {
+        /* ===== WAVE DIVIDER ===== */
+        .wave-divider {
+            position: relative; width: 100%; overflow: hidden;
+            line-height: 0;
+        }
+        .wave-divider svg { display: block; width: 100%; height: auto; }
+        .wave-navy-to-white svg { fill: var(--light-bg); }
+        .wave-white-to-navy svg { fill: var(--navy); }
+        .wave-white-to-light svg { fill: var(--off-white); }
+        .wave-light-to-navy svg { fill: var(--navy); }
+
+        /* ===== TRUST STRIP ===== */
+        .trust-strip {
+            background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .trust-items {
+            display: flex; justify-content: center; align-items: center;
+            flex-wrap: wrap; gap: 20px 48px;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 12px;
+            color: var(--muted-light); font-size: 0.9rem; font-weight: 500;
+        }
+        .trust-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section-dark {
+            background: var(--navy); color: var(--white);
+            position: relative;
+        }
+        .section-light {
+            background: var(--light-bg);
+            position: relative;
+        }
+        .section-white {
+            background: var(--white);
+            position: relative;
+        }
+        .section-padding { padding: 100px 0; }
+        .section-header {
+            text-align: center; margin-bottom: 60px;
+        }
+        .section-header h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            margin-bottom: 16px;
+        }
+        .section-header p {
+            font-size: 1.1rem; max-width: 600px; margin: 0 auto;
+            opacity: 0.7; line-height: 1.7;
+        }        .section-label {
+            display: inline-block; font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--orange); margin-bottom: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 24px; align-items: start;
+        }
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px; padding: 36px 28px;
+            position: relative; overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-md);
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        .pricing-card.featured {
+            border: 2px solid var(--orange);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            transform: scale(1.03);
+            z-index: 2;
+        }
+        .pricing-card.featured:hover {
+            transform: scale(1.03) translateY(-8px);
+            box-shadow: var(--shadow-xl), 0 0 50px rgba(232, 115, 26, 0.2);
+        }
+        .pricing-card.featured::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--orange-light), var(--orange));
+        }
+        .card-badge {
+            display: inline-block; padding: 5px 14px;
+            border-radius: 6px; font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .badge-orange {
+            background: rgba(232, 115, 26, 0.1); color: var(--orange);
+            border: 1px solid rgba(232, 115, 26, 0.2);
+        }
+        .badge-green {
+            background: rgba(34, 197, 94, 0.1); color: var(--green-dark);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        .pricing-card h3 {
+            font-size: 1.6rem; margin-bottom: 8px; color: var(--dark-text);
+        }
+        .pricing-card .price-line {
+            font-size: 0.9rem; color: var(--muted); margin-bottom: 20px; line-height: 1.5;
+        }
+        .pricing-card .price-line .strike { text-decoration: line-through; opacity: 0.6; }
+        .pricing-card .price-line .highlight { color: var(--orange); font-weight: 700; }
+        .pricing-card ul {
+            list-style: none; padding: 0; margin-bottom: 24px;
+        }
+        .pricing-card li {
+            padding: 8px 0; font-size: 0.9rem; color: #475569;
+            display: flex; align-items: flex-start; gap: 10px;
+            line-height: 1.5;
+        }
+        .pricing-card li::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: var(--orange); margin-top: 8px; flex-shrink: 0;
+        }
+        .scarcity-bar {
             margin-bottom: 20px;
         }
-
-        .form-group label {
-            display: block;
+        .scarcity-text {
+            font-size: 0.8rem; color: var(--muted); margin-bottom: 6px;
             font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: var(--dark-text);
+        }
+        .scarcity-track {
+            height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden;
+        }
+        .scarcity-fill {
+            height: 100%; border-radius: 3px;
+            background: linear-gradient(90deg, var(--green), var(--green-dark));
+            transition: width 1s ease;
+        }
+        .btn-card {
+            display: block; width: 100%; padding: 14px 0; text-align: center;
+            background: linear-gradient(135deg, var(--orange), #d4650f);
+            color: var(--white); border: none; border-radius: 10px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
+            letter-spacing: 0.06em; cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 115, 26, 0.25);
+        }
+        .btn-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(232, 115, 26, 0.4);
+        }
+        .btn-card-outline {
+            background: transparent;
+            border: 2px solid var(--navy);
+            color: var(--navy);
+            box-shadow: none;
+        }
+        .btn-card-outline:hover {
+            background: var(--navy); color: var(--white);
+            box-shadow: 0 6px 20px rgba(10, 22, 40, 0.2);
+        }
+        .pricing-note {
+            text-align: center; margin-top: 40px; padding: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9rem; color: var(--muted);
         }
 
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
+        /* ===== HOW IT WORKS ===== */
+        .steps-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 40px; position: relative;
+        }
+        .steps-grid::before {
+            content: ''; position: absolute;
+            top: 40px; left: 15%; right: 15%; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(232,115,26,0.3), transparent);
+        }
+        .step-card {
+            text-align: center; position: relative;
+        }
+        .step-number {
+            width: 72px; height: 72px; border-radius: 20px;
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem;
+            color: var(--white); position: relative; z-index: 2;
+            box-shadow: 0 8px 25px rgba(232, 115, 26, 0.3);
+        }
+        .step-card h3 { font-size: 1.5rem; margin-bottom: 12px; color: var(--dark-text); }
+        .step-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; max-width: 300px; margin: 0 auto; }
+
+        /* ===== FOX 5 VIDEO SECTION ===== */
+        .video-section {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: center;
+        }
+        .video-wrapper {
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.08);
+            aspect-ratio: 16/9;
+        }
+        .video-wrapper video, .video-wrapper iframe {
+            width: 100%; height: 100%; display: block; object-fit: cover;
+        }
+        .video-text h2 { font-size: 2.8rem; color: var(--white); margin-bottom: 20px; }
+        .video-text p {
+            font-size: 1.05rem; color: var(--muted-light); line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .video-text .olympics-note {
+            font-style: italic; color: var(--muted);
+            border-left: 3px solid var(--orange); padding-left: 16px;
+            margin-top: 24px; font-size: 0.95rem;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .testimonial-card {
+            background: var(--white);
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-            color: var(--dark-text);
+            border-radius: 16px; padding: 32px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .testimonial-card .stars {
+            color: var(--gold); font-size: 0.9rem;
+            margin-bottom: 16px; letter-spacing: 2px;
+        }
+        .testimonial-card blockquote {
+            font-size: 0.95rem; line-height: 1.7; color: #475569;
+            margin-bottom: 20px; font-style: italic;
+        }
+        .testimonial-author {
+            display: flex; align-items: center; gap: 12px;
+            justify-content: space-between;
+        }
+        .testimonial-author .author-info { display: flex; align-items: center; gap: 12px; }
+        .author-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-weight: 700; font-size: 0.85rem;
+        }
+        .author-name { font-weight: 600; font-size: 0.9rem; color: var(--dark-text); }
+        .author-loc { font-size: 0.8rem; color: var(--muted); }
+        .google-badge {
+            font-size: 0.7rem; font-weight: 600; color: #4285f4;
+            background: rgba(66, 133, 244, 0.08);
+            padding: 4px 10px; border-radius: 4px;
+            border: 1px solid rgba(66, 133, 244, 0.15);
+        }
+        .testimonial-stats {
+            display: flex; justify-content: center; gap: 32px;
+            margin-bottom: 48px; padding: 16px 32px;
+            background: var(--navy); border-radius: 12px;
+            max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .testimonial-stats span {
+            color: var(--muted-light); font-size: 0.85rem; font-weight: 500;
         }
 
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--orange);
-            box-shadow: 0 0 0 3px rgba(232, 115, 26, 0.1);
+        /* ===== PROGRAMS ===== */
+        .programs-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .program-card {
+            border-radius: 20px; padding: 40px 36px;
+            position: relative; overflow: hidden;
+            transition: all 0.4s ease;
+            min-height: 220px;
+        }
+        .program-card:hover { transform: translateY(-6px) scale(1.01); }
+        .program-card::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1), transparent);
+        }
+        .program-card.prog-orange { background: linear-gradient(135deg, #e8731a, #f59542); }
+        .program-card.prog-green { background: linear-gradient(135deg, #16a34a, #4ade80); }
+        .program-card.prog-blue { background: linear-gradient(135deg, #2563eb, #60a5fa); }
+        .program-card.prog-purple { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+        .program-card .prog-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .program-card h3 {
+            font-size: 1.6rem; color: var(--white);
+            margin-bottom: 12px; position: relative; z-index: 1;
+        }
+        .program-card p {
+            font-size: 0.95rem; color: rgba(255,255,255,0.85);
+            line-height: 1.6; position: relative; z-index: 1;
+            max-width: 400px;
         }
 
-        .form-group input::placeholder {
-            color: var(--muted);
+        /* ===== TEAM SECTION ===== */
+        .team-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 32px; max-width: 800px; margin: 0 auto;
+        }
+        .team-card {
+            display: flex; align-items: center; gap: 24px;
+            padding: 32px; border-radius: 16px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(232, 115, 26, 0.2);
+            transform: translateY(-4px);
+        }
+        .team-avatar {
+            width: 80px; height: 80px; border-radius: 20px;
+            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem;
+            color: var(--white); flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(232, 115, 26, 0.25);
+        }
+        .team-info h3 { font-size: 1.4rem; color: var(--white); margin-bottom: 4px; }
+        .team-info .role {
+            font-size: 0.85rem; color: var(--orange); font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .team-info p { font-size: 0.9rem; color: var(--muted-light); line-height: 1.5; }
+
+        /* ===== FAQ ===== */
+        .faq-list { max-width: 760px; margin: 0 auto; }
+        .faq-item {
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; margin-bottom: 12px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.03);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {border-color: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.05);
+        }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 24px; cursor: pointer;
+            background: none; border: none; width: 100%;
+            text-align: left; font-size: 1rem; font-weight: 500;
+            color: var(--white); font-family: 'Inter', sans-serif;
+            transition: color 0.2s ease;
+        }
+        .faq-question:hover { color: var(--orange); }
+        .faq-toggle {
+            font-size: 1.4rem; color: var(--orange);
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+            padding: 0 24px;
+        }
+        .faq-answer.open {
+            max-height: 300px; padding: 0 24px 20px;
+        }
+        .faq-answer p {
+            font-size: 0.95rem; color: var(--muted-light); line-height: 1.7;
         }
 
-        .modal-submit {
-            width: 100%;
-            padding: 14px;
-            background: var(--orange);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            transition: background 0.2s;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            text-align: center; padding: 100px 24px;
+            background: var(--navy); position: relative; overflow: hidden;
         }
-
-        .modal-submit:hover {
-            background: #d6621a;
+        .final-cta::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(232, 115, 26, 0.08) 0%, transparent 60%);
         }
-
-        .modal-submit:disabled {
-            background: var(--muted);
-            cursor: not-allowed;
+        .final-cta h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--white); margin-bottom: 16px;
+            position: relative; z-index: 1;
         }
-
-        .modal-fine-print {
-            font-size: 12px;
-            color: var(--muted);
-            text-align: center;
-            margin-top: 16px;
+        .final-cta p {
+            color: var(--muted-light); font-size: 1.1rem;
+            margin-bottom: 40px; position: relative; z-index: 1;
         }
+        .final-cta .btn-hero { position: relative; z-index: 1; }
 
-        .modal-success {
-            text-align: center;
-            padding: 40px 0;
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #060d18; padding: 60px 0 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
-
-        .modal-success-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--white);
-            font-size: 32px;
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px; padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
-
-        .modal-success h3 {
-            font-size: 28px;
-            color: var(--dark-text);
+        .footer-brand h3 {
+            font-size: 1.6rem; color: var(--orange);
             margin-bottom: 12px;
         }
-
-        .modal-success p {
-            color: var(--muted);
-            font-size: 14px;            line-height: 1.6;
+        .footer-brand p {
+            font-size: 0.9rem; color: var(--muted); line-height: 1.7;
+            margin-bottom: 20px;
         }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        .social-links { display: flex; gap: 12px; }
+        .social-link {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--muted-light); font-size: 0.85rem; font-weight: 700;
+            text-decoration: none; transition: all 0.3s ease;
         }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .social-link:hover {
+            background: var(--orange); color: var(--white);
+            border-color: var(--orange);
+            transform: translateY(-2px);
         }
+        .footer-col h4 {
+            font-family: 'Inter', sans-serif; font-size: 0.8rem;
+            font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--white);
+            margin-bottom: 20px;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; }
+        .footer-col a {
+            color: var(--muted); text-decoration: none; font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        .footer-col a:hover { color: var(--orange); }
+        .footer-newsletter p {
+            font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; line-height: 1.6;
+        }
+        .newsletter-form {
+            display: flex; gap: 8px;
+        }
+        .newsletter-form input {
+            flex: 1; padding: 12px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; color: var(--white);
+            font-size: 0.9rem;
+        }
+        .newsletter-form input::placeholder { color: var(--muted); }
+        .newsletter-form input:focus {
+            outline: none; border-color: var(--orange);
+        }
+        .newsletter-form button {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--orange), #d4650f);
+            color: var(--white); border: none; border-radius: 8px;
+            font-weight: 600; font-size: 0.85rem; cursor: pointer;
+            transition: all 0.3s ease; white-space: nowrap;
+        }
+        .newsletter-form button:hover {
+            box-shadow: 0 4px 15px rgba(232, 115, 26, 0.3);
+        }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 24px 0; flex-wrap: wrap; gap: 12px;
+        }
+        .footer-bottom p { font-size: 0.8rem; color: var(--muted); }
+        .footer-bottom a { color: var(--orange); text-decoration: none; }
 
-        /* Honeypot (hidden) */
-        .honeypot {
+        /* ===== MOBILE STICKY CTA ===== */
+        .mobile-sticky {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 20px; z-index: 999;
             display: none;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .mobile-sticky.hidden { display: none !important; }
+        .mobile-sticky .btn-card {
+            font-size: 1rem; padding: 14px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10001; opacity: 0; pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .modal-overlay.open { opacity: 1; pointer-events: all; }
+        .modal {
+            background: var(--white); border-radius: 20px;
+            padding: 40px; max-width: 480px; width: 90%;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+        .modal-overlay.open .modal {
+            transform: translateY(0) scale(1);
+        }
+        .modal h3 { font-size: 2rem; margin-bottom: 8px; }
+        .modal .modal-deposit {
+            color: var(--orange); font-weight: 600; margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        .form-group { margin-bottom: 16px; }
+        .form-group label {
+            display: block; font-size: 0.85rem; font-weight: 600;
+            color: var(--dark-text); margin-bottom: 6px;
+        }
+        .form-group input, .form-group select {
+            width: 100%; padding: 12px 16px;
+            border: 1px solid #e2e8f0; border-radius: 10px;
+            font-size: 0.95rem; color: var(--dark-text);
+            transition: all 0.2s ease;
+            background: var(--white);
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none; border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(232, 115, 26, 0.1);
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .btn-submit {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, var(--orange), #d4650f);
+            color: var(--white); border: none; border-radius: 10px;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem;
+            letter-spacing: 0.06em; cursor: pointer;
+            transition: all 0.3s ease; margin-top: 8px;
+            box-shadow: 0 4px 15px rgba(232, 115, 26, 0.25);
+        }
+        .btn-submit:hover {
+            box-shadow: 0 6px 25px rgba(232, 115, 26, 0.4);
+            transform: translateY(-2px);
+        }
+        .modal-success {
+            text-align: center; padding: 20px 0;
+        }
+        .modal-success .check {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: rgba(34, 197, 94, 0.1); margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+        }
+        .honeypot { position: absolute; left: -9999px; }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in-left {
+            opacity: 0; transform: translateX(-30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-in-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-in-right {
+            opacity: 0; transform: translateX(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-in-right.visible { opacity: 1; transform: translateX(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .top-bar-center { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+            .pricing-card.featured { transform: none; }
+            .pricing-card.featured:hover { transform: translateY(-8px); }
+            .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+            .steps-grid::before { display: none; }
+            .video-section { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { justify-content: center; text-align: center; }
+            .mobile-sticky { display: block; }
+            .trust-items { gap: 12px 24px; }
+            .section-padding { padding: 70px 0; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-sub { font-size: 0.95rem; }
+            .btn-hero { padding: 16px 32px; font-size: 1.15rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .trust-items { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Password Gate -->
+    <div class="noise-overlay"></div>
+
+    <!-- PASSWORD GATE -->
     <div class="password-gate" id="passwordGate">
         <h2>USA Ninja Challenge Annapolis</h2>
         <p>Under Construction</p>
-        <div class="password-input-group">
-            <input type="password" id="passwordInput" placeholder="Enter password" />
+        <div class="input-group">
+            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
             <button onclick="checkPassword()">Enter Site</button>
         </div>
     </div>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-logo">NINJA ANNAPOLIS</div>
-                <div class="top-bar-center">
-                    <span id="topBarStats">Loading...</span> · Opening Sept 2026
-                </div>
-                <button class="top-bar-cta" onclick="scrollToPricing()">Pre-Register Now</button>
-            </div>
+    <!-- STICKY TOP BAR -->
+    <nav class="top-bar" id="topBar">
+        <a href="#" class="top-bar-logo">Ninja Annapolis</a>
+        <div class="top-bar-center">
+            <span class="live-dot"></span>
+            <span id="topBarStats">107 families pre-registered</span> &middot; Opening Sept 2026
         </div>
-    </div>
+        <a href="#pricing" class="btn-nav" onclick="scrollToPricing(); return false;">Pre-Register Now</a>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">NOW ACCEPTING PRE-REGISTRATIONS</div>
-                <h1>WHERE ANNAPOLIS KIDS BUILD CONFIDENCE, STRENGTH & GRIT</h1>
-                <p>A brand-new 7,000+ sq ft ninja obstacle course gym where kids ages 3–17 discover what they're capable of — through classes, camps, parties & open gym. Opening September 2026 at 441 Defense Highway.</p>
-                
-                <div class="hero-trust-strip">
-                    <span>4.9★ parent rating</span>
-                    <span class="dot"></span>
-                    <span>1,500+ kids enrolled nationwide</span>
-                    <span class="dot"></span>
-                    <span>Obstacle racing is in the 2028 Olympics!</span>
-                    <span class="dot"></span>
-                    <span>Deposits 100% refundable</span>
-                </div>
-
-                <button class="hero-cta" onclick="scrollToPricing()">See Founding Member Pricing ↓</button>
-                
-                <div class="hero-countdown" id="countdown"></div>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge fade-in"><span class="dot"></span> Now Accepting Pre-Registrations</div>
+            <h1 class="fade-in">Where Annapolis Kids Build <span class="accent">Confidence, Strength & Grit</span></h1>
+            <p class="hero-sub fade-in">A brand-new 7,000+ sq ft ninja obstacle course gym where kids ages 3&ndash;17 discover what they're capable of &mdash; through classes, camps, parties & open gym. Opening September 2026 at 441 Defense Highway.</p>
+            <div class="hero-trust fade-in">
+                <span><span class="star">&#9733;</span> 4.9 parent rating</span>
+                <span class="sep">&middot;</span>
+                <span>1,500+ kids enrolled nationwide</span>
+                <span class="sep">&middot;</span>
+                <span>Obstacle racing is in the 2028 Olympics!</span>
+                <span class="sep">&middot;</span>
+                <span>Deposits 100% refundable</span>
             </div>
+            <a href="#pricing" class="btn-hero" onclick="scrollToPricing(); return false;">See Founding Member Pricing &darr;</a>
+            <div class="countdown-text" id="countdown">Opens in 159 days</div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
-    <div class="trust-bar">
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
         <div class="container">
-            <div class="trust-bar-content">
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="2.18"></rect><path d="M7 2v20M17 2v20M2 12h20M2 7h20M2 17h20"></path></svg>
-                    AS SEEN ON FOX 5 DC
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                    4.9★ Google Rating
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    1,500+ Kids Enrolled
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    20+ Locations
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    100% Refundable
-                </div>
+            <div class="trust-items fade-in">
+                <div class="trust-item"><div class="trust-icon">&#128250;</div> As Seen on Fox 5 DC</div>
+                <div class="trust-item"><div class="trust-icon">&#11088;</div> 4.9&#9733; Google Rating</div>
+                <div class="trust-item"><div class="trust-icon">&#128106;</div> 1,500+ Kids Enrolled</div>
+                <div class="trust-item"><div class="trust-icon">&#127963;</div> 20+ Locations</div>
+                <div class="trust-item"><div class="trust-icon">&#128155;</div> 100% Refundable</div>
             </div>
         </div>
-    </div>
-
-    <!-- Pricing Section -->
-    <section id="pricing"><div class="container">
-            <h2>FOUNDING MEMBER PRICING</h2>
-            <p class="section-subhead">Lock in rates that never go up. Every deposit is 100% refundable.</p>
-
+    </div>    <!-- PRICING -->
+    <section class="section-light section-padding" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Limited Availability</span>
+                <h2>Founding Member Pricing</h2>
+                <p>Lock in rates that never go up. Every deposit is 100% refundable.</p>
+            </div>
             <div class="pricing-grid">
-                <!-- First 5 Families -->
-                <div class="pricing-card">
-                    <div class="pricing-badge">SAVE 20% FOREVER</div>
-                    <h3 class="pricing-title">FIRST 5 FAMILIES</h3>
-                    <p class="pricing-anchor">Regular ~$150/mo → You pay ~$120/mo for life</p>
-                    
-                    <ul class="pricing-perks">
+                <!-- Tier 1 -->
+                <div class="pricing-card fade-in">
+                    <span class="card-badge badge-orange">Save 20% Forever</span>
+                    <h3>First 5 Families</h3>
+                    <p class="price-line"><span class="strike">~$150/mo</span> &rarr; <span class="highlight">~$120/mo for life</span></p>
+                    <ul>
                         <li>Free birthday party ($350 value)</li>
                         <li>20% off tuition forever</li>
                         <li>Free registration</li>
-                        <li>VIP opening access</li>
-                        <li>Founder wall plaque</li>
-                        <li>$49 → class credit</li>
-                    </ul>
-
-                    <div class="pricing-scarcity" id="tier1-scarcity">X of 5 remaining</div>
-                    <div class="pricing-progress">
-                        <div class="pricing-progress-bar" id="tier1-progress" style="width: 20%"></div>
-                    </div>
-
-                    <button class="pricing-cta" onclick="openModal('tier1', '$49', 'FIRST 5 FAMILIES')">Claim This Perk — $49</button>
-                </div>
-
-                <!-- Founders 50 (Featured) -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge popular">MOST POPULAR</div>
-                    <div class="pricing-badge">SAVE 20% FOREVER</div>
-                    <h3 class="pricing-title">FOUNDERS 50</h3>
-                    <p class="pricing-anchor">Regular ~$150/mo → You pay ~$120/mo for life</p>
-                    
-                    <ul class="pricing-perks">
-                        <li>20% off forever</li>
-                        <li>Free registration</li>
-                        <li>Priority scheduling</li>
                         <li>VIP opening invite</li>
                         <li>Founder wall plaque</li>
-                        <li>$25 → class credit</li>
+                        <li>$49 &rarr; class credit</li>
                     </ul>
-
-                    <div class="pricing-scarcity" id="tier2-scarcity">X of 50 remaining</div>
-                    <div class="pricing-progress">
-                        <div class="pricing-progress-bar" id="tier2-progress" style="width: 50%"></div>
+                    <div class="scarcity-bar">
+                        <div class="scarcity-text" id="tier1-scarcity">3 of 5 remaining</div>
+                        <div class="scarcity-track"><div class="scarcity-fill" id="tier1-progress" style="width:40%"></div></div>
                     </div>
-
-                    <button class="pricing-cta" onclick="openModal('tier2', '$25', 'FOUNDERS 50')">Lock In 20% Off — $25</button>
+                    <button class="btn-card" onclick="openModal('tier1','$49','First 5 Families')">Claim This Perk &mdash; $49</button>
                 </div>
-
-                <!-- Early Bird 100 -->
-                <div class="pricing-card">
-                    <div class="pricing-badge">SAVE 15% FOREVER</div>
-                    <h3 class="pricing-title">EARLY BIRD 100</h3>
-                    <p class="pricing-anchor">Regular ~$150/mo → You pay ~$127/mo for life</p>
-                    
-                    <ul class="pricing-perks">
+                <!-- Tier 2 (Featured) -->
+                <div class="pricing-card featured fade-in">
+                    <span class="card-badge badge-orange">Most Popular</span>
+                    <h3>Founders 50</h3>
+                    <p class="price-line"><span class="strike">~$150/mo</span> &rarr; <span class="highlight">~$120/mo for life</span></p>
+                    <ul>
+                        <li>20% off forever</li>
+                        <li>Free registration</li>
+                        <li>VIP opening invite</li>
+                        <li>Founder wall plaque</li>
+                        <li>$25 &rarr; class credit</li>
+                    </ul>
+                    <div class="scarcity-bar">
+                        <div class="scarcity-text" id="tier2-scarcity">15 of 50 remaining</div>
+                        <div class="scarcity-track"><div class="scarcity-fill" id="tier2-progress" style="width:70%"></div></div>
+                    </div>
+                    <button class="btn-card" onclick="openModal('tier2','$25','Founders 50')">Lock In 20% Off &mdash; $25</button>
+                </div>
+                <!-- Tier 3 -->
+                <div class="pricing-card fade-in">
+                    <span class="card-badge badge-green">Save 15% Forever</span>
+                    <h3>Early Bird 100</h3>
+                    <p class="price-line"><span class="strike">~$150/mo</span> &rarr; <span class="highlight">~$127/mo for life</span></p>
+                    <ul>
                         <li>15% off forever</li>
                         <li>Free registration</li>
                         <li>Opening week invite</li>
-                        <li>$10 → class credit</li>
+                        <li>$10 &rarr; class credit</li>
                     </ul>
-
-                    <div class="pricing-scarcity" id="tier3-scarcity">X of 100 remaining</div>
-                    <div class="pricing-progress">
-                        <div class="pricing-progress-bar" id="tier3-progress" style="width: 75%"></div>
+                    <div class="scarcity-bar">
+                        <div class="scarcity-text" id="tier3-scarcity">30 of 100 remaining</div>
+                        <div class="scarcity-track"><div class="scarcity-fill" id="tier3-progress" style="width:70%"></div></div>
                     </div>
-
-                    <button class="pricing-cta" onclick="openModal('tier3', '$10', 'EARLY BIRD 100')">Get Early Bird Rate — $10</button>
+                    <button class="btn-card" onclick="openModal('tier3','$10','Early Bird 100')">Get Early Bird Rate &mdash; $10</button>
                 </div>
-
                 <!-- Interest List -->
-                <div class="pricing-card">
-                    <h3 class="pricing-title">INTEREST LIST</h3>
-                    <p class="pricing-anchor">Free</p>
-                    
-                    <ul class="pricing-perks">
+                <div class="pricing-card fade-in">
+                    <span class="card-badge badge-green">Free</span>
+                    <h3>Interest List</h3>
+                    <p class="price-line">No deposit required</p>
+                    <ul>
                         <li>Free registration waived ($50 value)</li>
                         <li>First to know about opening</li>
                         <li>Opening week specials</li>
                     </ul>
-
-                    <div class="pricing-scarcity">Unlimited spots</div>
-
-                    <button class="pricing-cta secondary" onclick="openModal('tier4', 'Free', 'INTEREST LIST')">Join Free Interest List</button>
+                    <div class="scarcity-bar">
+                        <div class="scarcity-text">Unlimited spots</div>
+                    </div>
+                    <button class="btn-card btn-card-outline" onclick="openModal('interest','Free','Interest List')">Join Free Interest List</button>
                 </div>
             </div>
-
-            <div class="pricing-trust">
-                Every deposit is 100% refundable and converts to a class credit at opening. Zero risk.
-            </div>
+            <div class="pricing-note fade-in">Every deposit is 100% refundable and converts to a class credit at opening. Zero risk.</div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section>
+    <!-- HOW IT WORKS -->
+    <section class="section-white section-padding">
         <div class="container">
-            <h2>HOW PRE-REGISTRATION WORKS</h2>            <div class="steps">
-                <div class="step fade-in">
-                    <div class="step-circle">1</div>
+            <div class="section-header fade-in">
+                <span class="section-label">Simple Process</span>
+                <h2>How Pre-Registration Works</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">1</div>
                     <h3>Pick Your Tier</h3>
-                    <p>Higher tiers = bigger lifetime discounts. All deposits fully refundable.</p>
+                    <p>Choose the founding member perk that fits your family. Better tiers = bigger savings locked in for life.</p>
                 </div>
-
-                <div class="step fade-in">
-                    <div class="step-circle">2</div>
-                    <h3>We Keep You Posted</h3>
-                    <p>Construction updates, early class schedules, VIP event invites.</p>
+                <div class="step-card fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Place Your Deposit</h3>
+                    <p>100% refundable, converts to class credit at opening. You're not locked into anything.</p>
                 </div>
-
-                <div class="step fade-in">
-                    <div class="step-circle">3</div>
-                    <h3>Start First</h3>
-                    <p>Founding members get priority scheduling. Your deposit becomes a class credit.</p>
+                <div class="step-card fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Get Priority Access</h3>
+                    <p>Founding members get first pick of class times, exclusive opening events, and perks nobody else gets.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Video + Credibility -->
-    <section>
+    <!-- FOX 5 DC VIDEO -->
+    <section class="section-dark section-padding">
         <div class="container">
-            <div class="video-section fade-in">
-                <div class="video-container">
-                    <video controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect fill='%23000' width='16' height='9'/%3E%3Cpolygon fill='%23fff' points='6.5,2 6.5,7 11.5,4.5'/%3E%3C/svg%3E">
-                        <source src="https://static-clips.fox.com/proxy/fts_clip/digital/fts/wttg/1757120/1757120__s2i9P90BbQq6eGBWZVaiE7ktTZM_lowres.mp4" type="video/mp4">
+            <div class="video-section">
+                <div class="video-wrapper fade-in-left">
+                    <video controls preload="metadata" poster="">
+                        <source src="https://ninjastafford.com/wp-content/uploads/2024/03/fox5.mp4" type="video/mp4">
                     </video>
                 </div>
-
-                <div class="video-text">
-                    <h3>AS FEATURED ON FOX 5 DC</h3>
-                    <p>Fox 5's Good Day DC came to see why so many families are choosing USA Ninja Challenge — watch kids light up as they conquer obstacles they never thought possible.</p>
-                    <p class="credibility">Fun fact: Obstacle course racing will be in the 2028 Olympics. Your kid can train in an Olympic sport.</p>
+                <div class="video-text fade-in-right">
+                    <span class="section-label">National Recognition</span>
+                    <h2>As Featured on Fox 5 DC</h2>
+                    <p>Fox 5's Good Day DC came to see why so many families are choosing USA Ninja Challenge &mdash; watch kids light up as they conquer obstacles they never thought possible.</p>
+                    <div class="olympics-note">Fun fact: Obstacle course racing will be in the 2028 Olympics. Your kid can train in an Olympic sport.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews -->
-    <section>
+    <!-- TESTIMONIALS -->
+    <section class="section-light section-padding">
         <div class="container">
-            <h2>WHAT PARENTS SAY</h2>
-            
-            <div style="text-align: center;">
-                <div class="reviews-summary">
-                    <span>4.9★ Average</span>
-                    <span style="opacity: 0.4;">·</span>
-                    <span>1,500+ Families</span>
-                    <span style="opacity: 0.4;">·</span>
-                    <span>6 Locations</span>
-                    <span style="opacity: 0.4;">·</span>
-                    <span>95% Satisfaction</span>
-                </div>
+            <div class="section-header fade-in">
+                <span class="section-label">Real Parents, Real Results</span>
+                <h2>What Parents Say</h2>
             </div>
-
-            <div class="reviews-grid fade-in">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-quote">"This has helped build confidence and core strength — my shy son now loves going!"</p>
-                    <div class="review-footer">
-                        <div class="review-avatar">JS</div>
-                        <div class="review-info">
-                            <div class="review-name">Joel S.</div>
-                            <div class="review-location">Fairfield, OH</div>
+            <div class="testimonial-stats fade-in">
+                <span>4.9&#9733; Average</span>
+                <span>&middot;</span>
+                <span>1,500+ Families</span>
+                <span>&middot;</span>
+                <span>6 Locations</span>
+                <span>&middot;</span>
+                <span>95% Satisfaction</span>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>"This has helped build confidence and core strength &mdash; my shy son now loves going!"</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-avatar">JS</div>
+                            <div><div class="author-name">Joel S.</div><div class="author-loc">Fairfield, OH</div></div>
                         </div>
-                        <div class="review-badge">Google</div>
+                        <span class="google-badge">Google</span>
                     </div>
                 </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-quote">"Love this place — CLEAN, organized, fun environment with staff who take the time to get to know each kid."</p>
-                    <div class="review-footer">
-                        <div class="review-avatar">SM</div>
-                        <div class="review-info">
-                            <div class="review-name">Sarah M.</div>
-                            <div class="review-location">Stafford, VA</div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>"Love this place &mdash; CLEAN, organized, fun environment with staff who take the time to get to know each kid."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-avatar">SM</div>
+                            <div><div class="author-name">Sarah M.</div><div class="author-loc">Stafford, VA</div></div>
                         </div>
-                        <div class="review-badge">Google</div>
+                        <span class="google-badge">Google</span>
                     </div>
                 </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-quote">"The coaching, level tracking, and encouraging environment is so much better than anywhere else we've tried."</p>
-                    <div class="review-footer">
-                        <div class="review-avatar">NG</div>
-                        <div class="review-info">
-                            <div class="review-name">Natalie G.</div>
-                            <div class="review-location">Murray, UT</div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>"The coaching, level tracking, and encouraging environment is so much better than anywhere else we've tried."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-avatar">NG</div>
+                            <div><div class="author-name">Natalie G.</div><div class="author-loc">Murray, UT</div></div>
                         </div>
-                        <div class="review-badge">Google</div>
+                        <span class="google-badge">Google</span>
                     </div>
                 </div>
             </div>
-        </div>    </section>
+        </div>
+    </section>
 
-    <!-- Programs -->
-    <section>
+    <!-- PROGRAMS -->
+    <section class="section-white section-padding">
         <div class="container">
-            <h2>SOMETHING FOR EVERY KID</h2>
-            <p class="section-subhead">Whether they're shy or fearless, 3 or 17 — there's a place for them here</p>
-
-            <div class="programs-grid fade-in">
-                <div class="program-card">
-                    <div class="program-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"></path>
-                            <path d="M8 12l2 2 4-4"></path>
-                        </svg>
-                    </div>
+            <div class="section-header fade-in">
+                <span class="section-label">Ages 3&ndash;17</span>
+                <h2>Something for Every Kid</h2>
+                <p>Whether they're shy or fearless, 3 or 17 &mdash; there's a place for them here</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card prog-orange fade-in">
+                    <div class="prog-icon">&#127939;</div>
                     <h3>Obstacle Course Classes</h3>
-                    <p>Kids progress at their own pace through age-grouped classes. They build grip strength, balance, and the "I can do hard things" mindset — week after week.</p>
+                    <p>Kids progress at their own pace through age-grouped classes. They build grip strength, balance, and the "I can do hard things" mindset &mdash; week after week.</p>
                 </div>
-
-                <div class="program-card">
-                    <div class="program-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M12 6v6l4 2"></path>
-                        </svg>
-                    </div>
+                <div class="program-card prog-green fade-in">
+                    <div class="prog-icon">&#9200;</div>
                     <h3>Summer & Holiday Camps</h3>
                     <p>Full-day camps where kids make friends, try new challenges, and come home exhausted (in the best way). Parents get their summer break too.</p>
                 </div>
-
-                <div class="program-card">
-                    <div class="program-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
+                <div class="program-card prog-blue fade-in">
+                    <div class="prog-icon">&#127874;</div>
                     <h3>Birthday Parties</h3>
                     <p>The birthday party kids actually beg for. Private obstacle course, a dedicated host, and every kid goes home saying "that was the best party ever."</p>
                 </div>
-
-                <div class="program-card">
-                    <div class="program-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="6" cy="6" r="1"></circle>
-                            <circle cx="18" cy="6" r="1"></circle>
-                            <circle cx="6" cy="18" r="1"></circle>
-                            <circle cx="18" cy="18" r="1"></circle>
-                            <line x1="6" y1="7" x2="6" y2="17"></line>
-                            <line x1="18" y1="7" x2="18" y2="17"></line>
-                            <line x1="7" y1="6" x2="17" y2="6"></line>
-                            <line x1="7" y1="18" x2="17" y2="18"></line>
-                        </svg>
-                    </div>
+                <div class="program-card prog-purple fade-in">
+                    <div class="prog-icon">&#127947;</div>
                     <h3>Open Gym Sessions</h3>
                     <p>Drop in anytime during open gym hours. Kids practice what they've learned, hang with ninja friends, and burn off energy (you're welcome, parents).</p>
                 </div>
@@ -1541,28 +1123,29 @@
         </div>
     </section>
 
-    <!-- Team -->
-    <section>
+    <!-- TEAM -->
+    <section class="section-dark section-padding">
         <div class="container">
-            <h2>THE TEAM BEHIND ANNAPOLIS</h2>
-            <p class="section-subhead">Parents and coaches who understand what kids need to thrive</p>
-
-            <div class="team-grid fade-in">
-                <div class="team-card">
+            <div class="section-header fade-in">
+                <span class="section-label">Who We Are</span>
+                <h2>The Team Behind Annapolis</h2>
+                <p style="color: var(--muted-light);">Parents and coaches who understand what kids need to thrive</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in">
                     <div class="team-avatar">DU</div>
                     <div class="team-info">
                         <h3>Dan Umpa</h3>
-                        <div class="role">Owner & Head Coach</div>
-                        <p>Military veteran and dad who started USA Ninja so his own kids would have a place to build real confidence. Now 1,500+ families trust his gyms. Featured on Fox 5 DC.</p>
+                        <div class="role">Owner & Operator</div>
+                        <p>Dad, veteran, and owner of the Stafford VA location. Building a place where Annapolis kids discover what they're capable of.</p>
                     </div>
                 </div>
-
-                <div class="team-card">
+                <div class="team-card fade-in">
                     <div class="team-avatar">SS</div>
                     <div class="team-info">
                         <h3>Stephen Saekoo</h3>
-                        <div class="role">Co-Owner & Youth Development</div>
-                        <p>Father of three who built his career around helping kids succeed — from after-school programs in LA to running ninja gyms in Durham, NC and Fairfield, OH where 800+ kids train every week.</p>
+                        <div class="role">Co-Owner & Operations</div>
+                        <p>Runs multiple USA Ninja locations with 800+ enrolled students. Bringing proven systems and coaching culture to Annapolis.</p>
                     </div>
                 </div>
             </div>
@@ -1570,202 +1153,138 @@
     </section>
 
     <!-- FAQ -->
-    <section>
+    <section class="section-dark section-padding" style="padding-top: 0;">
         <div class="container">
-            <h2>FREQUENTLY ASKED QUESTIONS</h2>
-            
-            <div class="faq-container fade-in">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        Is my deposit refundable?
-                        <span class="faq-toggle">+</span>                    </button>
-                    <div class="faq-answer">
-                        Yes, 100% refundable until opening day. Your deposit converts to a class credit at opening. Zero risk.
-                    </div>
+            <div class="section-header fade-in">
+                <span class="section-label">Questions?</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Is my deposit refundable? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>Yes, 100%. If you change your mind for any reason, you get a full refund. If you keep it, your deposit converts to a class credit when we open. There is zero risk.</p></div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        What does "20% off for life" mean?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Founders pay 20% less than standard tuition every month, forever. This discount survives all future price increases.
-                    </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">What does "20% off for life" mean? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>It means the discount you lock in today stays with you as long as you're a member. When tuition goes up (and it will as we grow), your rate stays the same. Founding members are permanently grandfathered in at the lower rate.</p></div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        What age groups do you serve?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Ages 3-17, grouped by skill level: Little Ninjas (3-4), Junior (5-7), Training (8-11), Advanced (12-17).
-                    </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">What age groups do you serve? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>Ages 3 to 17. Classes are grouped by age and ability so every kid gets the right challenge level. Tiny ninjas (3-5) have their own equipment and coaching style. Teens get advanced courses that push their limits.</p></div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        How does the free birthday party work?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        First 5 families get one free party ($350+ value) within 12 months of opening. 90 minutes, up to 15 kids.
-                    </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">How does the free birthday party work? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>First 5 Families members get one free birthday party (normally $350). Private obstacle course time, a dedicated party host, setup and cleanup handled. It's the easiest party you'll ever throw and the one your kid will talk about for months.</p></div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        When do you open?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Targeting September 2026. Pre-registered families get construction updates and first scheduling access.
-                    </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">When do you open? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>September 2026. We're at 441 Defense Highway in Annapolis, MD. Construction begins soon. Pre-registered families will get progress updates and early scheduling access before anyone else.</p></div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        Where are you located?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        441 Defense Highway (Route 450), Annapolis, MD. Easy access from Routes 2, 50, and 97.
-                    </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Where are you located? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>441 Defense Highway, Annapolis, MD 21401. Easy access from Route 50, about 10 minutes from downtown Annapolis and convenient for families in Crofton, Bowie, Severna Park, and Arnold.</p></div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        Can I register multiple kids?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Yes, the discount applies to your entire family account. One deposit for all your kids.
-                    </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">How is this different from a trampoline park? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>Trampoline parks are drop-in entertainment. We're a progressive skill-building program with coached classes, level tracking, and real measurable growth. Kids earn new skills each week and build physical + mental resilience. It's the difference between playing and training.</p></div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        How is this different from a trampoline park?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        This isn't just a place to bounce around — it's a coached training facility with a real curriculum, levels your kid advances through, and competitions they can enter. Think martial arts discipline meets American Ninja Warrior excitement. And here's a cool bonus: obstacle course racing is officially in the 2028 Olympics.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        My kid isn't athletic — will they fit in?
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Absolutely. Most kids who walk in have never done anything like this — and that's the point. Our coaches meet every kid where they are. The shy ones, the uncoordinated ones, the ones who've never done a pull-up. Within a few weeks, parents tell us their kid is standing taller, trying harder things, and actually excited about being active.
-                    </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">My kid isn't athletic &mdash; will they fit in? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>Absolutely. Most of our students have never done anything like this before. Our coaches meet every kid where they are. The obstacles are adjustable, and progress is individual. Some of our most dedicated ninjas started as the shy kid in the back. That's exactly who this is built for.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- FINAL CTA -->
     <section class="final-cta">
-        <div class="container" style="text-align: center;">
-            <h2>GIVE YOUR KID SOMETHING THEY'LL THANK YOU FOR</h2>
-            <p class="section-subhead">A small refundable deposit locks in founding member pricing forever. Zero risk — just a head start.</p>
-            
-            <button class="final-cta-button" onclick="scrollToPricing()">See Founding Member Pricing ↑</button>
-            
-            <div class="final-cta-trust">
-                100% refundable · No obligation · Deposit → class credit
-            </div>        </div>
+        <div class="container">
+            <h2 class="fade-in">Give Your Kid Something They'll Thank You For</h2>
+            <p class="fade-in">Founding member spots are limited. Lock in your rate before we open.</p>
+            <a href="#pricing" class="btn-hero fade-in" onclick="scrollToPricing(); return false;">See Founding Member Pricing &uarr;</a>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
-            <p style="margin-bottom: 12px;">© 2026 USA Ninja Challenge Annapolis</p>
-            <p>
-                441 Defense Highway, Annapolis, MD · 
-                <a href="tel:(301)915-5979">(301) 915-5979</a> · 
-                <a href="mailto:info@ninjaannapolis.com">info@ninjaannapolis.com</a>
-            </p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ninja Annapolis</h3>
+                    <p>Annapolis's first ninja obstacle course gym for kids. A place where confidence, strength, and grit are built one obstacle at a time.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">FB</a>
+                        <a href="#" class="social-link" title="Instagram">IG</a>
+                        <a href="#" class="social-link" title="TikTok">TK</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#">Ninja Classes</a></li>
+                        <li><a href="#">Summer Camps</a></li>
+                        <li><a href="#">Birthday Parties</a></li>
+                        <li><a href="#">Open Gym</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get construction progress, opening dates, and exclusive founding member perks delivered to your inbox.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 USA Ninja Challenge Annapolis. All rights reserved.</p>
+                <p>441 Defense Highway, Annapolis, MD &middot; <a href="tel:3019155979">(301) 915-5979</a> &middot; <a href="mailto:info@ninjaannapolis.com">info@ninjaannapolis.com</a></p>
+            </div>
         </div>
     </footer>
 
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta" id="mobileStickyCtA">
-        <div class="mobile-sticky-text">Founding spots filling up</div>
-        <button class="mobile-sticky-button" onclick="scrollToPricing()">Pre-Register →</button>
+    <!-- MOBILE STICKY CTA -->
+    <div class="mobile-sticky" id="mobileStickyCtA">
+        <button class="btn-card" onclick="scrollToPricing()">See Founding Member Pricing</button>
     </div>
 
-    <!-- Modal -->
+    <!-- REGISTRATION MODAL -->
     <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
         <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            
-            <div id="modalContent">
-                <h3 id="modalTitle"></h3>
-                <div class="modal-deposit" id="modalDeposit"></div>
-
-                <form id="registrationForm" onsubmit="submitForm(event)">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="numKids">How many kids?</label>
-                        <select id="numKids" name="numKids" required>
-                            <option value="">Select number of kids</option>
-                            <option value="1">1 kid</option>
-                            <option value="2">2 kids</option>
-                            <option value="3">3 kids</option>
-                            <option value="4">4+ kids</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ageRange">Kids age range</label>
-                        <select id="ageRange" name="ageRange" required>
-                            <option value="">Select age range</option>
-                            <option value="3-4">Little Ninjas (3-4)</option>
-                            <option value="5-7">Junior (5-7)</option>
-                            <option value="8-11">Training (8-11)</option>
-                            <option value="12-17">Advanced (12-17)</option>
-                            <option value="mixed">Mixed ages</option>
-                        </select>
-                    </div>
-
-                    <input type="hidden" id="tierValue" name="tier" value="">
-                    <input type="text" class="honeypot" name="website" tabindex="-1" autocomplete="off">
-
-                    <button type="submit" class="modal-submit">Pre-Register My Family</button>
-                </form>
-
-                <p class="modal-fine-print">100% refundable deposit. Converts to class credit at opening.</p>
-            </div>
-
-            <div id="modalSuccess" style="display: none;">
-                <div class="modal-success">
-                    <div class="modal-success-icon">✓</div>
-                    <h3>You're In!</h3>
-                    <p id="successMessage"></p>
+            <form id="registrationForm" onsubmit="submitForm(event)">
+                <h3 id="modalTitle">Join the Founders</h3>
+                <p class="modal-deposit" id="modalDeposit">Deposit: $25</p>
+                <input type="hidden" id="tierValue" value="">
+                <div class="form-row">
+                    <div class="form-group"><label>First Name</label><input type="text" id="firstName" required></div>
+                    <div class="form-group"><label>Last Name</label><input type="text" id="lastName" required></div>
                 </div>
+                <div class="form-group"><label>Email</label><input type="email" id="email" required></div>
+                <div class="form-group"><label>Phone</label><input type="tel" id="phone" required></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Number of Kids</label>
+                        <select id="numKids"><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+                    </div>
+                    <div class="form-group"><label>Age Range</label>
+                        <select id="ageRange"><option>3-5</option><option>6-8</option><option>9-12</option><option>13-17</option><option>Mixed ages</option></select>
+                    </div>
+                </div>
+                <input type="text" class="honeypot" name="website" tabindex="-1" autocomplete="off">
+                <button type="submit" class="btn-submit">Secure My Spot</button>
+            </form>
+            <div class="modal-success" id="modalSuccess" style="display:none;">
+                <div class="check">&#10003;</div>
+                <h3>You're In!</h3>
+                <p id="successMessage"></p>
             </div>
         </div>
     </div>
@@ -1773,12 +1292,16 @@
     <script>
         // Password Gate
         function checkPassword() {
-            const input = document.getElementById('passwordInput').value;
-            if (input === 'ninja2026') {
+            const pw = document.getElementById('passwordInput').value;
+            if (pw === 'ninja2026') {
+                document.getElementById('passwordGate').classList.add('hidden');
                 sessionStorage.setItem('passwordAuth', 'true');
-                document.getElementById('passwordGate').classList.add('hidden');                loadStats();
+                loadStats();
             } else {
-                alert('Incorrect password');
+                const input = document.getElementById('passwordInput');
+                input.style.borderColor = '#ef4444';
+                input.style.animation = 'shake 0.5s ease';
+                setTimeout(() => { input.style.borderColor = ''; input.style.animation = ''; }, 500);
             }
         }
 
@@ -1789,7 +1312,6 @@
             }
         }
 
-        // Enter key on password input
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('passwordInput').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') checkPassword();
@@ -1802,53 +1324,38 @@
             const openDate = new Date('2026-09-01').getTime();
             const now = new Date().getTime();
             const days = Math.ceil((openDate - now) / (1000 * 60 * 60 * 24));
-            
+            const el = document.getElementById('countdown');
             if (days > 0) {
-                document.getElementById('countdown').textContent = `Opens in ${days} days`;
+                el.textContent = 'Opens in ' + days + ' days';
             } else {
-                document.getElementById('countdown').textContent = 'Opening soon!';
+                el.textContent = 'Opening soon!';
             }
         }
-
         updateCountdown();
         setInterval(updateCountdown, 60000);
+
+        // Sticky nav scroll effect
+        window.addEventListener('scroll', function() {
+            document.getElementById('topBar').classList.toggle('scrolled', window.scrollY > 50);
+        });
 
         // Load Stats from API
         function loadStats() {
             fetch('https://api.secondsummit.ninja/annapolis/stats')
-                .then(res => res.json())
-                .then(data => {
-                    updateStats(data);
-                })
-                .catch(err => {
-                    console.log('Stats API unavailable, using defaults');
-                    updateStats({
-                        tier1: 2,
-                        tier2: 35,
-                        tier3: 70,
-                        total: 107
-                    });
-                });
+                .then(r => r.json()).then(d => updateStats(d))
+                .catch(() => updateStats({ tier1: 2, tier2: 35, tier3: 70, total: 107 }));
         }
 
         function updateStats(data) {
-            const tier1Remaining = 5 - (data.tier1 || 2);
-            const tier2Remaining = 50 - (data.tier2 || 35);
-            const tier3Remaining = 100 - (data.tier3 || 70);
+            const t1 = 5 - (data.tier1 || 2), t2 = 50 - (data.tier2 || 35), t3 = 100 - (data.tier3 || 70);
             const total = data.total || 107;
-
-            // Update top bar
-            document.getElementById('topBarStats').textContent = `${total} families pre-registered`;
-
-            // Update pricing cards
-            document.getElementById('tier1-scarcity').textContent = `${tier1Remaining} of 5 remaining`;
-            document.getElementById('tier1-progress').style.width = ((5 - tier1Remaining) / 5 * 100) + '%';
-
-            document.getElementById('tier2-scarcity').textContent = `${tier2Remaining} of 50 remaining`;
-            document.getElementById('tier2-progress').style.width = ((50 - tier2Remaining) / 50 * 100) + '%';
-
-            document.getElementById('tier3-scarcity').textContent = `${tier3Remaining} of 100 remaining`;
-            document.getElementById('tier3-progress').style.width = ((100 - tier3Remaining) / 100 * 100) + '%';
+            document.getElementById('topBarStats').textContent = total + ' families pre-registered';
+            document.getElementById('tier1-scarcity').textContent = t1 + ' of 5 remaining';
+            document.getElementById('tier1-progress').style.width = ((5-t1)/5*100) + '%';
+            document.getElementById('tier2-scarcity').textContent = t2 + ' of 50 remaining';
+            document.getElementById('tier2-progress').style.width = ((50-t2)/50*100) + '%';
+            document.getElementById('tier3-scarcity').textContent = t3 + ' of 100 remaining';
+            document.getElementById('tier3-progress').style.width = ((100-t3)/100*100) + '%';
         }
 
         // Modal
@@ -1859,11 +1366,8 @@
             document.getElementById('registrationForm').style.display = 'block';
             document.getElementById('modalSuccess').style.display = 'none';
             document.getElementById('modalOverlay').classList.add('open');
-            
-            // Reset form
             document.getElementById('registrationForm').reset();
         }
-
         function closeModal(event) {
             if (event && event.target !== document.getElementById('modalOverlay')) return;
             document.getElementById('modalOverlay').classList.remove('open');
@@ -1872,14 +1376,8 @@
         // Form Submission
         function submitForm(event) {
             event.preventDefault();
-
-            // Honeypot check
-            if (document.querySelector('.honeypot').value) {
-                console.log('Honeypot triggered');
-                return;
-            }
-
-            const formData = {
+            if (document.querySelector('.honeypot').value) return;
+            const fd = {
                 firstName: document.getElementById('firstName').value,
                 lastName: document.getElementById('lastName').value,
                 email: document.getElementById('email').value,
@@ -1888,84 +1386,68 @@
                 ageRange: document.getElementById('ageRange').value,
                 tier: document.getElementById('tierValue').value
             };
-
-            // Submit to API
             fetch('https://api.secondsummit.ninja/annapolis/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(fd)
             })
-            .then(res => res.json())
-            .then(data => {
-                // Show success state
+            .then(r => r.json()).then(() => {
                 document.getElementById('registrationForm').style.display = 'none';
                 document.getElementById('modalSuccess').style.display = 'block';
-                document.getElementById('successMessage').textContent = 
-                    `Thanks ${formData.firstName}! Check your email for next steps. Expect opening details, priority scheduling, and exclusive founding member perks.`;
-                
-                // Close after 5 seconds
-                setTimeout(() => closeModal(), 5000);
-                
-                // Refresh stats
+                document.getElementById('successMessage').textContent =
+                    'Thanks ' + fd.firstName + '! Check your email for next steps. Expect opening details, priority scheduling, and exclusive founding member perks.';
+                setTimeout(() => { document.getElementById('modalOverlay').classList.remove('open'); }, 5000);
                 loadStats();
             })
-            .catch(err => {
-                alert('Error submitting form. Please try again.');
-                console.error(err);
-            });
+            .catch(() => alert('Error submitting form. Please try again.'));
         }
 
-        // Scroll Functions
+        // Scroll to pricing
         function scrollToPricing() {
             document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // FAQ Accordion
-        function toggleFAQ(button) {
-            const answer = button.nextElementSibling;
-            const toggle = button.querySelector('.faq-toggle');
-            
+        // FAQ toggle
+        function toggleFAQ(btn) {
+            const answer = btn.nextElementSibling;
+            const toggle = btn.querySelector('.faq-toggle');
             if (answer.classList.contains('open')) {
-                answer.classList.remove('open');
-                toggle.textContent = '+';
+                answer.classList.remove('open'); toggle.textContent = '+';
             } else {
-                answer.classList.add('open');
-                toggle.textContent = '−';
+                answer.classList.add('open'); toggle.textContent = '\u2212';
             }
         }
 
-        // Mobile Sticky CTA
-        function updateMobileStickyCtA() {
+        // Mobile sticky CTA visibility
+        function updateMobileSticky() {
             const sticky = document.getElementById('mobileStickyCtA');
             const pricing = document.getElementById('pricing');
-            const scrollPos = window.scrollY;
-            const pricingPos = pricing.offsetTop;
-
-            if (scrollPos > pricingPos) {
+            if (window.scrollY > pricing.offsetTop) {
                 sticky.classList.add('hidden');
             } else {
                 sticky.classList.remove('hidden');
             }
         }
+        window.addEventListener('scroll', updateMobileSticky);
 
-        window.addEventListener('scroll', updateMobileStickyCtA);
-
-        // Scroll Animations
+        // Scroll animations with stagger
         function observeElements() {
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+                entries.forEach((entry, i) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, i * 80);
                     }
                 });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
         }
-
         observeElements();
+
+        // Shake animation for wrong password
+        const style = document.createElement('style');
+        style.textContent = '@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-4px)}}';
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
