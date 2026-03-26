@@ -1,1085 +1,1971 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>USA Ninja Challenge Annapolis | Pre-Register — Opening September 2026</title>
-<meta name="description" content="Annapolis's first kids ninja gym is coming to 441 Defense Highway! Pre-register now for founding member pricing — 20% off tuition for life. First 5 families get a FREE birthday party.">
-<meta property="og:title" content="USA Ninja Challenge Annapolis — Back Us Before We Open">
-<meta property="og:description" content="Kickstarter-style pre-registration. Lock in founding member rates, free birthday parties, and lifetime perks before September 2026.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ninjaannapolis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#0f1923;--navy-mid:#1a2744;--navy-light:#243352;
-  --orange:#e8731a;--orange-hover:#d4650f;--orange-glow:rgba(232,115,26,.25);
-  --green:#22c55e;--green-dark:#16a34a;--green-bg:rgba(34,197,94,.08);
-  --white:#fff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;
-  --gray-400:#94a3b8;--gray-600:#475569;--gray-800:#1e293b;--gray-900:#0f172a;
-  --gold:#f59e0b;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--gray-800);background:var(--gray-50);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA Ninja Challenge Annapolis — Pre-Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ===== TOP BAR ===== */
-.top-bar{background:var(--navy);color:var(--white);padding:.6rem 2rem;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
-.top-bar-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;display:flex;align-items:center;gap:.5rem}
-.top-bar-logo span{color:var(--orange)}
-.top-bar-stats{display:flex;gap:1.5rem;align-items:center}
-.top-bar-stat{display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.7)}
-.top-bar-stat strong{color:var(--green);font-weight:700}
-.top-bar-cta{background:var(--orange);color:var(--white);border:none;padding:.45rem 1.2rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.8rem;text-decoration:none;transition:all .2s}
-.top-bar-cta:hover{background:var(--orange-hover)}
+        :root {
+            --navy: #0f1923;
+            --orange: #e8731a;
+            --green: #22c55e;
+            --white: #fff;
+            --light-bg: #f8fafc;
+            --dark-text: #1e293b;
+            --muted: #64748b;
+            --gold: #f59e0b;
+            --dark-blue: #1e3a5f;
+        }
 
-/* ===== HERO SPLIT ===== */
-.hero-split{display:grid;grid-template-columns:1fr 380px;max-width:1200px;margin:2rem auto 0;gap:2rem;padding:0 1.5rem}
-@media(max-width:900px){.hero-split{grid-template-columns:1fr;margin-top:1rem}}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.hero-main{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.hero-visual{position:relative;background:linear-gradient(135deg,rgba(15,25,35,.88) 0%,rgba(26,39,68,.85) 60%,rgba(15,42,31,.88) 100%),url('images/hero-banner.jpg') center/cover no-repeat;padding:3rem 2.5rem;min-height:340px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-.hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(232,115,26,.12) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(34,197,94,.08) 0%,transparent 50%);pointer-events:none}
-.hero-visual::after{content:'';position:absolute;bottom:0;right:0;width:280px;height:280px;background:radial-gradient(circle,rgba(232,115,26,.15) 0%,transparent 70%);pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:var(--green);padding:.35rem .9rem;border-radius:100px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.25rem;width:fit-content}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero-visual h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,3.5rem);color:var(--white);line-height:1.05;margin-bottom:.75rem;position:relative;z-index:1}
-.hero-visual h1 .accent{color:var(--orange)}
-.hero-visual p{color:rgba(255,255,255,.75);font-size:1.05rem;line-height:1.6;max-width:480px;position:relative;z-index:1}
-.hero-location{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.6);font-size:.85rem;margin-top:1rem;position:relative;z-index:1}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
 
-/* Progress Section */
-.hero-progress{padding:1.5rem 2rem;border-top:1px solid var(--gray-200)}
-.progress-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem}
-.progress-count{font-size:1.8rem;font-weight:800;color:var(--gray-900)}
-.progress-count span{font-size:.9rem;font-weight:500;color:var(--gray-400)}
-.progress-goal{font-size:.85rem;color:var(--gray-400)}
-.progress-bar-wrap{background:var(--gray-100);border-radius:100px;height:12px;overflow:hidden;margin-bottom:.75rem}
-.progress-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--green),#4ade80);transition:width 1.5s ease-out;min-width:2%}
-.progress-milestones{display:flex;gap:1.5rem;flex-wrap:wrap}
-.milestone{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:var(--gray-600)}
-.milestone .icon{font-size:1rem}
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
 
-/* Hero details row */
-.hero-details{display:flex;gap:2rem;padding:1rem 2rem 1.25rem;border-top:1px solid var(--gray-200);flex-wrap:wrap}
-.hero-detail{display:flex;flex-direction:column;gap:.15rem}
-.hero-detail-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--gray-400);font-weight:600}
-.hero-detail-value{font-size:.95rem;font-weight:700;color:var(--gray-800)}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-/* ===== TIER SIDEBAR ===== */
-.tier-sidebar{display:flex;flex-direction:column;gap:1rem}
+        /* Password Gate */
+        .password-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 24px;
+        }
 
-.tier-card{background:var(--white);border-radius:14px;padding:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);border:2px solid transparent;transition:all .3s;position:relative;cursor:pointer}
-.tier-card:hover{border-color:var(--orange);box-shadow:0 4px 20px var(--orange-glow)}
-.tier-card.featured{border-color:var(--orange);background:linear-gradient(135deg,#fff8f0 0%,var(--white) 100%)}
-.tier-card.featured::before{content:'MOST POPULAR';position:absolute;top:-10px;left:1.5rem;background:var(--orange);color:var(--white);font-size:.65rem;font-weight:800;padding:.25rem .7rem;border-radius:4px;letter-spacing:1px}
-.tier-card.sold-out{opacity:.65;pointer-events:none}
-.tier-card.sold-out::after{content:'SOLD OUT';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-12deg);background:rgba(239,68,68,.9);color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:1.8rem;padding:.2rem 1.5rem;border-radius:4px;letter-spacing:3px;z-index:2}
+        .password-gate.hidden {
+            display: none;
+        }
 
-.tier-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem}
-.tier-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;color:var(--gray-900)}
-.tier-price{text-align:right}
-.tier-price .amount{font-size:1.4rem;font-weight:800;color:var(--orange)}
-.tier-price .period{font-size:.7rem;color:var(--gray-400);display:block}
-.tier-slots{font-size:.75rem;font-weight:700;color:var(--green-dark);background:var(--green-bg);padding:.2rem .6rem;border-radius:4px;display:inline-block;margin-bottom:.6rem}
-.tier-slots.urgent{color:#dc2626;background:rgba(220,38,38,.08)}
-.tier-desc{font-size:.85rem;color:var(--gray-600);line-height:1.5;margin-bottom:.75rem}
-.tier-perks{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.tier-perks li{font-size:.8rem;color:var(--gray-600);display:flex;align-items:flex-start;gap:.4rem;line-height:1.4}
-.tier-perks li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
-.tier-btn{display:block;width:100%;text-align:center;padding:.7rem;border-radius:8px;font-weight:700;font-size:.85rem;border:none;cursor:pointer;margin-top:.75rem;transition:all .2s;text-decoration:none}
-.tier-btn-primary{background:var(--orange);color:var(--white)}
-.tier-btn-primary:hover{background:var(--orange-hover);transform:translateY(-1px)}
-.tier-btn-secondary{background:var(--gray-100);color:var(--gray-800)}
-.tier-btn-secondary:hover{background:var(--gray-200)}
+        .password-gate h2 {
+            color: var(--white);
+            font-size: 32px;
+            text-align: center;
+        }
 
-/* ===== CONTENT SECTIONS ===== */
-.content-area{max-width:1200px;margin:0 auto;padding:0 1.5rem}.content-grid{display:grid;grid-template-columns:1fr 380px;gap:2rem;margin-top:2rem}
-@media(max-width:900px){.content-grid{grid-template-columns:1fr}}
+        .password-gate p {
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center;
+        }
 
-/* Story Section */
-.story-section{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.story-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;color:var(--gray-900);margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
-.story-section p{color:var(--gray-600);line-height:1.8;margin-bottom:1rem;font-size:.95rem}
-.story-section p strong{color:var(--gray-900);font-weight:700}
+        .password-input-group {
+            display: flex;
+            gap: 12px;
+        }
 
-/* Features Grid */
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:1.5rem}
-.feature-card{background:var(--gray-50);border-radius:12px;padding:1.5rem;border:1px solid var(--gray-200);transition:all .3s}
-.feature-card:hover{border-color:var(--orange);background:var(--white);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.06)}
-.feature-icon{font-size:2rem;margin-bottom:.75rem}
-.feature-card h3{font-size:1rem;font-weight:700;color:var(--gray-900);margin-bottom:.4rem}
-.feature-card p{font-size:.85rem;color:var(--gray-600);line-height:1.5}
+        .password-input-group input {
+            padding: 12px 16px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            font-size: 14px;
+            width: 200px;
+        }
 
-/* Social Proof Bar */
-.social-proof{background:var(--navy);border-radius:16px;padding:2rem 2.5rem;margin-top:2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
-@media(max-width:700px){.social-proof{grid-template-columns:repeat(2,1fr)}}
-.proof-item .proof-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--orange);line-height:1}
-.proof-item .proof-label{font-size:.75rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;margin-top:.25rem}
+        .password-input-group input::placeholder {
+            color: var(--muted);
+        }        .password-input-group button {
+            padding: 12px 24px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
 
-/* Timeline */
-.timeline-section{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.timeline{display:flex;flex-direction:column;gap:0;margin-top:1.5rem}
-.timeline-item{display:grid;grid-template-columns:80px 3px 1fr;gap:1.25rem;padding-bottom:2rem;position:relative}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-date{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--orange);text-align:right;padding-top:.1rem}
-.timeline-line{background:var(--gray-200);border-radius:2px;position:relative}
-.timeline-line::before{content:'';position:absolute;top:4px;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--white);border:3px solid var(--orange)}
-.timeline-item.active .timeline-line::before{background:var(--orange);box-shadow:0 0 0 4px var(--orange-glow)}
-.timeline-item.active .timeline-line{background:linear-gradient(180deg,var(--orange) 0%,var(--gray-200) 100%)}
-.timeline-content h3{font-size:1rem;font-weight:700;color:var(--gray-900);margin-bottom:.25rem}
-.timeline-content p{font-size:.85rem;color:var(--gray-600);line-height:1.5}
+        .password-input-group button:hover {
+            background: #d6621a;
+        }
 
-/* FAQ */
-.faq-section{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.faq-item{border-bottom:1px solid var(--gray-200);overflow:hidden}
-.faq-item:last-child{border-bottom:none}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;cursor:pointer;font-weight:600;font-size:.95rem;color:var(--gray-900);gap:1rem;user-select:none}
-.faq-q:hover{color:var(--orange)}
-.faq-toggle{font-size:1.2rem;color:var(--gray-400);transition:transform .3s;flex-shrink:0}
-.faq-item.open .faq-toggle{transform:rotate(45deg);color:var(--orange)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease-out}
-.faq-item.open .faq-a{max-height:300px}
-.faq-a p{padding:0 0 1.1rem;font-size:.9rem;color:var(--gray-600);line-height:1.7}
+        /* Top Bar */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 25, 35, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(232, 115, 26, 0.2);
+            padding: 12px 0;
+            z-index: 100;
+        }
 
-/* CTA BANNER */
-.cta-banner{background:linear-gradient(135deg,var(--navy) 0%,#1a2744 50%,#0f2a1f 100%);border-radius:16px;padding:3rem 2.5rem;margin-top:2rem;text-align:center;position:relative;overflow:hidden}
-.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(232,115,26,.1) 0%,transparent 60%);pointer-events:none}
-.cta-banner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--white);margin-bottom:.5rem;position:relative;z-index:1}
-.cta-banner h2 .accent{color:var(--orange)}
-.cta-banner p{color:rgba(255,255,255,.7);margin-bottom:1.5rem;position:relative;z-index:1}
-.cta-form{display:flex;gap:.5rem;max-width:500px;margin:0 auto;position:relative;z-index:1}
-.cta-form input{flex:1;padding:.85rem 1.2rem;border-radius:10px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:var(--white);font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s}
-.cta-form input::placeholder{color:rgba(255,255,255,.4)}
-.cta-form input:focus{border-color:var(--orange)}
-.cta-form button{background:var(--orange);color:var(--white);border:none;padding:.85rem 2rem;border-radius:10px;font-weight:800;font-size:.95rem;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit}
-.cta-form button:hover{background:var(--orange-hover);transform:translateY(-1px)}
-@media(max-width:500px){.cta-form{flex-direction:column}.cta-form button{width:100%}}
+        .top-bar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-/* ===== FOUNDERS WALL ===== */
-.founders-wall{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.founders-wall h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;color:var(--gray-900);margin-bottom:.25rem}
-.founders-wall .wall-sub{color:var(--gray-400);font-size:.85rem;margin-bottom:1.5rem}
-.wall-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.5rem}
-.wall-name{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:.5rem .75rem;font-size:.8rem;font-weight:600;color:var(--gray-800);display:flex;align-items:center;gap:.4rem;transition:all .3s}
-.wall-name.vip{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#f59e0b;color:#92400e}
-.wall-name.founders{background:linear-gradient(135deg,#fff7ed,#fed7aa);border-color:var(--orange);color:#9a3412}
-.wall-name.earlybird{background:var(--green-bg);border-color:var(--green);color:var(--green-dark)}
-.wall-name .badge{font-size:.55rem;padding:.1rem .3rem;border-radius:3px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;flex-shrink:0}
-.wall-name.vip .badge{background:#f59e0b;color:#fff}
-.wall-name.founders .badge{background:var(--orange);color:#fff}
-.wall-name.earlybird .badge{background:var(--green);color:#fff}
-.wall-empty{grid-column:1/-1;text-align:center;padding:2rem;color:var(--gray-400);font-size:.9rem}
-.wall-placeholder{background:var(--gray-50);border:2px dashed var(--gray-200);border-radius:8px;padding:.5rem .75rem;font-size:.8rem;color:var(--gray-400);text-align:center;font-style:italic}
-.wall-cta{text-align:center;margin-top:1.25rem}
-.wall-cta-btn{display:inline-block;background:var(--orange);color:var(--white);padding:.7rem 2rem;border-radius:8px;font-weight:700;font-size:.9rem;text-decoration:none;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
-.wall-cta-btn:hover{background:var(--orange-hover);transform:translateY(-1px)}
+        .top-bar-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            color: var(--orange);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
 
-/* ===== MOBILE STICKY CTA ===== */
-@media(max-width:900px){
-  .mobile-sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:.6rem 1rem;background:var(--navy);border-top:2px solid var(--orange);z-index:150;display:flex;align-items:center;gap:.75rem;box-shadow:0 -4px 20px rgba(0,0,0,.3)}
-  .mobile-sticky-cta .sticky-text{flex:1;color:var(--white);font-size:.75rem;font-weight:600;line-height:1.3}
-  .mobile-sticky-cta .sticky-text span{color:var(--orange)}
-  .mobile-sticky-cta button{background:var(--orange);color:var(--white);border:none;padding:.7rem 1.2rem;border-radius:8px;font-weight:800;font-size:.85rem;white-space:nowrap;cursor:pointer;font-family:inherit}
-  body{padding-bottom:65px}
-}
-@media(min-width:901px){.mobile-sticky-cta{display:none}}
+        .top-bar-center {
+            flex: 1;
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+        }
 
-/* ===== REVIEWS SECTION ===== */
-.reviews-section{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.reviews-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;color:var(--gray-900);margin-bottom:.25rem;display:flex;align-items:center;gap:.5rem}
-.reviews-sub{color:var(--gray-400);font-size:.85rem;margin-bottom:1.5rem}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
-.review-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:1.25rem;position:relative}
-.review-stars{color:var(--gold);font-size:1rem;margin-bottom:.5rem;letter-spacing:2px}
-.review-text{font-size:.88rem;color:var(--gray-600);line-height:1.6;font-style:italic;margin-bottom:.75rem}
-.review-author{display:flex;align-items:center;gap:.5rem}
-.review-avatar{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0}
-.review-name{font-size:.8rem;font-weight:700;color:var(--gray-800)}
-.review-location{font-size:.7rem;color:var(--gray-400)}
-.review-summary{display:flex;align-items:center;gap:2rem;padding:1.25rem;background:var(--navy);border-radius:12px;margin-bottom:1.5rem;flex-wrap:wrap;justify-content:center;text-align:center}
-.review-summary-stat{color:var(--white)}
-.review-summary-stat .big{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--orange);line-height:1}
-.review-summary-stat .label{font-size:.7rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+        .top-bar-cta {
+            padding: 8px 16px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 13px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
 
-/* ===== HOW IT WORKS ===== */
-.how-section{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.how-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;color:var(--gray-900);margin-bottom:1.5rem;text-align:center}
-.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center}
-@media(max-width:700px){.how-steps{grid-template-columns:1fr;gap:1.25rem}}
-.how-step{position:relative}
-.how-num{width:48px;height:48px;border-radius:50%;background:var(--orange);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin:0 auto .75rem}
-.how-step h3{font-size:1rem;font-weight:700;color:var(--gray-900);margin-bottom:.3rem}
-.how-step p{font-size:.85rem;color:var(--gray-600);line-height:1.5}
+        .top-bar-cta:hover {
+            background: #d6621a;
+        }
 
-/* ===== PRICE ANCHOR ===== */
-.tier-price .original{font-size:.85rem;color:var(--gray-400);text-decoration:line-through;display:block;margin-bottom:-.1rem}
-.tier-savings{font-size:.7rem;color:var(--green-dark);font-weight:700;background:var(--green-bg);padding:.15rem .4rem;border-radius:4px;display:inline-block;margin-top:.3rem}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 50%, #0a4a6b 100%);
+            color: var(--white);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* ===== REFERRAL SECTION ===== */
-.referral-section{background:linear-gradient(135deg,var(--navy) 0%,#1a2744 100%);border-radius:16px;padding:2.5rem;margin-top:2rem;text-align:center;position:relative;overflow:hidden}
-.referral-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(232,115,26,.08) 0%,transparent 60%);pointer-events:none}
-.referral-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin-bottom:.5rem;position:relative;z-index:1}
-.referral-section p{color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:1.25rem;position:relative;z-index:1}
-.referral-steps{display:flex;gap:2rem;justify-content:center;margin:1.5rem 0;position:relative;z-index:1;flex-wrap:wrap}
-.referral-step{text-align:center;max-width:180px}
-.referral-step .r-icon{font-size:2rem;margin-bottom:.4rem}
-.referral-step h4{color:var(--white);font-size:.9rem;font-weight:700;margin-bottom:.2rem}
-.referral-step p{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:0}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(232, 115, 26, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-/* ===== TRUST BAR ===== */
-.trust-bar{display:flex;align-items:center;justify-content:center;gap:2rem;padding:1rem 1.5rem;flex-wrap:wrap;margin-top:2rem}
-.trust-item{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:var(--gray-600);font-weight:600}
-.trust-item .t-icon{font-size:1.1rem}
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
 
-/* ===== DEPOSIT BADGE ===== */
-.deposit-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);color:var(--green-dark);padding:.15rem .5rem;border-radius:4px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.deposit-badge.refundable::after{content:'100% REFUNDABLE';margin-left:.25rem;opacity:.7}
-/* Honeypot */
-.ohnohoney{opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1}
+        .hero-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 8px 16px;            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+        }
 
-/* FOOTER */
-.site-footer{text-align:center;padding:2rem 1.5rem;color:var(--gray-400);font-size:.8rem;margin-top:2rem}
-.site-footer a{color:var(--orange);text-decoration:none}
-/* ===== SIGNUP MODAL ===== */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:200;display:none;justify-content:center;align-items:center;padding:1rem}
-.modal-overlay.active{display:flex}
-.modal{background:var(--white);border-radius:20px;padding:2.5rem;max-width:480px;width:100%;position:relative;animation:modalIn .3s ease-out}
-@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
-.modal-close{position:absolute;top:1rem;right:1rem;background:var(--gray-100);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gray-600);transition:all .2s}
-.modal-close:hover{background:var(--gray-200)}
-.modal-tier-badge{display:inline-block;background:var(--orange);color:var(--white);font-size:.7rem;font-weight:800;padding:.2rem .7rem;border-radius:4px;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem}
-.modal h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gray-900);margin-bottom:.25rem}
-.modal .modal-sub{color:var(--gray-600);font-size:.9rem;margin-bottom:1.5rem}
-.modal-form{display:flex;flex-direction:column;gap:.75rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-@media(max-width:500px){.form-row{grid-template-columns:1fr}}
-.modal-form input,.modal-form select{padding:.8rem 1rem;border:2px solid var(--gray-200);border-radius:10px;font-size:.9rem;font-family:inherit;color:var(--gray-800);outline:none;transition:border-color .2s;width:100%}
-.modal-form input:focus,.modal-form select:focus{border-color:var(--orange)}
-.modal-form input::placeholder{color:var(--gray-400)}
-.modal-submit{background:var(--orange);color:var(--white);border:none;padding:1rem;border-radius:10px;font-weight:800;font-size:1rem;cursor:pointer;transition:all .2s;margin-top:.25rem;font-family:inherit}
-.modal-submit:hover{background:var(--orange-hover);transform:translateY(-1px)}
-.modal-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.modal-fine{font-size:.75rem;color:var(--gray-400);text-align:center;margin-top:.75rem}
+        .hero-badge::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
 
-/* SUCCESS STATE */
-.modal-success{display:none;text-align:center;padding:1rem 0}
-.modal-success.active{display:block}
-.modal-success .check{width:64px;height:64px;background:var(--green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem}
-.modal-success h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gray-900);margin-bottom:.5rem}
-.modal-success p{color:var(--gray-600);font-size:.9rem;line-height:1.6}
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
 
-/* COUNTDOWN BADGE */
-.countdown-inline{display:flex;gap:.75rem;margin-top:1rem;position:relative;z-index:1}
-.cd-block{text-align:center}
-.cd-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--orange);line-height:1;background:rgba(255,255,255,.08);border-radius:8px;padding:.3rem .6rem;min-width:48px;display:block}
-.cd-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.45);margin-top:.2rem}
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
 
-/* ===== PHOTO GALLERY ===== */
-.photo-gallery{margin-top:2rem}
-.photo-gallery h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;color:var(--gray-900);margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;border-radius:16px;overflow:hidden}
-@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.gallery-grid{grid-template-columns:1fr 1fr}}
-.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;transition:transform .3s,box-shadow .3s;cursor:pointer}
-.gallery-grid img:hover{transform:scale(1.03);box-shadow:0 8px 25px rgba(0,0,0,.15)}
-.gallery-grid img.tall{grid-row:span 2;height:100%}
-.gallery-caption{text-align:center;margin-top:.75rem;font-size:.8rem;color:var(--gray-400);font-style:italic}
+        .hero > .container > p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-/* ===== VIDEO SECTION ===== */
-.video-section{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.video-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;color:var(--gray-900);margin-bottom:.35rem;display:flex;align-items:center;gap:.5rem}
-.video-section .video-sub{color:var(--gray-600);font-size:.9rem;margin-bottom:1.5rem}
-.video-wrapper{position:relative;border-radius:12px;overflow:hidden;background:#000;max-width:720px;margin:0 auto}
-.video-wrapper video{width:100%;display:block;border-radius:12px}
-.fox-badge{display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,#1a365d,#2563eb);color:#fff;padding:.35rem .9rem;border-radius:6px;font-size:.75rem;font-weight:700;letter-spacing:.5px;margin-bottom:1rem}
+        .hero-trust-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            flex-wrap: wrap;
+        }
 
-/* ===== MEET THE OWNERS ===== */
-.owners-section{background:var(--white);border-radius:16px;padding:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-top:2rem}
-.owners-section h2{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;color:var(--gray-900);margin-bottom:1.5rem;text-align:center}
-.owners-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-@media(max-width:700px){.owners-grid{grid-template-columns:1fr}}
-.owner-card{text-align:center;padding:1.5rem}
-.owner-avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-mid));display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--orange);border:3px solid var(--orange);overflow:hidden}
-.owner-avatar img{width:100%;height:100%;object-fit:cover}
-.owner-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gray-900);letter-spacing:.5px}
-.owner-role{font-size:.8rem;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:.75rem}
-.owner-bio{font-size:.88rem;color:var(--gray-600);line-height:1.7;text-align:left}
-.owner-bio strong{color:var(--gray-900)}
+        .hero-trust-strip span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-/* Responsive */
-@media(max-width:900px){
-  .top-bar-stats{display:none}
-  .hero-visual{padding:2rem 1.5rem;min-height:auto}
-  .social-proof{padding:1.5rem}
-  .story-section,.timeline-section,.faq-section,.video-section,.owners-section{padding:1.5rem}
-}
-</style>
+        .hero-trust-strip .dot {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-cta:hover {
+            background: #d6621a;
+            transform: translateY(-2px);
+        }
+
+        .hero-countdown {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--navy);
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(232, 115, 26, 0.1);
+        }
+
+        .trust-bar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .trust-item svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Section Alternating Backgrounds */
+        section:nth-child(odd) {
+            background: var(--light-bg);
+        }
+
+        section:nth-child(even) {
+            background: var(--white);
+        }
+
+        section:nth-child(4n+3) {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 48px 0;
+            }
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            section h2 {
+                font-size: 28px;
+            }
+        }
+
+        .section-subhead {
+            text-align: center;
+            font-size: 16px;
+            color: var(--muted);
+            margin-bottom: 48px;
+        }
+
+        section:nth-child(4n+3) .section-subhead {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);        }
+
+        .pricing-card.featured {
+            border-top: 4px solid var(--orange);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--green);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            width: fit-content;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-badge.popular {
+            background: rgba(232, 115, 26, 0.1);
+            color: var(--orange);
+        }
+
+        .pricing-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
+
+        .pricing-anchor {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .pricing-perks {
+            list-style: none;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .pricing-perks li {
+            font-size: 13px;
+            color: var(--dark-text);
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .pricing-perks li::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: var(--green);
+            border-radius: 50%;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .pricing-scarcity {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 16px 0;
+        }
+
+        .pricing-progress {
+            width: 100%;
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .pricing-progress-bar {
+            height: 100%;
+            background: var(--green);
+            border-radius: 2px;
+        }
+
+        .pricing-cta {
+            padding: 12px 16px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;            font-size: 14px;
+            transition: background 0.2s;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-cta:hover {
+            background: #d6621a;
+        }
+
+        .pricing-cta.secondary {
+            background: var(--navy);
+        }
+
+        .pricing-cta.secondary:hover {
+            background: #1e3a5f;
+        }
+
+        .pricing-trust {
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* How It Works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 48px;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .steps::before {
+                display: none;
+            }
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 12px rgba(232, 115, 26, 0.3);
+        }
+
+        .step h3 {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Video Section */
+        .video-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }        @media (max-width: 768px) {
+            .video-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .video-container {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-text h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .video-text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .video-text .credibility {
+            font-size: 13px;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        /* Reviews Section */
+        .reviews-summary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--dark-text);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 20px;
+            width: fit-content;
+            margin: 32px auto;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 1024px) {
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .review-stars {
+            color: var(--gold);
+            font-size: 12px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .review-quote {
+            font-size: 14px;
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .review-footer {
+            display: flex;
+            align-items: center;            gap: 12px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--orange);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .review-info {
+            flex: 1;
+        }
+
+        .review-name {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--dark-text);
+        }
+
+        .review-location {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .review-badge {
+            background: rgba(232, 115, 26, 0.1);
+            color: var(--orange);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .program-card {
+            border-radius: 12px;
+            padding: 48px 32px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .program-card:nth-child(1)::before {
+            background: linear-gradient(135deg, #e8731a 0%, #d6621a 100%);
+        }
+
+        .program-card:nth-child(2)::before {
+            background: linear-gradient(135deg, #22c55e 0%, #1a9d42 100%);
+        }
+
+        .program-card:nth-child(3)::before {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+
+        .program-card:nth-child(4)::before {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+        }
+
+        .program-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;align-items: center;
+            justify-content: center;
+        }
+
+        .program-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .program-card h3 {
+            font-size: 20px;
+        }
+
+        .program-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 32px;
+            color: var(--white);
+            display: flex;
+            gap: 20px;
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--orange) 0%, #d6621a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .team-card:nth-child(2) .team-avatar {
+            background: linear-gradient(135deg, var(--green) 0%, #1a9d42 100%);
+        }
+
+        .team-info h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .team-info .role {
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .team-info p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 700px;
+            margin: 48px auto 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: var(--white);
+            border: none;
+            width: 100%;            text-align: left;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #f1f5f9;
+        }
+
+        .faq-toggle {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            background: #f8fafc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        /* Final CTA Section */
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .final-cta .section-subhead {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .final-cta-button:hover {
+            background: #d6621a;
+            transform: translateY(-2px);
+        }
+
+        .final-cta-trust {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1420;
+            color: var(--muted);
+            padding: 32px 0;
+            text-align: center;
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Sticky CTA */
+        .mobile-sticky-cta {
+            position: fixed;            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--navy);
+            border-top: 1px solid rgba(232, 115, 26, 0.2);
+            padding: 12px 20px;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            z-index: 50;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-sticky-cta {
+                display: flex;
+            }
+        }
+
+        .mobile-sticky-cta.hidden {
+            display: none !important;
+        }
+
+        .mobile-sticky-text {
+            color: var(--muted);
+            font-size: 12px;
+            flex: 1;
+        }
+
+        .mobile-sticky-button {
+            padding: 10px 16px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 13px;
+            white-space: nowrap;
+            font-family: 'Bebas Neue', sans-serif;
+            transition: background 0.2s;
+        }
+
+        .mobile-sticky-button:hover {
+            background: #d6621a;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            padding: 20px;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--muted);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--dark-text);
+        }
+
+        .modal h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }        .modal-deposit {
+            font-size: 18px;
+            color: var(--orange);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--dark-text);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(232, 115, 26, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: var(--muted);
+        }
+
+        .modal-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .modal-submit:hover {
+            background: #d6621a;
+        }
+
+        .modal-submit:disabled {
+            background: var(--muted);
+            cursor: not-allowed;
+        }
+
+        .modal-fine-print {
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .modal-success {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .modal-success-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--white);
+            font-size: 32px;
+        }
+
+        .modal-success h3 {
+            font-size: 28px;
+            color: var(--dark-text);
+            margin-bottom: 12px;
+        }
+
+        .modal-success p {
+            color: var(--muted);
+            font-size: 14px;            line-height: 1.6;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Honeypot (hidden) */
+        .honeypot {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-
-<!-- PASSWORD GATE — remove when ready to go public -->
-<div id="password-gate" style="position:fixed;inset:0;z-index:99999;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;padding:2rem">
-  <div style="text-align:center;max-width:420px">
-    <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);letter-spacing:3px;margin-bottom:.25rem">USA NINJA <span style="color:var(--orange)">CHALLENGE</span></div>
-    <div style="color:var(--gray-400);font-size:.95rem;margin-bottom:1.5rem">Annapolis — Under Construction</div>
-    <div style="background:var(--navy-mid);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:2rem">
-      <div style="font-size:1.1rem;color:var(--white);font-weight:600;margin-bottom:.5rem">This site is in preview mode</div>
-      <div style="color:var(--gray-400);font-size:.85rem;margin-bottom:1.25rem">Enter the team password to continue</div>
-      <input id="gate-pw" type="password" placeholder="Password" style="width:100%;padding:.75rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:var(--navy);color:var(--white);font-size:1rem;outline:none;margin-bottom:.75rem" onkeydown="if(event.key==='Enter')document.getElementById('gate-btn').click()">
-      <button id="gate-btn" onclick="if(document.getElementById('gate-pw').value==='ninja2026'){document.getElementById('password-gate').style.display='none';sessionStorage.setItem('ninja-auth','1')}else{this.previousElementSibling.style.borderColor='#ef4444';this.nextElementSibling.style.display='block'}" style="width:100%;padding:.75rem;border-radius:8px;border:none;background:var(--orange);color:var(--white);font-size:1rem;font-weight:700;cursor:pointer">Enter Site</button>
-      <div style="display:none;color:#ef4444;font-size:.8rem;margin-top:.5rem;text-align:center">Incorrect password</div>
-    </div>
-  </div>
-</div>
-<script>if(sessionStorage.getItem('ninja-auth')==='1')document.getElementById('password-gate').style.display='none';</script>
-<!-- STICKY TOP BAR -->
-<div class="top-bar">
-  <div class="top-bar-logo">USA NINJA <span>CHALLENGE</span></div>
-  <div class="top-bar-stats">
-    <div class="top-bar-stat"><strong id="nav-count">0</strong> families pre-registered</div>
-    <div class="top-bar-stat">Opening <strong>Sept 2026</strong></div>
-  </div>
-  <a href="#signup" class="top-bar-cta" onclick="openModal('general')">Pre-Register Now</a>
-</div>
-
-<!-- HERO: KICKSTARTER LAYOUT -->
-<div class="hero-split">
-  <!-- LEFT: Main Content -->
-  <div class="hero-main">
-    <div class="hero-visual">
-      <div class="hero-badge"><span class="dot"></span> Now accepting pre-registrations</div>
-      <h1>ANNAPOLIS IS<br>GETTING ITS FIRST<br><span class="accent">NINJA GYM</span></h1>
-      <p>A 7,000+ sq ft obstacle course training facility for kids ages 3-17. Classes, camps, birthday parties, and open gym — all at 441 Defense Highway.</p>
-      <div class="hero-location">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        441 Defense Highway, Annapolis, MD
-      </div>
-      <div class="countdown-inline" id="countdown">
-        <div class="cd-block"><span class="cd-num" id="cd-days">--</span><div class="cd-lbl">Days</div></div>
-        <div class="cd-block"><span class="cd-num" id="cd-hours">--</span><div class="cd-lbl">Hours</div></div>
-        <div class="cd-block"><span class="cd-num" id="cd-mins">--</span><div class="cd-lbl">Mins</div></div>
-        <div class="cd-block"><span class="cd-num" id="cd-secs">--</span><div class="cd-lbl">Secs</div></div>
-      </div>
-    </div>
-
-    <!-- Family Counter -->
-    <div class="hero-progress" style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
-      <div>
-        <div class="progress-count" id="progress-count">0 <span>families</span></div>
-        <div style="font-size:.8rem;color:var(--gray-400)">have already pre-registered</div>
-      </div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <div class="deposit-badge refundable" style="font-size:.7rem;padding:.25rem .6rem">Deposits are 100% refundable</div>
-      </div>
-    </div>
-
-    <!-- Details Row -->
-    <div class="hero-details">
-      <div class="hero-detail">
-        <span class="hero-detail-label">Opening</span>
-        <span class="hero-detail-value">September 2026</span>
-      </div>
-      <div class="hero-detail">
-        <span class="hero-detail-label">Ages</span>
-        <span class="hero-detail-value">3 — 17</span>
-      </div>
-      <div class="hero-detail">
-        <span class="hero-detail-label">Location</span>
-        <span class="hero-detail-value">Annapolis, MD</span>
-      </div>
-      <div class="hero-detail">
-        <span class="hero-detail-label">Deposit</span>
-        <span class="hero-detail-value">From $10 (refundable)</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT: Tier Cards (Kickstarter Rewards Style) -->
-  <div class="tier-sidebar" id="signup">
-
-    <!-- TIER 0: FIRST 5 -->
-    <div class="tier-card" id="tier-vip" onclick="openModal('vip')">
-      <div class="tier-header">
-        <div class="tier-name">FIRST 5 FAMILIES</div>
-        <div class="tier-price"><span class="amount">$49</span><span class="period">refundable deposit</span></div>
-      </div>
-      <div class="tier-slots urgent" id="vip-slots">5 of 5 remaining</div>
-      <div class="tier-savings">SAVE 20% every month forever</div>
-      <div class="tier-desc">The ultimate founding perk. First 5 families get a FREE birthday party ($350+ value) plus everything in Founders. Your $49 converts to a class credit.</div>
-      <ul class="tier-perks">
-        <li>Free birthday party for up to 15 kids</li>
-        <li>20% off tuition for life</li>
-        <li>Free registration ($50 value)</li>
-        <li>VIP grand opening access</li>
-        <li>Founding Family wall plaque</li>
-        <li>$49 deposit → class credit at opening</li>
-      </ul>
-      <button class="tier-btn tier-btn-primary">Claim This Perk — $49</button>
-    </div>
-
-    <!-- TIER 1: FOUNDERS -->
-    <div class="tier-card featured" onclick="openModal('founders')">
-      <div class="tier-header">
-        <div class="tier-name">FOUNDERS 50</div>
-        <div class="tier-price"><span class="amount">$25</span><span class="period">refundable deposit</span></div>
-      </div>
-      <div class="tier-slots" id="founders-slots">50 of 50 remaining</div>
-      <div class="tier-savings">SAVE 20% every month forever</div>
-      <div class="tier-desc">Lock in 20% off tuition for life — the deepest discount we'll ever offer. Only 50 spots. Your $25 converts to a class credit at opening.</div>
-      <ul class="tier-perks">
-        <li>20% off monthly tuition forever</li>
-        <li>Free registration ($50 value)</li>
-        <li>Priority class scheduling</li>
-        <li>VIP grand opening invite</li>
-        <li>Founding Family wall plaque</li>
-        <li>$25 deposit → class credit at opening</li>
-      </ul>
-      <button class="tier-btn tier-btn-primary">Lock In 20% Off — $25</button>
-    </div>
-
-    <!-- TIER 2: EARLY BIRD -->
-    <div class="tier-card" onclick="openModal('earlybird')">
-      <div class="tier-header">
-        <div class="tier-name">EARLY BIRD 100</div>
-        <div class="tier-price"><span class="amount">$10</span><span class="period">refundable deposit</span></div>
-      </div>
-      <div class="tier-slots" id="earlybird-slots">100 of 100 remaining</div>
-      <div class="tier-savings">SAVE 15% every month forever</div>
-      <div class="tier-desc">15% off tuition for life, locked in before we open. Your $10 converts to a class credit — you literally can't lose.</div>
-      <ul class="tier-perks">
-        <li>15% off monthly tuition forever</li>
-        <li>Free registration ($50 value)</li>
-        <li>Grand opening invitation</li>
-        <li>$10 deposit → class credit at opening</li>
-      </ul>
-      <button class="tier-btn tier-btn-secondary">Get Early Bird Rate — $10</button>
-    </div>
-
-    <!-- TIER 3: GENERAL -->
-    <div class="tier-card" onclick="openModal('general')">
-      <div class="tier-header">
-        <div class="tier-name">INTEREST LIST</div>
-        <div class="tier-price"><span class="amount">FREE</span><span class="period">no deposit</span></div>
-      </div>
-      <div class="tier-slots">Unlimited spots</div>
-      <div class="tier-desc">Not ready to commit? Join the interest list — no deposit, no obligation. You'll still get free registration when we open.</div>
-      <ul class="tier-perks">
-        <li>Free registration fee waived ($50 value)</li>
-        <li>First to know when we open</li>
-        <li>Opening week specials</li>
-      </ul>
-      <button class="tier-btn tier-btn-secondary">Join Interest List — Free</button>
-    </div>
-  </div>
-</div>
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><span class="t-icon">📺</span> Featured on Fox 5 DC</div>
-  <div class="trust-item"><span class="t-icon">⭐</span> 4.9 Average Rating</div>
-  <div class="trust-item"><span class="t-icon">🥷</span> 600+ Active Students</div>
-  <div class="trust-item"><span class="t-icon">🏢</span> 20+ Locations Nationwide</div>
-  <div class="trust-item"><span class="t-icon">🔒</span> 100% Refundable Deposits</div>
-</div>
-
-<!-- STORY SECTION -->
-<div class="content-area">
-  <div class="story-section">
-    <h2>🥷 What Is USA Ninja Challenge?</h2>
-    <p><strong>USA Ninja Challenge</strong> is a nationwide network of obstacle course training gyms designed specifically for kids. Think American Ninja Warrior — but built for ages 3 to 17, with trained coaches, structured curriculum, and a focus on building confidence, strength, and grit.</p>
-    <p>We're not a trampoline park or a drop-in play center. Our <strong>progressive class curriculum</strong> teaches real skills — grip strength, balance, agility, and problem-solving — in a safe, coached environment where every kid is challenged at their level.</p>
-    <p>Annapolis will be our newest location, and we're building it from the ground up at <strong>441 Defense Highway</strong> — a 7,000+ sq ft facility with competition-grade obstacles, dedicated party rooms, and a layout designed for maximum fun and safety.</p>
-
-    <!-- Features Grid -->
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🧗</div>
-        <h3>Obstacle Course Classes</h3>
-        <p>Age-appropriate curriculum for ages 3-17. Weekly progression through increasingly challenging obstacles.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏕️</div>
-        <h3>Summer & Holiday Camps</h3>
-        <p>Full-day camps during school breaks. Ninja training, team challenges, and tons of fun.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎂</div>
-        <h3>Birthday Parties</h3>
-        <p>The most epic birthday party in Annapolis. Private obstacle course access with dedicated party hosts.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏋️</div>
-        <h3>Open Gym Sessions</h3>
-        <p>Drop-in obstacle course time for members. Practice skills, hang with friends, burn energy.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏆</div>
-        <h3>Ninja Competitions</h3>
-        <p>In-house and regional competitions. Kids test their skills against peers and earn rankings.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👨‍👩‍👧‍👦</div>
-        <h3>Family Events</h3>
-        <p>Parents vs. kids nights, family open gym, and community events throughout the year.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- HOW IT WORKS -->
-  <div class="how-section">
-    <h2>How Pre-Registration Works</h2>
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="how-num">1</div>
-        <h3>Pick Your Tier</h3>
-        <p>Choose your founding member level. Higher tiers = bigger lifetime discounts. All deposits are 100% refundable.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-num">2</div>
-        <h3>We Keep You Posted</h3>
-        <p>Get behind-the-scenes construction updates, early access to class schedules, and VIP event invites.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-num">3</div>
-        <h3>Start First on Opening Day</h3>
-        <p>Founding members schedule classes before the public. Your deposit converts to a class credit. You're ready to go.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- PHOTO GALLERY -->
-  <div class="photo-gallery">
-    <h2>📸 Inside a USA Ninja Challenge Gym</h2>
-    <div class="gallery-grid">
-      <img src="images/hero-main.jpg" alt="Kids conquering the ninja obstacle course" loading="lazy">
-      <img src="images/gallery-obstacles.jpg" alt="Professional ninja obstacles and climbing walls" class="tall" loading="lazy">
-      <img src="images/gallery-kids-climbing.jpg" alt="Young ninjas training on the warped wall" loading="lazy">
-      <img src="images/gallery-coaching.jpg" alt="Coaches guiding kids through obstacle techniques" loading="lazy">
-      <img src="images/gallery-competition.jpg" alt="Ninja competition day — kids racing the course" loading="lazy">
-      <img src="images/gallery-party.jpg" alt="Birthday party fun on the ninja course" class="tall" loading="lazy">
-      <img src="images/gallery-group.jpg" alt="Group photo — ninja families celebrating" loading="lazy">
-      <img src="images/gallery-fun.jpg" alt="Kids having a blast on the obstacles" loading="lazy">
-    </div>
-    <p class="gallery-caption">Real photos from USA Ninja Challenge grand opening events. This is what's coming to Annapolis.</p>
-  </div>
-
-  <!-- FOX NEWS VIDEO -->
-  <div class="video-section">
-    <div class="fox-badge">📺 AS SEEN ON FOX 5 DC</div>
-    <h2>🎬 USA Ninja Challenge on Good Day DC</h2>
-    <p class="video-sub">Our owner Dan Umpa was featured on Fox 5's Good Day DC, showcasing what makes USA Ninja Challenge the best kids' fitness program in the region.</p>
-    <div class="video-wrapper">
-      <video controls preload="metadata" poster="images/hero-banner.jpg">
-        <source src="https://static-clips.fox.com/proxy/fts_clip/digital/fts/wttg/1757120/1757120__s2i9P90BbQq6eGBWZVaiE7ktTZM_lowres.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
-
-  <!-- MEET THE OWNERS -->
-  <div class="owners-section">
-    <h2>👋 Meet the Team Behind Annapolis</h2>
-    <div class="owners-grid">
-      <div class="owner-card">
-        <div class="owner-avatar">DU</div>
-        <div class="owner-name">Dan Umpa</div>
-        <div class="owner-role">Owner &amp; Operator</div>
-        <p class="owner-bio">Dan is a <strong>military veteran and father</strong> who discovered the transformative power of ninja training for his own kids — and decided to bring it to every family in his community. He opened USA Ninja Challenge Stafford in 2025 and grew it from <strong>36 students to over 210 in under a year</strong>, making it one of the fastest-growing locations in the entire franchise. Featured on <strong>Fox 5's Good Day DC</strong>, Dan's vision is simple: build the kind of place where every kid walks in nervous and walks out saying "when can I come back?" Annapolis will be his second owned location, designed from the ground up with everything he's learned about what makes kids (and parents) love coming back week after week.</p>
-      </div>
-      <div class="owner-card">
-        <div class="owner-avatar">SS</div>
-        <div class="owner-name">Stephen Saekoo</div>
-        <div class="owner-role">Co-Owner &amp; Marketing Partner</div>
-        <p class="owner-bio">Stephen brings a <strong>lifetime of working with kids</strong> to the ninja world. He took a gap year in college to volunteer at an orphanage in Japan — where he first fell in love with building obstacle courses for children. He later founded an <strong>after-school program in Los Angeles</strong> to keep kids active and inspired. Now a father of three (including a sensory-seeking child who thrives in ninja training), Stephen acquired <strong>USA Ninja Challenge Durham, NC</strong> and co-owns the Fairfield, OH location. As co-founder of <strong>Second Summit Marketing</strong>, he and Dan power the digital strategy behind every USA Ninja location they touch — from lead generation to community building. His mission: create spaces where <strong>every child can grow stronger, braver, and more confident</strong>.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- SOCIAL PROOF -->
-  <div class="social-proof">
-    <div class="proof-item">
-      <div class="proof-num">20+</div>
-      <div class="proof-label">Locations Nationwide</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-num">15K+</div>
-      <div class="proof-label">Active Students</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-num">4.9★</div>
-      <div class="proof-label">Average Rating</div>
-    </div>
-    <div class="proof-item">
-      <div class="proof-num">8+</div>
-      <div class="proof-label">Years Running</div>
-    </div>
-  </div>
-
-  <!-- PARENT REVIEWS -->
-  <div class="reviews-section">
-    <h2>⭐ What Parents Say About USA Ninja Challenge</h2>
-    <p class="reviews-sub">Real reviews from parents at our existing locations in Virginia, Ohio, and Utah.</p>
-
-    <div class="review-summary">
-      <div class="review-summary-stat"><div class="big">4.9★</div><div class="label">Average Rating</div></div>
-      <div class="review-summary-stat"><div class="big">600+</div><div class="label">Active Students</div></div>
-      <div class="review-summary-stat"><div class="big">3</div><div class="label">Locations Open</div></div>
-      <div class="review-summary-stat"><div class="big">95%</div><div class="label">Parent Satisfaction</div></div>
-    </div>
-
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"This has helped build confidence and core strength — my shy son now loves going!"</p>
-        <div class="review-author">
-          <div class="review-avatar">JS</div>
-          <div><div class="review-name">Joel S.</div><div class="review-location">Fairfield, OH</div></div>
+    <!-- Password Gate -->
+    <div class="password-gate" id="passwordGate">
+        <h2>USA Ninja Challenge Annapolis</h2>
+        <p>Under Construction</p>
+        <div class="password-input-group">
+            <input type="password" id="passwordInput" placeholder="Enter password" />
+            <button onclick="checkPassword()">Enter Site</button>
         </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"My child has grown exponentially in self confidence being a part of this gym!"</p>
-        <div class="review-author">
-          <div class="review-avatar">ED</div>
-          <div><div class="review-name">Erin D.</div><div class="review-location">Fairfield, OH</div></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-logo">NINJA ANNAPOLIS</div>
+                <div class="top-bar-center">
+                    <span id="topBarStats">Loading...</span> · Opening Sept 2026
+                </div>
+                <button class="top-bar-cta" onclick="scrollToPricing()">Pre-Register Now</button>
+            </div>
         </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Love this place — CLEAN, organized, fun environment with staff who take the time to get to know each kid."</p>
-        <div class="review-author">
-          <div class="review-avatar">SM</div>
-          <div><div class="review-name">Sarah M.</div><div class="review-location">Stafford, VA</div></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">NOW ACCEPTING PRE-REGISTRATIONS</div>
+                <h1>WHERE ANNAPOLIS KIDS BUILD CONFIDENCE, STRENGTH & GRIT</h1>
+                <p>A brand-new 7,000+ sq ft ninja obstacle course gym where kids ages 3–17 discover what they're capable of — through classes, camps, parties & open gym. Opening September 2026 at 441 Defense Highway.</p>
+                
+                <div class="hero-trust-strip">
+                    <span>4.9★ parent rating</span>
+                    <span class="dot"></span>
+                    <span>1,500+ kids enrolled nationwide</span>
+                    <span class="dot"></span>
+                    <span>Obstacle racing is in the 2028 Olympics!</span>
+                    <span class="dot"></span>
+                    <span>Deposits 100% refundable</span>
+                </div>
+
+                <button class="hero-cta" onclick="scrollToPricing()">See Founding Member Pricing ↓</button>
+                
+                <div class="hero-countdown" id="countdown"></div>
+            </div>
         </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"The coaching, level tracking, and encouraging environment is so much better than anywhere else we've tried."</p>
-        <div class="review-author">
-          <div class="review-avatar">NG</div>
-          <div><div class="review-name">Natalie G.</div><div class="review-location">Murray, UT</div></div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-bar-content">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="2.18"></rect><path d="M7 2v20M17 2v20M2 12h20M2 7h20M2 17h20"></path></svg>
+                    AS SEEN ON FOX 5 DC
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    4.9★ Google Rating
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    1,500+ Kids Enrolled
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    20+ Locations
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    100% Refundable
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"He loves going to weekly ninja class, and I love watching him have a blast and get better each time."</p>
-        <div class="review-author">
-          <div class="review-avatar">KB</div>
-          <div><div class="review-name">Kristen B.</div><div class="review-location">Fairfield, OH</div></div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="pricing"><div class="container">
+            <h2>FOUNDING MEMBER PRICING</h2>
+            <p class="section-subhead">Lock in rates that never go up. Every deposit is 100% refundable.</p>
+
+            <div class="pricing-grid">
+                <!-- First 5 Families -->
+                <div class="pricing-card">
+                    <div class="pricing-badge">SAVE 20% FOREVER</div>
+                    <h3 class="pricing-title">FIRST 5 FAMILIES</h3>
+                    <p class="pricing-anchor">Regular ~$150/mo → You pay ~$120/mo for life</p>
+                    
+                    <ul class="pricing-perks">
+                        <li>Free birthday party ($350 value)</li>
+                        <li>20% off tuition forever</li>
+                        <li>Free registration</li>
+                        <li>VIP opening access</li>
+                        <li>Founder wall plaque</li>
+                        <li>$49 → class credit</li>
+                    </ul>
+
+                    <div class="pricing-scarcity" id="tier1-scarcity">X of 5 remaining</div>
+                    <div class="pricing-progress">
+                        <div class="pricing-progress-bar" id="tier1-progress" style="width: 20%"></div>
+                    </div>
+
+                    <button class="pricing-cta" onclick="openModal('tier1', '$49', 'FIRST 5 FAMILIES')">Claim This Perk — $49</button>
+                </div>
+
+                <!-- Founders 50 (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge popular">MOST POPULAR</div>
+                    <div class="pricing-badge">SAVE 20% FOREVER</div>
+                    <h3 class="pricing-title">FOUNDERS 50</h3>
+                    <p class="pricing-anchor">Regular ~$150/mo → You pay ~$120/mo for life</p>
+                    
+                    <ul class="pricing-perks">
+                        <li>20% off forever</li>
+                        <li>Free registration</li>
+                        <li>Priority scheduling</li>
+                        <li>VIP opening invite</li>
+                        <li>Founder wall plaque</li>
+                        <li>$25 → class credit</li>
+                    </ul>
+
+                    <div class="pricing-scarcity" id="tier2-scarcity">X of 50 remaining</div>
+                    <div class="pricing-progress">
+                        <div class="pricing-progress-bar" id="tier2-progress" style="width: 50%"></div>
+                    </div>
+
+                    <button class="pricing-cta" onclick="openModal('tier2', '$25', 'FOUNDERS 50')">Lock In 20% Off — $25</button>
+                </div>
+
+                <!-- Early Bird 100 -->
+                <div class="pricing-card">
+                    <div class="pricing-badge">SAVE 15% FOREVER</div>
+                    <h3 class="pricing-title">EARLY BIRD 100</h3>
+                    <p class="pricing-anchor">Regular ~$150/mo → You pay ~$127/mo for life</p>
+                    
+                    <ul class="pricing-perks">
+                        <li>15% off forever</li>
+                        <li>Free registration</li>
+                        <li>Opening week invite</li>
+                        <li>$10 → class credit</li>
+                    </ul>
+
+                    <div class="pricing-scarcity" id="tier3-scarcity">X of 100 remaining</div>
+                    <div class="pricing-progress">
+                        <div class="pricing-progress-bar" id="tier3-progress" style="width: 75%"></div>
+                    </div>
+
+                    <button class="pricing-cta" onclick="openModal('tier3', '$10', 'EARLY BIRD 100')">Get Early Bird Rate — $10</button>
+                </div>
+
+                <!-- Interest List -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">INTEREST LIST</h3>
+                    <p class="pricing-anchor">Free</p>
+                    
+                    <ul class="pricing-perks">
+                        <li>Free registration waived ($50 value)</li>
+                        <li>First to know about opening</li>
+                        <li>Opening week specials</li>
+                    </ul>
+
+                    <div class="pricing-scarcity">Unlimited spots</div>
+
+                    <button class="pricing-cta secondary" onclick="openModal('tier4', 'Free', 'INTEREST LIST')">Join Free Interest List</button>
+                </div>
+            </div>
+
+            <div class="pricing-trust">
+                Every deposit is 100% refundable and converts to a class credit at opening. Zero risk.
+            </div>
         </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"The obstacles change weekly, and I love the flexibility to schedule makeup classes. Our kids are obsessed!"</p>
-        <div class="review-author">
-          <div class="review-avatar">CB</div>
-          <div><div class="review-name">Charity B.</div><div class="review-location">Murray, UT</div></div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <div class="container">
+            <h2>HOW PRE-REGISTRATION WORKS</h2>            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-circle">1</div>
+                    <h3>Pick Your Tier</h3>
+                    <p>Higher tiers = bigger lifetime discounts. All deposits fully refundable.</p>
+                </div>
+
+                <div class="step fade-in">
+                    <div class="step-circle">2</div>
+                    <h3>We Keep You Posted</h3>
+                    <p>Construction updates, early class schedules, VIP event invites.</p>
+                </div>
+
+                <div class="step fade-in">
+                    <div class="step-circle">3</div>
+                    <h3>Start First</h3>
+                    <p>Founding members get priority scheduling. Your deposit becomes a class credit.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- REFERRAL SECTION -->
-  <div class="referral-section">
-    <h2>🎁 Know a Family Who'd Love This?</h2>
-    <p>Refer a friend and you both get rewarded when we open. The more families you bring, the bigger your perks.</p>
-    <div class="referral-steps">
-      <div class="referral-step">
-        <div class="r-icon">📋</div>
-        <h4>Pre-Register</h4>
-        <p>Sign up for any tier</p>
-      </div>
-      <div class="referral-step">
-        <div class="r-icon">📤</div>
-        <h4>Share the Link</h4>
-        <p>Send to friends with kids</p>
-      </div>
-      <div class="referral-step">
-        <div class="r-icon">🎉</div>
-        <h4>Earn Rewards</h4>
-        <p>Both families get bonus perks</p>
-      </div>
-    </div>
-    <button style="background:var(--orange);color:var(--white);border:none;padding:.8rem 2rem;border-radius:8px;font-weight:700;font-size:.95rem;cursor:pointer;position:relative;z-index:1;font-family:inherit" onclick="openModal('founders')">Pre-Register & Get Your Referral Link →</button>
-  </div>
+    <!-- Video + Credibility -->
+    <section>
+        <div class="container">
+            <div class="video-section fade-in">
+                <div class="video-container">
+                    <video controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect fill='%23000' width='16' height='9'/%3E%3Cpolygon fill='%23fff' points='6.5,2 6.5,7 11.5,4.5'/%3E%3C/svg%3E">
+                        <source src="https://static-clips.fox.com/proxy/fts_clip/digital/fts/wttg/1757120/1757120__s2i9P90BbQq6eGBWZVaiE7ktTZM_lowres.mp4" type="video/mp4">
+                    </video>
+                </div>
 
-  <!-- FOUNDERS WALL -->
-  <div class="founders-wall">
-    <h2>🏆 Founding Families Wall</h2>
-    <p class="wall-sub">First 100 pre-registered families earn a permanent spot on our Founders Wall inside the gym. Your name. On the wall. Forever.</p>
-    <div class="wall-grid" id="founders-wall-grid">
-      <!-- Populated by JS -->
-    </div>
-    <div class="wall-cta">
-      <button class="wall-cta-btn" onclick="openModal('founders')">Add Your Name to the Wall →</button>
-    </div>
-  </div>
-  <!-- TIMELINE -->
-  <div class="timeline-section">
-    <h2>🗓️ The Road to Opening</h2>
-    <div class="timeline">
-      <div class="timeline-item active">
-        <div class="timeline-date">NOW</div>
-        <div class="timeline-line"></div>
-        <div class="timeline-content">
-          <h3>Pre-Registration Open</h3>
-          <p>Lock in founding member pricing with a small refundable deposit. First 5 families get a free birthday party.</p>
+                <div class="video-text">
+                    <h3>AS FEATURED ON FOX 5 DC</h3>
+                    <p>Fox 5's Good Day DC came to see why so many families are choosing USA Ninja Challenge — watch kids light up as they conquer obstacles they never thought possible.</p>
+                    <p class="credibility">Fun fact: Obstacle course racing will be in the 2028 Olympics. Your kid can train in an Olympic sport.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">MAY '26</div>
-        <div class="timeline-line"></div>
-        <div class="timeline-content">
-          <h3>Construction Begins</h3>
-          <p>Buildout starts at 441 Defense Highway. We'll share behind-the-scenes updates with pre-registered families.</p>
+    </section>
+
+    <!-- Reviews -->
+    <section>
+        <div class="container">
+            <h2>WHAT PARENTS SAY</h2>
+            
+            <div style="text-align: center;">
+                <div class="reviews-summary">
+                    <span>4.9★ Average</span>
+                    <span style="opacity: 0.4;">·</span>
+                    <span>1,500+ Families</span>
+                    <span style="opacity: 0.4;">·</span>
+                    <span>6 Locations</span>
+                    <span style="opacity: 0.4;">·</span>
+                    <span>95% Satisfaction</span>
+                </div>
+            </div>
+
+            <div class="reviews-grid fade-in">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-quote">"This has helped build confidence and core strength — my shy son now loves going!"</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">JS</div>
+                        <div class="review-info">
+                            <div class="review-name">Joel S.</div>
+                            <div class="review-location">Fairfield, OH</div>
+                        </div>
+                        <div class="review-badge">Google</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-quote">"Love this place — CLEAN, organized, fun environment with staff who take the time to get to know each kid."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">SM</div>
+                        <div class="review-info">
+                            <div class="review-name">Sarah M.</div>
+                            <div class="review-location">Stafford, VA</div>
+                        </div>
+                        <div class="review-badge">Google</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-quote">"The coaching, level tracking, and encouraging environment is so much better than anywhere else we've tried."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">NG</div>
+                        <div class="review-info">
+                            <div class="review-name">Natalie G.</div>
+                            <div class="review-location">Murray, UT</div>
+                        </div>
+                        <div class="review-badge">Google</div>
+                    </div>
+                </div>
+            </div>
+        </div>    </section>
+
+    <!-- Programs -->
+    <section>
+        <div class="container">
+            <h2>SOMETHING FOR EVERY KID</h2>
+            <p class="section-subhead">Whether they're shy or fearless, 3 or 17 — there's a place for them here</p>
+
+            <div class="programs-grid fade-in">
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"></path>
+                            <path d="M8 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3>Obstacle Course Classes</h3>
+                    <p>Kids progress at their own pace through age-grouped classes. They build grip strength, balance, and the "I can do hard things" mindset — week after week.</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3>Summer & Holiday Camps</h3>
+                    <p>Full-day camps where kids make friends, try new challenges, and come home exhausted (in the best way). Parents get their summer break too.</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>Birthday Parties</h3>
+                    <p>The birthday party kids actually beg for. Private obstacle course, a dedicated host, and every kid goes home saying "that was the best party ever."</p>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="6" cy="6" r="1"></circle>
+                            <circle cx="18" cy="6" r="1"></circle>
+                            <circle cx="6" cy="18" r="1"></circle>
+                            <circle cx="18" cy="18" r="1"></circle>
+                            <line x1="6" y1="7" x2="6" y2="17"></line>
+                            <line x1="18" y1="7" x2="18" y2="17"></line>
+                            <line x1="7" y1="6" x2="17" y2="6"></line>
+                            <line x1="7" y1="18" x2="17" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>Open Gym Sessions</h3>
+                    <p>Drop in anytime during open gym hours. Kids practice what they've learned, hang with ninja friends, and burn off energy (you're welcome, parents).</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">AUG '26</div>
-        <div class="timeline-line"></div>
-        <div class="timeline-content">
-          <h3>VIP Sneak Peek</h3>
-          <p>Founding members get exclusive early access to the facility before we open to the public.</p>
+    </section>
+
+    <!-- Team -->
+    <section>
+        <div class="container">
+            <h2>THE TEAM BEHIND ANNAPOLIS</h2>
+            <p class="section-subhead">Parents and coaches who understand what kids need to thrive</p>
+
+            <div class="team-grid fade-in">
+                <div class="team-card">
+                    <div class="team-avatar">DU</div>
+                    <div class="team-info">
+                        <h3>Dan Umpa</h3>
+                        <div class="role">Owner & Head Coach</div>
+                        <p>Military veteran and dad who started USA Ninja so his own kids would have a place to build real confidence. Now 1,500+ families trust his gyms. Featured on Fox 5 DC.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">SS</div>
+                    <div class="team-info">
+                        <h3>Stephen Saekoo</h3>
+                        <div class="role">Co-Owner & Youth Development</div>
+                        <p>Father of three who built his career around helping kids succeed — from after-school programs in LA to running ninja gyms in Durham, NC and Fairfield, OH where 800+ kids train every week.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">SEPT '26</div>
-        <div class="timeline-line"></div>
-        <div class="timeline-content">
-          <h3>Grand Opening</h3>
-          <p>Doors open to the public. Pre-registered families start classes first with priority scheduling.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+            
+            <div class="faq-container fade-in">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is my deposit refundable?
+                        <span class="faq-toggle">+</span>                    </button>
+                    <div class="faq-answer">
+                        Yes, 100% refundable until opening day. Your deposit converts to a class credit at opening. Zero risk.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What does "20% off for life" mean?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Founders pay 20% less than standard tuition every month, forever. This discount survives all future price increases.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What age groups do you serve?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Ages 3-17, grouped by skill level: Little Ninjas (3-4), Junior (5-7), Training (8-11), Advanced (12-17).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How does the free birthday party work?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        First 5 families get one free party ($350+ value) within 12 months of opening. 90 minutes, up to 15 kids.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        When do you open?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Targeting September 2026. Pre-registered families get construction updates and first scheduling access.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Where are you located?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        441 Defense Highway (Route 450), Annapolis, MD. Easy access from Routes 2, 50, and 97.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I register multiple kids?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, the discount applies to your entire family account. One deposit for all your kids.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How is this different from a trampoline park?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        This isn't just a place to bounce around — it's a coached training facility with a real curriculum, levels your kid advances through, and competitions they can enter. Think martial arts discipline meets American Ninja Warrior excitement. And here's a cool bonus: obstacle course racing is officially in the 2028 Olympics.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        My kid isn't athletic — will they fit in?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely. Most kids who walk in have never done anything like this — and that's the point. Our coaches meet every kid where they are. The shy ones, the uncoordinated ones, the ones who've never done a pull-up. Within a few weeks, parents tell us their kid is standing taller, trying harder things, and actually excited about being active.
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- FAQ -->
-  <div class="faq-section">
-    <h2>❓ Frequently Asked Questions</h2>
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container" style="text-align: center;">
+            <h2>GIVE YOUR KID SOMETHING THEY'LL THANK YOU FOR</h2>
+            <p class="section-subhead">A small refundable deposit locks in founding member pricing forever. Zero risk — just a head start.</p>
+            
+            <button class="final-cta-button" onclick="scrollToPricing()">See Founding Member Pricing ↑</button>
+            
+            <div class="final-cta-trust">
+                100% refundable · No obligation · Deposit → class credit
+            </div>        </div>
+    </section>
 
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Do I have to pay anything to pre-register?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>Each tier has a small refundable deposit ($10–$49) that secures your spot and converts to a class credit when we open — so you're not paying extra, just committing early. The Interest List tier is completely free with no deposit. All deposits are 100% refundable if you change your mind before opening day.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">What does "20% off for life" actually mean?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>It means exactly that. Founders 50 members pay 20% less than standard tuition every single month, for as long as they remain active members. If our standard monthly rate is $150, you'd pay $120. Forever. The rate is tied to your family account — it never expires and survives any future price increases.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">What age groups do you serve?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>We offer classes for kids ages 3 through 17, grouped by age and skill level: Little Ninjas (3-4), Junior Ninjas (5-7), Ninja Training (8-11), and Advanced Ninja (12-17). Every child trains at their appropriate level with age-matched peers.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">How does the free birthday party work for the first 5 families?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>The first 5 families to pre-register get one free birthday party (valued at $350+) redeemable within 12 months of our opening. Includes 90 minutes of private obstacle course time for up to 15 kids, a dedicated party host, setup and cleanup, and a party room. You just pick the date!</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">When exactly do you open?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>We're targeting September 2026. Construction begins in spring. Pre-registered families will get progress updates and first access to class scheduling before we open to the general public.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Where exactly are you located?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>We're at 441 Defense Highway (Route 450) in Annapolis, MD. Easy access from Routes 2, 50, and 97 — convenient for families throughout Anne Arundel County, Crofton, Bowie, Severna Park, and beyond.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Can I register multiple kids?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>Absolutely. Your founding member discount applies to your entire family. Whether you have 1 kid or 4, the discount covers all of them under your family account.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">What if I change my mind?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>No problem at all. Every deposit is 100% refundable up until opening day. Just email info@ninjaannapolis.com and we'll process your refund immediately. Zero risk.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Is there a referral program?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>Yes! After you pre-register, you'll receive a unique referral link. When a friend signs up through your link, both families earn bonus rewards when we open — like free class credits and priority scheduling upgrades. The more families you refer, the bigger your perks.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">How is this different from a trampoline park?<span class="faq-toggle">+</span></div>
-      <div class="faq-a"><p>We're a coached training facility, not a drop-in play center. Kids follow a structured curriculum with real skill progression — grip strength, balance, agility, problem-solving. They earn levels, compete, and build genuine confidence through mastery. Think martial arts meets American Ninja Warrior.</p></div>
-    </div>
-  </div>
-
-  <!-- BOTTOM CTA -->
-  <div class="cta-banner" id="bottom-cta">
-    <h2>DON'T MISS YOUR <span class="accent">FOUNDING MEMBER</span> SPOT</h2>
-    <p>Reserve your spot in 10 seconds. Small refundable deposit secures your founding member discount.</p>
-    <div class="cta-form" id="quick-form">
-      <input type="email" id="quick-email" placeholder="Your email address" required>
-      <button type="button" onclick="quickSignup()">I'm In →</button>
-    </div>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <p>© 2026 USA Ninja Challenge Annapolis. All rights reserved.</p>
-  <p style="margin-top:.35rem">441 Defense Highway, Annapolis, MD · <a href="tel:+13019155979">(301) 915-5979</a> · <a href="mailto:info@ninjaannapolis.com">info@ninjaannapolis.com</a></p>
-</footer>
-
-<!-- SIGNUP MODAL -->
-<div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-
-    <!-- Form State -->
-    <div id="modal-form-state">
-      <div class="modal-tier-badge" id="modal-tier-label">FOUNDERS 50</div>
-      <h2 id="modal-title">Lock In Your Spot</h2>
-      <p class="modal-sub" id="modal-sub">Small refundable deposit → class credit at opening.</p>
-      <form class="modal-form" id="signup-form" onsubmit="submitForm(event)">
-        <input type="hidden" id="form-tier" value="founders">
-        <div class="form-row">
-          <input type="text" id="form-first" placeholder="First name" required>
-          <input type="text" id="form-last" placeholder="Last name" required>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 12px;">© 2026 USA Ninja Challenge Annapolis</p>
+            <p>
+                441 Defense Highway, Annapolis, MD · 
+                <a href="tel:(301)915-5979">(301) 915-5979</a> · 
+                <a href="mailto:info@ninjaannapolis.com">info@ninjaannapolis.com</a>
+            </p>
         </div>
-        <input type="email" id="form-email" placeholder="Email address" required>
-        <input type="tel" id="form-phone" placeholder="Phone number" required>
-        <div class="form-row">
-          <select id="form-kids">
-            <option value="">How many kids?</option>
-            <option value="1">1 child</option>
-            <option value="2">2 children</option>
-            <option value="3">3 children</option>
-            <option value="4+">4+ children</option>
-          </select>
-          <select id="form-ages">
-            <option value="">Kids' age range</option>
-            <option value="3-5">3-5 years</option>
-            <option value="5-8">5-8 years</option>
-            <option value="8-12">8-12 years</option>
-            <option value="12-17">12-17 years</option>
-            <option value="mixed">Mixed ages</option>
-          </select>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta" id="mobileStickyCtA">
+        <div class="mobile-sticky-text">Founding spots filling up</div>
+        <button class="mobile-sticky-button" onclick="scrollToPricing()">Pre-Register →</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            
+            <div id="modalContent">
+                <h3 id="modalTitle"></h3>
+                <div class="modal-deposit" id="modalDeposit"></div>
+
+                <form id="registrationForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numKids">How many kids?</label>
+                        <select id="numKids" name="numKids" required>
+                            <option value="">Select number of kids</option>
+                            <option value="1">1 kid</option>
+                            <option value="2">2 kids</option>
+                            <option value="3">3 kids</option>
+                            <option value="4">4+ kids</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ageRange">Kids age range</label>
+                        <select id="ageRange" name="ageRange" required>
+                            <option value="">Select age range</option>
+                            <option value="3-4">Little Ninjas (3-4)</option>
+                            <option value="5-7">Junior (5-7)</option>
+                            <option value="8-11">Training (8-11)</option>
+                            <option value="12-17">Advanced (12-17)</option>
+                            <option value="mixed">Mixed ages</option>
+                        </select>
+                    </div>
+
+                    <input type="hidden" id="tierValue" name="tier" value="">
+                    <input type="text" class="honeypot" name="website" tabindex="-1" autocomplete="off">
+
+                    <button type="submit" class="modal-submit">Pre-Register My Family</button>
+                </form>
+
+                <p class="modal-fine-print">100% refundable deposit. Converts to class credit at opening.</p>
+            </div>
+
+            <div id="modalSuccess" style="display: none;">
+                <div class="modal-success">
+                    <div class="modal-success-icon">✓</div>
+                    <h3>You're In!</h3>
+                    <p id="successMessage"></p>
+                </div>
+            </div>
         </div>
-        <div class="ohnohoney"><label for="website">Website</label><input type="text" id="form-website" name="website" tabindex="-1" autocomplete="off"></div>
-        <button type="submit" class="modal-submit" id="submit-btn">Pre-Register My Family</button>
-        <p class="modal-fine">100% refundable deposit. Converts to class credit at opening.</p>
-      </form>
     </div>
 
-    <!-- Success State -->
-    <div class="modal-success" id="modal-success">
-      <div class="check">✓</div>
-      <h2>You're In!</h2>
-      <p id="success-msg">Welcome to the founding family. We'll keep you posted on construction progress, and you'll be the first to schedule classes when we open.</p>
-    </div>
-  </div>
-</div>
-<script>
-// ===== COUNTDOWN =====
-function updateCountdown(){
-  const open=new Date('2026-09-01T09:00:00');
-  const now=new Date();
-  const diff=open-now;
-  if(diff<=0)return;
-  const d=Math.floor(diff/864e5);
-  const h=Math.floor((diff%864e5)/36e5);
-  const m=Math.floor((diff%36e5)/6e4);
-  const s=Math.floor((diff%6e4)/1e3);
-  document.getElementById('cd-days').textContent=d;
-  document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
-}
-updateCountdown();
-setInterval(updateCountdown,1000);
+    <script>
+        // Password Gate
+        function checkPassword() {
+            const input = document.getElementById('passwordInput').value;
+            if (input === 'ninja2026') {
+                sessionStorage.setItem('passwordAuth', 'true');
+                document.getElementById('passwordGate').classList.add('hidden');                loadStats();
+            } else {
+                alert('Incorrect password');
+            }
+        }
 
-// ===== WAITLIST COUNT =====
-let currentCount=0;
-function fetchCount(){
-  fetch('https://api.secondsummit.ninja/annapolis/stats')
-    .then(r=>r.json())
-    .then(d=>{
-      currentCount=d.count||0;
-      updateProgress(currentCount);
-    })
-    .catch(()=>updateProgress(0));
-}
-function updateProgress(n){
-  const goal=150;
-  const pct=Math.min(Math.max((n/goal)*100,2),100);
-  document.getElementById('progress-count').innerHTML=n+' <span>families</span>';
-  document.getElementById('nav-count').textContent=n;
-  const bar=document.getElementById('progress-bar');if(bar)bar.style.width=pct+'%';
-  // Update tier slots (rough estimate)
-  const vipLeft=Math.max(5-Math.min(n,5),0);
-  const foundersLeft=Math.max(50-Math.min(n,50),0);
-  const earlybirdLeft=Math.max(100-Math.max(n-50,0),0);
-  document.getElementById('vip-slots').textContent=vipLeft+' of 5 remaining';
-  document.getElementById('founders-slots').textContent=foundersLeft+' of 50 remaining';
-  document.getElementById('earlybird-slots').textContent=Math.max(earlybirdLeft,0)+' of 100 remaining';
-  if(vipLeft===0){
-    document.getElementById('tier-vip').classList.add('sold-out');
-    document.getElementById('vip-slots').classList.add('urgent');
-  }else{
-    document.getElementById('vip-slots').classList.add('urgent');
-  }
-}
-fetchCount();
+        function initPasswordGate() {
+            if (sessionStorage.getItem('passwordAuth') === 'true') {
+                document.getElementById('passwordGate').classList.add('hidden');
+                loadStats();
+            }
+        }
 
-// ===== MODAL =====
-const tierConfig={
-  vip:{label:'FIRST 5 FAMILIES',title:'Claim Your Free Birthday Party',sub:'$49 refundable deposit → converts to class credit at opening.'},
-  founders:{label:'FOUNDERS 50',title:'Lock In 20% Off For Life',sub:'$25 refundable deposit → converts to class credit at opening.'},
-  earlybird:{label:'EARLY BIRD 100',title:'Get 15% Off Before We Open',sub:'$10 refundable deposit → converts to class credit at opening.'},
-  general:{label:'INTEREST LIST',title:'Join the Waitlist',sub:'No deposit. Free registration included when we open.'}
-};
-function openModal(tier){
-  const c=tierConfig[tier]||tierConfig.general;
-  document.getElementById('modal-tier-label').textContent=c.label;
-  document.getElementById('modal-title').textContent=c.title;
-  document.getElementById('modal-sub').textContent=c.sub;
-  document.getElementById('form-tier').value=tier;
-  document.getElementById('modal-form-state').style.display='block';
-  document.getElementById('modal-success').classList.remove('active');
-  document.getElementById('modal-overlay').classList.add('active');
-  document.body.style.overflow='hidden';
-  setTimeout(()=>document.getElementById('form-first').focus(),100);
-}
-function closeModal(){
-  document.getElementById('modal-overlay').classList.remove('active');
-  document.body.style.overflow='';
-}
+        // Enter key on password input
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') checkPassword();
+            });
+            initPasswordGate();
+        });
 
-// ===== FORM SUBMIT =====
-async function submitForm(e){
-  e.preventDefault();
-  // Honeypot anti-bot check
-  const honeypot=document.getElementById('form-website');
-  if(honeypot&&honeypot.value){return;}
-  const btn=document.getElementById('submit-btn');
-  btn.disabled=true;
-  btn.textContent='Submitting...';
-  const tier=document.getElementById('form-tier').value;
-  const tierNames={vip:'First 5 - VIP',founders:'Founders 50',earlybird:'Early Bird 100',general:'Interest List'};
-  const payload={
-    firstName:document.getElementById('form-first').value.trim(),
-    lastName:document.getElementById('form-last').value.trim(),
-    email:document.getElementById('form-email').value.trim(),
-    phone:document.getElementById('form-phone').value.trim(),
-    numKids:document.getElementById('form-kids').value,
-    ageRange:document.getElementById('form-ages').value,
-    tier:tierNames[tier]||'Interest List'
-  };
-  try{
-    const resp=await fetch('https://api.secondsummit.ninja/annapolis/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    const data=await resp.json();
-    if(data.success){
-      document.getElementById('modal-form-state').style.display='none';
-      const msgs={
-        vip:'You claimed the free birthday party perk! Plus 20% off tuition for life. We\'ll email you deposit payment details shortly.',
-        founders:'Welcome to the Founders 50! You\'ve locked in 20% off tuition for life. We\'ll be in touch with construction updates.',
-        earlybird:'You\'re on the Early Bird list! 15% off tuition for life is locked in. We\'ll email you before we open.',
-        general:'You\'re on the list! We\'ll notify you first when registration opens. Free registration is already yours.'
-      };
-      document.getElementById('success-msg').textContent=msgs[tier]||msgs.general;
-      document.getElementById('modal-success').classList.add('active');
-      currentCount++;
-      updateProgress(currentCount);
-    }
-  }catch(err){
-    document.getElementById('modal-form-state').style.display='none';
-    document.getElementById('success-msg').textContent='You\'re on the list! We\'ll be in touch soon.';
-    document.getElementById('modal-success').classList.add('active');
-    currentCount++;
-    updateProgress(currentCount);
-  }
-  btn.disabled=false;
-  btn.textContent='Pre-Register My Family';
-}
+        // Countdown
+        function updateCountdown() {
+            const openDate = new Date('2026-09-01').getTime();
+            const now = new Date().getTime();
+            const days = Math.ceil((openDate - now) / (1000 * 60 * 60 * 24));
+            
+            if (days > 0) {
+                document.getElementById('countdown').textContent = `Opens in ${days} days`;
+            } else {
+                document.getElementById('countdown').textContent = 'Opening soon!';
+            }
+        }
 
-// ===== QUICK SIGNUP (bottom CTA) =====
-function quickSignup(){
-  const email=document.getElementById('quick-email').value.trim();
-  if(!email||!email.includes('@'))return;
-  openModal('general');
-  setTimeout(()=>{document.getElementById('form-email').value=email;document.getElementById('form-first').focus()},150);
-}
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
 
-// ===== FAQ TOGGLE =====
-function toggleFaq(el){
-  const item=el.parentElement;
-  item.classList.toggle('open');
-}
+        // Load Stats from API
+        function loadStats() {
+            fetch('https://api.secondsummit.ninja/annapolis/stats')
+                .then(res => res.json())
+                .then(data => {
+                    updateStats(data);
+                })
+                .catch(err => {
+                    console.log('Stats API unavailable, using defaults');
+                    updateStats({
+                        tier1: 2,
+                        tier2: 35,
+                        tier3: 70,
+                        total: 107
+                    });
+                });
+        }
 
-// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
+        function updateStats(data) {
+            const tier1Remaining = 5 - (data.tier1 || 2);
+            const tier2Remaining = 50 - (data.tier2 || 35);
+            const tier3Remaining = 100 - (data.tier3 || 70);
+            const total = data.total || 107;
 
-// ===== FOUNDERS WALL =====
-// Seed names for social proof (replace with real names from API as they come in)
-const seedNames=[
-  {name:'Dan U.',tier:'vip'},{name:'Lisa U.',tier:'vip'},
-];
-function renderFoundersWall(registeredNames){
-  const grid=document.getElementById('founders-wall-grid');
-  if(!grid)return;
-  grid.innerHTML='';
-  const allNames=[...registeredNames];
-  // Fill remaining slots with placeholders up to 100
-  const filled=allNames.length;
-  allNames.forEach(n=>{
-    const div=document.createElement('div');
-    div.className='wall-name '+(n.tier||'');
-    const tierLabels={vip:'VIP',founders:'F50',earlybird:'EB'};
-    div.innerHTML=n.name+(n.tier&&tierLabels[n.tier]?' <span class="badge">'+tierLabels[n.tier]+'</span>':'');
-    grid.appendChild(div);
-  });
-  // Show some empty placeholder slots to create urgency
-  const showPlaceholders=Math.min(100-filled,8);
-  for(let i=0;i<showPlaceholders;i++){
-    const div=document.createElement('div');
-    div.className='wall-placeholder';
-    div.textContent='Your name here?';
-    div.onclick=()=>openModal('founders');
-    div.style.cursor='pointer';
-    grid.appendChild(div);
-  }
-  if(filled<100){
-    const remaining=document.createElement('div');
-    remaining.style.cssText='grid-column:1/-1;text-align:center;padding:.75rem;font-size:.8rem;color:var(--gray-400);font-weight:600';
-    remaining.textContent='+ '+(100-filled-showPlaceholders)+' more spots available';
-    grid.appendChild(remaining);
-  }
-}
-renderFoundersWall(seedNames);
+            // Update top bar
+            document.getElementById('topBarStats').textContent = `${total} families pre-registered`;
 
-// ===== REAL SOCIAL PROOF: LIVE FAMILY COUNTER =====
-// Counter already handled by updateProgress above — no fake elements needed
-</script>
+            // Update pricing cards
+            document.getElementById('tier1-scarcity').textContent = `${tier1Remaining} of 5 remaining`;
+            document.getElementById('tier1-progress').style.width = ((5 - tier1Remaining) / 5 * 100) + '%';
 
-<!-- MOBILE STICKY CTA -->
-<div class="mobile-sticky-cta">
-  <div class="sticky-text">Founding spots filling up — <span>reserve yours</span></div>
-  <button onclick="openModal('founders')">Pre-Register →</button>
-</div>
+            document.getElementById('tier2-scarcity').textContent = `${tier2Remaining} of 50 remaining`;
+            document.getElementById('tier2-progress').style.width = ((50 - tier2Remaining) / 50 * 100) + '%';
 
-<!-- Meta Pixel (uncomment when ready)
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1230516214335467');
-fbq('track','PageView');
-</script>
--->
+            document.getElementById('tier3-scarcity').textContent = `${tier3Remaining} of 100 remaining`;
+            document.getElementById('tier3-progress').style.width = ((100 - tier3Remaining) / 100 * 100) + '%';
+        }
+
+        // Modal
+        function openModal(tier, deposit, title) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDeposit').textContent = 'Deposit: ' + deposit;
+            document.getElementById('tierValue').value = tier;
+            document.getElementById('registrationForm').style.display = 'block';
+            document.getElementById('modalSuccess').style.display = 'none';
+            document.getElementById('modalOverlay').classList.add('open');
+            
+            // Reset form
+            document.getElementById('registrationForm').reset();
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== document.getElementById('modalOverlay')) return;
+            document.getElementById('modalOverlay').classList.remove('open');
+        }
+
+        // Form Submission
+        function submitForm(event) {
+            event.preventDefault();
+
+            // Honeypot check
+            if (document.querySelector('.honeypot').value) {
+                console.log('Honeypot triggered');
+                return;
+            }
+
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                numKids: document.getElementById('numKids').value,
+                ageRange: document.getElementById('ageRange').value,
+                tier: document.getElementById('tierValue').value
+            };
+
+            // Submit to API
+            fetch('https://api.secondsummit.ninja/annapolis/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                // Show success state
+                document.getElementById('registrationForm').style.display = 'none';
+                document.getElementById('modalSuccess').style.display = 'block';
+                document.getElementById('successMessage').textContent = 
+                    `Thanks ${formData.firstName}! Check your email for next steps. Expect opening details, priority scheduling, and exclusive founding member perks.`;
+                
+                // Close after 5 seconds
+                setTimeout(() => closeModal(), 5000);
+                
+                // Refresh stats
+                loadStats();
+            })
+            .catch(err => {
+                alert('Error submitting form. Please try again.');
+                console.error(err);
+            });
+        }
+
+        // Scroll Functions
+        function scrollToPricing() {
+            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // FAQ Accordion
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const toggle = button.querySelector('.faq-toggle');
+            
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+                toggle.textContent = '+';
+            } else {
+                answer.classList.add('open');
+                toggle.textContent = '−';
+            }
+        }
+
+        // Mobile Sticky CTA
+        function updateMobileStickyCtA() {
+            const sticky = document.getElementById('mobileStickyCtA');
+            const pricing = document.getElementById('pricing');
+            const scrollPos = window.scrollY;
+            const pricingPos = pricing.offsetTop;
+
+            if (scrollPos > pricingPos) {
+                sticky.classList.add('hidden');
+            } else {
+                sticky.classList.remove('hidden');
+            }
+        }
+
+        window.addEventListener('scroll', updateMobileStickyCtA);
+
+        // Scroll Animations
+        function observeElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        observeElements();
+    </script>
 </body>
 </html>
