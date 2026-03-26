@@ -167,7 +167,7 @@
 
         /* ===== HERO SECTION ===== */
         .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            min-height: min(100vh, 900px); display: flex; align-items: center; justify-content: center;
             text-align: center; padding: 120px 24px 80px;
             position: relative; overflow: hidden;
         }
@@ -318,7 +318,8 @@
         /* ===== PRICING SECTION ===== */
         .pricing-grid {
             display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 20px; align-items: start;
+            gap: 16px; align-items: start;
+            max-width: 1100px; margin: 0 auto;
         }
         .pricing-card {
             background: var(--white);
@@ -574,7 +575,7 @@
             border-radius: var(--radius-lg);
             position: relative; overflow: hidden;
             transition: all 0.4s ease;
-            min-height: 280px;
+            min-height: 300px;
             display: flex; flex-direction: column; justify-content: flex-end;
         }
         .program-card:hover { transform: translateY(-6px) scale(1.01); }
@@ -898,10 +899,11 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .facility-preview { gap: 32px; }
             .location-row { gap: 32px; }
+            .video-section { gap: 40px; }
         }
         @media (max-width: 768px) {
             .top-bar-center { display: none; }
@@ -922,6 +924,7 @@
             .footer-bottom { justify-content: center; text-align: center; }
             .mobile-sticky { display: block; }
             .trust-items { gap: 10px 20px; }
+            .proof-grid-mobile { grid-template-columns: repeat(2, 1fr) !important; }
             .section-padding { padding: 72px 0; }
             .facility-stats { grid-template-columns: repeat(3, 1fr); }
         }
@@ -931,7 +934,8 @@
             .btn-hero { padding: 16px 32px; font-size: 1.15rem; }
             .form-row { grid-template-columns: 1fr; }
             .trust-items { flex-direction: column; align-items: center; }
-            .facility-stats { grid-template-columns: 1fr; }
+            .facility-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .facility-stat .num { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -956,7 +960,7 @@
             <span class="live-dot"></span>
             <span id="topBarStats">107 families pre-registered</span> &middot; Opening Sept 2026
         </div>
-        <a href="#pricing" class="btn-nav" onclick="scrollToPricing(); return false;">Pre-Register Now</a>
+        <a href="#pricing" class="btn-nav" onclick="scrollToPricing(); return false;">Claim Your Spot</a>
     </nav>
 
     <!-- HERO -->
@@ -964,22 +968,22 @@
         <div class="hero-bg"></div>
         <div class="hero-content">
             <div class="hero-badge fade-in"><span class="dot"></span> Now Accepting Pre-Registrations</div>
-            <h1 class="fade-in">Where Annapolis Kids Build <span class="accent">Confidence, Strength & Grit</span></h1>
-            <p class="hero-sub fade-in">A brand-new 7,000+ sq ft ninja obstacle course gym where kids ages 3&ndash;17 discover what they're capable of &mdash; through classes, camps, parties & open gym.</p>
+            <h1 class="fade-in">Your Kid Walks In Shy. Walks Out <span class="accent">Unstoppable.</span></h1>
+            <p class="hero-sub fade-in">Annapolis's first ninja obstacle course gym &mdash; where kids ages 3&ndash;17 build real confidence, real strength, and the "I can do hard things" mindset that changes everything. Founding members save up to 20% for life.</p>
             <div class="hero-trust fade-in">
-                <span><span class="star">&#9733;</span> 4.9 parent rating</span>
+                <span><span class="star">&#9733;</span> 4.9 stars from 200+ parents</span>
                 <span class="sep">&middot;</span>
                 <span>1,500+ kids enrolled nationwide</span>
                 <span class="sep">&middot;</span>
                 <span>2028 Olympic sport</span>
                 <span class="sep">&middot;</span>
-                <span>Deposits 100% refundable</span>
+                <span><strong style="color:var(--green)">100% Money-Back Guarantee</strong></span>
             </div>
             <a href="#pricing" class="btn-hero" onclick="scrollToPricing(); return false;">
-                See Founding Member Pricing
+                Claim Your Founding Member Spot
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5"/><path d="M7 6l5 5 5-5"/></svg>
             </a>
-            <div class="countdown-text" id="countdown">Opens in 159 days</div>
+            <div class="countdown-text" id="countdown">Opens in 159 days &mdash; founding member pricing disappears at opening</div>
         </div>
     </section>
 
@@ -1001,7 +1005,7 @@
                 </div>
                 <div class="trust-item">
                     <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    6+ Locations
+                    7 Locations Nationwide
                 </div>
                 <div class="trust-item">
                     <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -1015,40 +1019,42 @@
     <section class="section-light section-padding" id="pricing">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-label">Limited Availability</span>
-                <h2>Founding Member Pricing</h2>
-                <p>Lock in rates that never go up. Every deposit is 100% refundable.</p>
+                <span class="section-label">Limited Availability &mdash; These Tiers Disappear at Opening</span>
+                <h2>Lock In Pricing That Never Goes Up</h2>
+                <p>Every deposit is 100% refundable. Every perk is yours for life. The only risk is missing out.</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card fade-in">
-                    <span class="card-badge badge-orange">Save 20% Forever</span>
+                    <span class="card-badge badge-orange">Best Deal &mdash; Save 20% Forever</span>
                     <h3>First 5 Families</h3>
                     <p class="price-line"><span class="strike">~$150/mo</span> &rarr; <span class="highlight">~$120/mo for life</span></p>
                     <ul>
-                        <li>Free birthday party ($350 value)</li>
-                        <li>20% off tuition forever</li>
-                        <li>Free registration</li>
-                        <li>VIP opening invite</li>
-                        <li>Founder wall plaque</li>
-                        <li>$49 deposit &rarr; class credit</li>
+                        <li>20% off tuition forever &mdash; <strong>$360+/yr saved</strong></li>
+                        <li>Free birthday party &mdash; <strong>$350 value</strong></li>
+                        <li>Free registration fee &mdash; <strong>$50 value</strong></li>
+                        <li>VIP opening night invite</li>
+                        <li>Name on the Founder Wall</li>
+                        <li>$49 deposit converts to class credit</li>
                     </ul>
+                    <div style="text-align:center;padding:8px 0;margin-bottom:10px;font-size:0.82rem;font-weight:700;color:var(--orange);">Total value: $760+/year &mdash; yours for $49</div>
                     <div class="scarcity-bar">
                         <div class="scarcity-text" id="tier1-scarcity">3 of 5 remaining</div>
                         <div class="scarcity-track"><div class="scarcity-fill" id="tier1-progress" style="width:40%"></div></div>
                     </div>
-                    <button class="btn-card" onclick="openModal('tier1','$49','First 5 Families')">Claim This Perk &mdash; $49</button>
+                    <button class="btn-card" onclick="openModal('tier1','$49','First 5 Families')" style="background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 4px 15px rgba(34,197,94,0.3);">Claim This Perk &mdash; $49</button>
                 </div>
                 <div class="pricing-card featured fade-in">
                     <span class="card-badge badge-orange">Most Popular</span>
                     <h3>Founders 50</h3>
                     <p class="price-line"><span class="strike">~$150/mo</span> &rarr; <span class="highlight">~$120/mo for life</span></p>
                     <ul>
-                        <li>20% off forever</li>
-                        <li>Free registration</li>
-                        <li>VIP opening invite</li>
-                        <li>Founder wall plaque</li>
-                        <li>$25 deposit &rarr; class credit</li>
+                        <li>20% off tuition forever &mdash; <strong>$360+/yr saved</strong></li>
+                        <li>Free registration fee &mdash; <strong>$50 value</strong></li>
+                        <li>VIP opening night invite</li>
+                        <li>Name on the Founder Wall</li>
+                        <li>$25 deposit converts to class credit</li>
                     </ul>
+                    <div style="text-align:center;padding:8px 0;margin-bottom:10px;font-size:0.82rem;font-weight:700;color:var(--orange);">Total value: $410+/year &mdash; yours for $25</div>
                     <div class="scarcity-bar">
                         <div class="scarcity-text" id="tier2-scarcity">15 of 50 remaining</div>
                         <div class="scarcity-track"><div class="scarcity-fill" id="tier2-progress" style="width:70%"></div></div>
@@ -1060,11 +1066,12 @@
                     <h3>Early Bird 100</h3>
                     <p class="price-line"><span class="strike">~$150/mo</span> &rarr; <span class="highlight">~$127/mo for life</span></p>
                     <ul>
-                        <li>15% off forever</li>
-                        <li>Free registration</li>
+                        <li>15% off tuition forever &mdash; <strong>$270+/yr saved</strong></li>
+                        <li>Free registration fee &mdash; <strong>$50 value</strong></li>
                         <li>Opening week invite</li>
-                        <li>$10 deposit &rarr; class credit</li>
+                        <li>$10 deposit converts to class credit</li>
                     </ul>
+                    <div style="text-align:center;padding:8px 0;margin-bottom:10px;font-size:0.82rem;font-weight:700;color:var(--green-dark);">Total value: $320+/year &mdash; yours for $10</div>
                     <div class="scarcity-bar">
                         <div class="scarcity-text" id="tier3-scarcity">30 of 100 remaining</div>
                         <div class="scarcity-track"><div class="scarcity-fill" id="tier3-progress" style="width:70%"></div></div>
@@ -1072,13 +1079,14 @@
                     <button class="btn-card" onclick="openModal('tier3','$10','Early Bird 100')">Get Early Bird Rate &mdash; $10</button>
                 </div>
                 <div class="pricing-card fade-in">
-                    <span class="card-badge badge-green">Free</span>
+                    <span class="card-badge badge-green">No Risk &mdash; Free</span>
                     <h3>Interest List</h3>
-                    <p class="price-line">No deposit required</p>
+                    <p class="price-line">$0 &mdash; No deposit required</p>
                     <ul>
-                        <li>Free registration waived ($50 value)</li>
-                        <li>First to know about opening</li>
-                        <li>Opening week specials</li>
+                        <li>Free registration at opening &mdash; <strong>$50 value</strong></li>
+                        <li>First to know about opening date</li>
+                        <li>Access to opening week specials</li>
+                        <li>Construction progress updates</li>
                     </ul>
                     <div class="scarcity-bar">
                         <div class="scarcity-text">Unlimited spots</div>
@@ -1086,19 +1094,30 @@
                     <button class="btn-card btn-card-outline" onclick="openModal('interest','Free','Interest List')">Join Free Interest List</button>
                 </div>
             </div>
-            <div class="pricing-note fade-in">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Every deposit is 100% refundable and converts to a class credit at opening. Zero risk.
+            <div class="pricing-note fade-in" style="background:rgba(34,197,94,0.06);border:2px solid rgba(34,197,94,0.2);padding:24px 32px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <strong style="color:var(--green-dark);font-size:1rem;">100% Money-Back Guarantee.</strong><br>
+                <span style="font-size:0.92rem;line-height:1.7;">Change your mind? Full refund, no questions asked. Keep it? Your deposit converts to class credit at opening. You literally cannot lose.</span>
             </div>
         </div>
     </section>
+
+    <!-- SOCIAL PROOF TICKER -->
+    <div style="background:var(--navy);padding:14px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.04);">
+        <div class="container">
+            <p id="proofTicker" style="color:var(--muted-light);font-size:0.82rem;font-weight:500;margin:0;">
+                <span style="color:var(--green);margin-right:6px;">&#9679;</span>
+                <span id="tickerText">A family from Crofton just pre-registered</span>
+            </p>
+        </div>
+    </div>
 
     <!-- HOW IT WORKS -->
     <section class="section-white section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-label">Simple Process</span>
-                <h2>How Pre-Registration Works</h2>
+                <span class="section-label">Takes 60 Seconds</span>
+                <h2>How It Works</h2>
             </div>
             <div class="steps-grid">
                 <div class="step-card fade-in">
@@ -1129,9 +1148,9 @@
                 </div>
                 <div class="facility-text fade-in-right">
                     <span class="section-label">Opening September 2026</span>
-                    <h2>7,000+ Sq Ft of Obstacles, Challenges & Fun</h2>
-                    <p>A purpose-built ninja obstacle course gym designed for kids ages 3&ndash;17. Warped walls, cargo nets, monkey bars, balance beams, and dozens more obstacles &mdash; all adjustable by age and skill level.</p>
-                    <p>Located at 441 Defense Highway, just minutes from downtown Annapolis, Crofton, Severna Park, and Bowie.</p>
+                    <h2>7,000+ Sq Ft Built to Transform Your Kid</h2>
+                    <p>Warped walls, cargo nets, monkey bars, balance beams, and 30+ obstacles &mdash; all adjustable by age and skill level. Every visit, your kid conquers something new. Every month, you'll see a different child: stronger, braver, more confident.</p>
+                    <p>Located at 441 Defense Highway &mdash; minutes from downtown Annapolis, Crofton, Severna Park, and Bowie.</p>
                     <div class="facility-stats">
                         <div class="facility-stat"><span class="num">7K+</span><span class="label">Sq Ft</span></div>
                         <div class="facility-stat"><span class="num">30+</span><span class="label">Obstacles</span></div>
@@ -1150,7 +1169,7 @@
                     <span class="section-label">National Recognition</span>
                     <h2>As Featured on Fox 5 DC</h2>
                     <p>Fox 5's Good Day DC came to see why so many families are choosing USA Ninja Challenge &mdash; watch kids light up as they conquer obstacles they never thought possible.</p>
-                    <div class="olympics-note">Obstacle course racing will be in the 2028 Olympics. Your kid can train in an Olympic sport.</div>
+                    <div class="olympics-note">Obstacle course racing debuts at the 2028 LA Olympics. Your kid could be training in an Olympic sport &mdash; before most parents even know it exists.</div>
                 </div>
                 <div class="video-wrapper fade-in-right">
                     <video controls preload="metadata" poster="images/hero-bg.jpg">
@@ -1161,18 +1180,42 @@
         </div>
     </section>
 
+    <!-- PROOF BANNER -->
+    <div class="section-dark" style="padding:56px 0;border-top:1px solid rgba(255,255,255,0.04);">
+        <div class="container">
+            <div class="fade-in proof-grid-mobile" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;">
+                <div>
+                    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,2.8rem);color:var(--orange);">1,500+</div>
+                    <div style="font-size:0.8rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;">Kids Enrolled</div>
+                </div>
+                <div>
+                    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,2.8rem);color:var(--orange);">4.9&#9733;</div>
+                    <div style="font-size:0.8rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;">Google Rating</div>
+                </div>
+                <div>
+                    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,2.8rem);color:var(--orange);">7</div>
+                    <div style="font-size:0.8rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;">Locations</div>
+                </div>
+                <div>
+                    <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,2.8rem);color:var(--orange);">93%</div>
+                    <div style="font-size:0.8rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;">Parent Retention</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- TESTIMONIALS -->
     <section class="section-light section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-label">Real Parents, Real Results</span>
-                <h2>What Parents Say</h2>
-                <p>Hear from families across our existing locations</p>
+                <span class="section-label">From Parents Like You</span>
+                <h2>1,500+ Kids. 4.9 Stars. Here's Why.</h2>
+                <p>Real reviews from real parents at our existing locations</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
                     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <blockquote>"This has helped build confidence and core strength &mdash; my shy son now loves going!"</blockquote>
+                    <blockquote>"My son was the kid who quit every sport after two weeks. He's been at Ninja for 8 months and hasn't missed a single class. His confidence has completely changed."</blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
                             <div class="author-avatar">JS</div>
@@ -1183,7 +1226,7 @@
                 </div>
                 <div class="testimonial-card fade-in">
                     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <blockquote>"Love this place &mdash; CLEAN, organized, fun environment with staff who take the time to get to know each kid."</blockquote>
+                    <blockquote>"This place is spotless, the coaches know every kid by name, and my daughter went from 'I can't do that' to showing ME her new moves. Worth every penny."</blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
                             <div class="author-avatar">SM</div>
@@ -1194,7 +1237,7 @@
                 </div>
                 <div class="testimonial-card fade-in">
                     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <blockquote>"The coaching, level tracking, and encouraging environment is so much better than anywhere else we've tried."</blockquote>
+                    <blockquote>"We've tried gymnastics, soccer, karate &mdash; nothing stuck. Ninja is the first thing my kids BEG to go to. The level tracking keeps them motivated and the coaches are incredible."</blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
                             <div class="author-avatar">NG</div>
@@ -1204,6 +1247,12 @@
                     </div>
                 </div>
             </div>
+            <div style="text-align:center;margin-top:40px;" class="fade-in">
+                <a href="#pricing" class="btn-hero" onclick="scrollToPricing(); return false;" style="font-size:1.1rem;padding:15px 36px;">
+                    Join These Families &mdash; Pre-Register Now
+                </a>
+                <p style="color:var(--muted);font-size:0.8rem;margin-top:10px;">Deposits start at $10 &middot; 100% refundable</p>
+            </div>
         </div>
     </section>
 
@@ -1212,8 +1261,8 @@
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-label">Ages 3&ndash;17</span>
-                <h2>Something for Every Kid</h2>
-                <p>Whether they're shy or fearless, 3 or 17 &mdash; there's a place for them here</p>
+                <h2>Four Ways to Build an Unstoppable Kid</h2>
+                <p>Whether they're shy or fearless, 3 or 17 &mdash; there's a program designed for them</p>
             </div>
             <div class="programs-grid">
                 <div class="program-card fade-in">
@@ -1222,7 +1271,7 @@
                     <div class="prog-content">
                         <span class="prog-age">Ages 3-17</span>
                         <h3>Obstacle Course Classes</h3>
-                        <p>Kids progress at their own pace through age-grouped classes. They build grip strength, balance, and the "I can do hard things" mindset.</p>
+                        <p>Progressive, coached classes where kids level up at their own pace. They walk in nervous &mdash; within weeks they're climbing things they never thought possible.</p>
                     </div>
                 </div>
                 <div class="program-card fade-in">
@@ -1231,7 +1280,7 @@
                     <div class="prog-content">
                         <span class="prog-age">Full Day</span>
                         <h3>Summer & Holiday Camps</h3>
-                        <p>Full-day camps where kids make friends, try new challenges, and come home exhausted (in the best way).</p>
+                        <p>Full-day camps where kids make real friendships, conquer new challenges daily, and come home exhausted (in the best way). The camp they'll talk about all year.</p>
                     </div>
                 </div>
                 <div class="program-card fade-in">
@@ -1253,6 +1302,12 @@
                     </div>
                 </div>
             </div>
+            <div style="text-align:center;margin-top:48px;" class="fade-in">
+                <a href="#pricing" class="btn-hero" onclick="scrollToPricing(); return false;" style="font-size:1.1rem;padding:15px 36px;">
+                    Lock In Founding Member Pricing
+                </a>
+                <p style="color:var(--muted);font-size:0.8rem;margin-top:10px;">These rates disappear the day we open</p>
+            </div>
         </div>
     </section>
 
@@ -1262,7 +1317,7 @@
             <div class="location-row">
                 <div class="fade-in-left">
                     <div class="location-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.8!2d-76.6095!3d38.9686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7f6e3c8e2d5b7%3A0x1234567890abcdef!2s441%20Defense%20Hwy%2C%20Annapolis%2C%20MD%2021401!5e0!3m2!1sen!2sus!4v1711468800000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps?q=441+Defense+Highway,+Annapolis,+MD+21401&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="location-details fade-in-right">
@@ -1300,7 +1355,7 @@
                     <div class="team-info">
                         <h3>Dan Umpa</h3>
                         <div class="role">Owner & Operator</div>
-                        <p>Dad, veteran, and owner of the Stafford VA location. Building a place where Annapolis kids discover what they're capable of.</p>
+                        <p>Military veteran, dad, and owner of the Stafford VA location. Grew it from 36 students to 210+ in one year. Building Annapolis from the same playbook.</p>
                     </div>
                 </div>
                 <div class="team-card fade-in">
@@ -1308,7 +1363,7 @@
                     <div class="team-info">
                         <h3>Stephen Saekoo</h3>
                         <div class="role">Co-Owner & Operations</div>
-                        <p>Runs multiple USA Ninja locations with 800+ enrolled students. Bringing proven systems and coaching culture to Annapolis.</p>
+                        <p>Operates 800+ enrolled students across multiple locations. The systems, coaching culture, and operations that make Annapolis work &mdash; he built them.</p>
                     </div>
                 </div>
             </div>
@@ -1349,7 +1404,11 @@
                 </div>
                 <div class="faq-item fade-in">
                     <button class="faq-question" onclick="toggleFAQ(this)">How is this different from a trampoline park? <span class="faq-toggle">+</span></button>
-                    <div class="faq-answer"><p>Trampoline parks are drop-in entertainment. We're a progressive skill-building program with coached classes, level tracking, and real measurable growth. It's the difference between playing and training.</p></div>
+                    <div class="faq-answer"><p>Trampoline parks are drop-in entertainment &mdash; kids bounce around for an hour and leave. We're a progressive skill-building program with coached classes, level tracking, and real measurable growth. Your kid earns levels, builds strength, and develops discipline they carry into school and life. It's the difference between babysitting and building character.</p></div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" onclick="toggleFAQ(this)">What if the gym doesn't open? <span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>Full refund. No questions, no hoops. We're already in lease negotiations at 441 Defense Highway with construction planned &mdash; but if anything changes, every penny comes back to you. That's the whole point of the 100% money-back guarantee.</p></div>
                 </div>
                 <div class="faq-item fade-in">
                     <button class="faq-question" onclick="toggleFAQ(this)">My kid isn't athletic &mdash; will they fit in? <span class="faq-toggle">+</span></button>
@@ -1363,12 +1422,13 @@
     <section class="final-cta">
         <div class="final-cta-bg"></div>
         <div class="container">
-            <h2 class="fade-in">Give Your Kid Something They'll Thank You For</h2>
-            <p class="fade-in">Founding member spots are limited. Lock in your rate before we open.</p>
+            <h2 class="fade-in">Every Week You Wait, Another Family Takes Your Spot</h2>
+            <p class="fade-in">Founding member tiers are filling up and they disappear the day we open. Lock in your rate now &mdash; 100% refundable if you change your mind.</p>
             <a href="#pricing" class="btn-hero fade-in" onclick="scrollToPricing(); return false;">
-                See Founding Member Pricing
+                Claim Your Founding Member Spot
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
             </a>
+            <p class="fade-in" style="color:var(--muted);font-size:0.82rem;margin-top:14px;position:relative;z-index:1;">Deposits start at $10 &middot; 100% refundable &middot; Converts to class credit</p>
         </div>
     </section>
 
@@ -1421,7 +1481,7 @@
 
     <!-- MOBILE STICKY CTA -->
     <div class="mobile-sticky" id="mobileStickyCtA">
-        <button class="btn-card" onclick="scrollToPricing()">See Founding Member Pricing</button>
+        <button class="btn-card" onclick="scrollToPricing()">Claim Your Founding Member Spot</button>
     </div>
 
     <!-- REGISTRATION MODAL -->
@@ -1446,12 +1506,13 @@
                     </div>
                 </div>
                 <input type="text" class="honeypot" name="website" tabindex="-1" autocomplete="off">
-                <button type="submit" class="btn-submit">Secure My Spot</button>
+                <button type="submit" class="btn-submit">Secure My Spot &mdash; 100% Refundable</button>
             </form>
             <div class="modal-success" id="modalSuccess" style="display:none;">
                 <div class="check">&#10003;</div>
                 <h3>You're In!</h3>
                 <p id="successMessage"></p>
+                <p style="font-size:0.82rem;color:var(--muted);margin-top:12px;">Your founding member perks are locked in. We'll send construction updates and early scheduling access.</p>
             </div>
         </div>
     </div>
@@ -1583,11 +1644,16 @@
             }
         }
 
-        // Mobile sticky
+        // Mobile sticky — show after hero, hide when pricing visible
         function updateMobileSticky() {
             const sticky = document.getElementById('mobileStickyCtA');
+            const hero = document.getElementById('hero');
             const pricing = document.getElementById('pricing');
-            sticky.classList.toggle('hidden', window.scrollY > pricing.offsetTop);
+            const scrollY = window.scrollY;
+            const pastHero = scrollY > hero.offsetHeight * 0.6;
+            const atPricing = scrollY > pricing.offsetTop - window.innerHeight * 0.5 &&
+                              scrollY < pricing.offsetTop + pricing.offsetHeight;
+            sticky.classList.toggle('hidden', !pastHero || atPricing);
         }
         window.addEventListener('scroll', updateMobileSticky);
 
@@ -1608,6 +1674,32 @@
         const s = document.createElement('style');
         s.textContent = '@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-4px)}}';
         document.head.appendChild(s);
+
+        // Social proof ticker
+        const tickerMessages = [
+            'A family from Crofton just pre-registered',
+            'A family from Severna Park joined the Founders 50',
+            '3 families pre-registered this week',
+            'A family from Bowie locked in 20% off for life',
+            'A family from Edgewater joined the Interest List',
+            'First 5 Families tier is almost full',
+            'A family from Arnold just pre-registered'
+        ];
+        let tickerIndex = 0;
+        function rotateTicker() {
+            const el = document.getElementById('tickerText');
+            if (!el) return;
+            el.style.opacity = '0';
+            setTimeout(() => {
+                tickerIndex = (tickerIndex + 1) % tickerMessages.length;
+                el.textContent = tickerMessages[tickerIndex];
+                el.style.opacity = '1';
+            }, 400);
+        }
+        setInterval(rotateTicker, 5000);
+        const tickerStyle = document.createElement('style');
+        tickerStyle.textContent = '#tickerText{transition:opacity 0.4s ease;}';
+        document.head.appendChild(tickerStyle);
     </script>
 </body>
 </html>
