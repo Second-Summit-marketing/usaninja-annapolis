@@ -372,6 +372,39 @@
         .section-white {
             background: var(--white);
             position: relative;
+            color: var(--navy);
+        }
+        .section-light,
+        .section-white {
+            /* Override all light-on-dark text for readability */
+        }
+        .section-light h2, .section-white h2,
+        .section-light h3, .section-white h3 { color: var(--navy); }
+        .section-light p, .section-white p { color: #475569; }
+        .section-light .section-label, .section-white .section-label { color: var(--orange); }
+        .section-light .section-header p, .section-white .section-header p { color: #64748b; opacity: 1; }
+        .section-light .step-number, .section-white .step-number { color: var(--orange); }
+        .section-light .step-card, .section-white .step-card {
+            background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06);
+        }
+        .section-light .step-card h3, .section-white .step-card h3 { color: var(--navy); }
+        .section-light .step-card p, .section-white .step-card p { color: #475569; }
+        .section-light .testimonial-card, .section-white .testimonial-card {
+            background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.06);
+        }
+        .section-light .testimonial-card p, .section-white .testimonial-card p { color: #475569; }
+        .section-light .testimonial-author, .section-white .testimonial-author { color: var(--navy); }
+        .section-light .testimonial-location, .section-white .testimonial-location { color: #64748b; }
+        .section-light .faq-question, .section-white .faq-question { color: var(--navy); }
+        .section-light .faq-answer p, .section-white .faq-answer p { color: #475569; }
+        .section-light .faq-toggle, .section-white .faq-toggle { color: var(--orange); }
+        .section-light .team-info h3, .section-white .team-info h3 { color: var(--navy); }
+        .section-light .team-info p, .section-white .team-info p { color: #475569; }
+        .section-light .location-details h2, .section-white .location-details h2 { color: var(--navy); }
+        .section-light .location-details .addr, .section-white .location-details .addr { color: #475569; }
+        .section-light .location-details .addr strong, .section-white .location-details .addr strong { color: var(--navy); }
+        .section-light .location-nearby .tag, .section-white .location-nearby .tag {
+            background: rgba(0,0,0,0.05); color: #475569; border-color: rgba(0,0,0,0.08);
         }
         .section-padding { padding: 100px 0; }
         .section-header {
