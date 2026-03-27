@@ -1377,7 +1377,7 @@
     </section>
 
     <!-- PROGRAMS -->
-    <section class="section-white section-padding">
+    <section class="section-white section-padding" id="programs">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-label">Ages 3&ndash;17</span>
@@ -1462,7 +1462,7 @@
     </section>
 
     <!-- TEAM -->
-    <section class="section-dark section-padding">
+    <section class="section-dark section-padding" id="about">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-label">Who We Are</span>
@@ -1491,7 +1491,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section-dark section-padding" style="padding-top: 0;">
+    <section class="section-dark section-padding" id="faq" style="padding-top: 0;">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-label">Questions?</span>
@@ -1568,19 +1568,19 @@
                 <div class="footer-col">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="#">Ninja Classes</a></li>
-                        <li><a href="#">Summer Camps</a></li>
-                        <li><a href="#">Birthday Parties</a></li>
-                        <li><a href="#">Open Gym</a></li>
+                        <li><a href="#programs" onclick="smoothScroll('programs'); return false;">Ninja Classes</a></li>
+                        <li><a href="#programs" onclick="smoothScroll('programs'); return false;">Summer Camps</a></li>
+                        <li><a href="#programs" onclick="smoothScroll('programs'); return false;">Birthday Parties</a></li>
+                        <li><a href="#programs" onclick="smoothScroll('programs'); return false;">Open Gym</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#about" onclick="smoothScroll('about'); return false;">About Us</a></li>
+                        <li><a href="#" onclick="openCareersModal(); return false;">Careers</a></li>
+                        <li><a href="#" onclick="openContactModal(); return false;">Contact</a></li>
+                        <li><a href="#faq" onclick="smoothScroll('faq'); return false;">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-newsletter">
@@ -1634,6 +1634,64 @@
                 <h3>You're In!</h3>
                 <p id="successMessage"></p>
                 <p style="font-size:0.82rem;color:var(--muted);margin-top:12px;">Your founding member perks are locked in. We'll send construction updates and early scheduling access.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal-overlay" id="contactOverlay" onclick="closeContactModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <form id="contactForm" onsubmit="submitContactForm(event)">
+                <h3>Get in Touch</h3>
+                <p style="color:var(--muted-light);font-size:0.9rem;margin-bottom:18px;">Have a question about classes, scheduling, or the gym? Drop us a message and we'll get back to you fast.</p>
+                <div class="form-row">
+                    <div class="form-group"><label>First Name</label><input type="text" id="contactFirstName" required></div>
+                    <div class="form-group"><label>Last Name</label><input type="text" id="contactLastName" required></div>
+                </div>
+                <div class="form-group"><label>Email</label><input type="email" id="contactEmail" required></div>
+                <div class="form-group"><label>Phone</label><input type="tel" id="contactPhone"></div>
+                <div class="form-group"><label>Message</label><textarea id="contactMessage" rows="3" style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.1);border-radius:10px;background:rgba(255,255,255,0.05);color:var(--text);font-family:inherit;font-size:0.9rem;resize:vertical;" placeholder="What can we help you with?" required></textarea></div>
+                <input type="text" class="honeypot" name="company" tabindex="-1" autocomplete="off">
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+            <div class="modal-success" id="contactSuccess" style="display:none;">
+                <div class="check">&#10003;</div>
+                <h3>Message Sent!</h3>
+                <p id="contactSuccessMsg"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAREERS MODAL -->
+    <div class="modal-overlay" id="careersOverlay" onclick="closeCareersModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <form id="careersForm" onsubmit="submitCareersForm(event)">
+                <h3>Join Our Team</h3>
+                <p style="color:var(--muted-light);font-size:0.9rem;margin-bottom:18px;">We're building something special in Annapolis. If you love working with kids and want to be part of an incredible team, tell us about yourself.</p>
+                <div class="form-row">
+                    <div class="form-group"><label>First Name</label><input type="text" id="careersFirstName" required></div>
+                    <div class="form-group"><label>Last Name</label><input type="text" id="careersLastName" required></div>
+                </div>
+                <div class="form-group"><label>Email</label><input type="email" id="careersEmail" required></div>
+                <div class="form-group"><label>Phone</label><input type="tel" id="careersPhone" required></div>
+                <div class="form-group"><label>Position Interest</label>
+                    <select id="careersPosition" style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.1);border-radius:10px;background:rgba(255,255,255,0.05);color:var(--text);font-size:0.9rem;">
+                        <option>Coach / Instructor</option>
+                        <option>Front Desk / Customer Service</option>
+                        <option>Birthday Party Host</option>
+                        <option>Camp Counselor</option>
+                        <option>General Manager</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Tell Us About Yourself</label><textarea id="careersAbout" rows="3" style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.1);border-radius:10px;background:rgba(255,255,255,0.05);color:var(--text);font-family:inherit;font-size:0.9rem;resize:vertical;" placeholder="Experience, availability, why you're interested..." required></textarea></div>
+                <input type="text" class="honeypot" name="company" tabindex="-1" autocomplete="off">
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </form>
+            <div class="modal-success" id="careersSuccess" style="display:none;">
+                <div class="check">&#10003;</div>
+                <h3>Application Received!</h3>
+                <p id="careersSuccessMsg"></p>
             </div>
         </div>
     </div>
@@ -1777,6 +1835,89 @@
                 msg.textContent = 'Something went wrong. Please try again.';
                 btn.disabled = false; btn.textContent = 'Subscribe';
             });
+        }
+
+        // Smooth scroll helper
+        function smoothScroll(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Contact Modal
+        function openContactModal() {
+            document.getElementById('contactForm').style.display = 'block';
+            document.getElementById('contactSuccess').style.display = 'none';
+            document.getElementById('contactForm').reset();
+            document.getElementById('contactOverlay').classList.add('open');
+        }
+        function closeContactModal(event) {
+            if (event && event.target !== document.getElementById('contactOverlay')) return;
+            document.getElementById('contactOverlay').classList.remove('open');
+        }
+        function submitContactForm(event) {
+            event.preventDefault();
+            if (document.querySelector('#contactForm .honeypot').value) return;
+            const fd = {
+                firstName: document.getElementById('contactFirstName').value,
+                lastName: document.getElementById('contactLastName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                message: document.getElementById('contactMessage').value,
+                type: 'contact'
+            };
+            const btn = document.querySelector('#contactForm .btn-submit');
+            btn.disabled = true; btn.textContent = 'Sending...';
+            fetch('https://api.secondsummit.ninja/annapolis/inquiry', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(fd)
+            })
+            .then(r => r.json()).then(() => {
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('contactSuccess').style.display = 'block';
+                document.getElementById('contactSuccessMsg').textContent =
+                    'Thanks ' + fd.firstName + '! We\'ll get back to you within 24 hours.';
+                setTimeout(() => { document.getElementById('contactOverlay').classList.remove('open'); }, 4000);
+            })
+            .catch(() => { btn.disabled = false; btn.textContent = 'Send Message'; alert('Error. Please try again.'); });
+        }
+
+        // Careers Modal
+        function openCareersModal() {
+            document.getElementById('careersForm').style.display = 'block';
+            document.getElementById('careersSuccess').style.display = 'none';
+            document.getElementById('careersForm').reset();
+            document.getElementById('careersOverlay').classList.add('open');
+        }
+        function closeCareersModal(event) {
+            if (event && event.target !== document.getElementById('careersOverlay')) return;
+            document.getElementById('careersOverlay').classList.remove('open');
+        }
+        function submitCareersForm(event) {
+            event.preventDefault();
+            if (document.querySelector('#careersForm .honeypot').value) return;
+            const fd = {
+                firstName: document.getElementById('careersFirstName').value,
+                lastName: document.getElementById('careersLastName').value,
+                email: document.getElementById('careersEmail').value,
+                phone: document.getElementById('careersPhone').value,
+                position: document.getElementById('careersPosition').value,
+                message: document.getElementById('careersAbout').value,
+                type: 'careers'
+            };
+            const btn = document.querySelector('#careersForm .btn-submit');
+            btn.disabled = true; btn.textContent = 'Submitting...';
+            fetch('https://api.secondsummit.ninja/annapolis/inquiry', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(fd)
+            })
+            .then(r => r.json()).then(() => {
+                document.getElementById('careersForm').style.display = 'none';
+                document.getElementById('careersSuccess').style.display = 'block';
+                document.getElementById('careersSuccessMsg').textContent =
+                    'Thanks ' + fd.firstName + '! We\'ll review your application and reach out soon.';
+                setTimeout(() => { document.getElementById('careersOverlay').classList.remove('open'); }, 4000);
+            })
+            .catch(() => { btn.disabled = false; btn.textContent = 'Submit Application'; alert('Error. Please try again.'); });
         }
 
         // Scroll
