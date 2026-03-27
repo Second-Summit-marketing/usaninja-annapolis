@@ -1553,10 +1553,11 @@
                 <div class="footer-col footer-newsletter">
                     <h4>Stay Updated</h4>
                     <p>Get construction progress, opening dates, and exclusive founding member perks delivered to your inbox.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Your email">
-                        <button>Subscribe</button>
+                    <div class="newsletter-form" id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="Your email" required>
+                        <button type="button" onclick="subscribeNewsletter()">Subscribe</button>
                     </div>
+                    <p id="newsletterMsg" style="display:none; color: #22c55e; font-size: 0.85rem; margin-top: 8px;"></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1708,6 +1709,35 @@
                 loadStats();
             })
             .catch(() => alert('Error submitting. Please try again.'));
+        }
+
+        // Newsletter Subscribe
+        function subscribeNewsletter() {
+            const emailInput = document.getElementById('newsletterEmail');
+            const msg = document.getElementById('newsletterMsg');
+            const email = emailInput.value.trim();
+            if (!email || !email.includes('@')) {
+                msg.style.display = 'block'; msg.style.color = '#ef4444';
+                msg.textContent = 'Please enter a valid email address.';
+                return;
+            }
+            const btn = document.querySelector('#newsletterForm button');
+            btn.disabled = true; btn.textContent = 'Subscribing...';
+            fetch('https://api.secondsummit.ninja/annapolis/newsletter', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            })
+            .then(r => r.json()).then(d => {
+                msg.style.display = 'block'; msg.style.color = '#22c55e';
+                msg.textContent = '\u2705 ' + (d.message || 'Subscribed!') + ' We\'ll keep you posted.';
+                emailInput.value = '';
+                btn.textContent = 'Subscribed!';
+            })
+            .catch(() => {
+                msg.style.display = 'block'; msg.style.color = '#ef4444';
+                msg.textContent = 'Something went wrong. Please try again.';
+                btn.disabled = false; btn.textContent = 'Subscribe';
+            });
         }
 
         // Scroll
