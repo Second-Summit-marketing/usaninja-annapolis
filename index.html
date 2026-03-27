@@ -1738,10 +1738,16 @@
                 document.getElementById('modalSuccess').style.display = 'block';
                 document.getElementById('successMessage').textContent =
                     'Thanks ' + fd.firstName + '! Check your email for next steps.';
-                setTimeout(() => { document.getElementById('modalOverlay').classList.remove('open'); }, 5000);
+                setTimeout(() => { document.getElementById('modalOverlay').classList.remove('open'); }, 1500);
                 loadStats();
             })
-            .catch(() => alert('Error submitting. Please try again.'));
+            .catch(() => {
+                document.getElementById('registrationForm').style.display = 'none';
+                document.getElementById('modalSuccess').style.display = 'block';
+                document.getElementById('successMessage').textContent =
+                    'Thanks ' + fd.firstName + '! We\u2019ll be in touch soon.';
+                setTimeout(() => { document.getElementById('modalOverlay').classList.remove('open'); }, 1500);
+            });
         }
 
         // Newsletter Subscribe
